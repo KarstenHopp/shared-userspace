@@ -6,11 +6,11 @@
 # - get a list of srpm package names that are included in BRT
 # - loop until ".end" got entered:
 #   - read newpackage from stdin
-#   - check if newpackage is in srpms list > next loop
+#   - check if newpackage is in brtsrpms list > next loop
 #   - check if newpackage is in module rpm list > next loop
 #   - get build deps from newpackage
 #   - loop over build deps:
-#     - check if build dep is in srpms list > next loop
+#     - check if build dep is in brtsrpms list > next loop
 #     - check if build dep is in module rpm list > next loop
 #     - otherwise add build dep to module rpm list
 #       and output modulemd snipped with rpm name and rationale
@@ -21,10 +21,11 @@
 
 binaryrpm=""
 modulerpms=()
-modulerpmsfile=`mktemp`
-moduleapifile=`mktemp`
-moduleprofilefile=`mktemp`
-
+modulerpmsfile=`mktemp modulerpms.XXX`
+moduleapifile=`mktemp moduleapi.XXX`
+moduleprofilefile=`mktemp moduleprofile.XXX`
+alreadyprocessed=`mktemp moduledepprocessed.XXX`
+brtrepo="https://kojipkgs.stg.fedoraproject.org/compose/branched/jkaluza/latest-Boltron-26/compose/base-runtime/x86_64/os/"
 
 debug() {
    echo "$@" 1>&2
@@ -40,6 +41,7 @@ containsElement () {
 
 gather_modulemd_rpms() {
    if [ "${1}" != "" ]; then
+      debug "gather_modulemd_rpms adding $binaryrpm_srpm to rpm list"
       echo "            ${1}:" >> $modulerpmsfile
       echo "                rationale: ${@:2}" >> $modulerpmsfile
       echo "                ref: f26" >> $modulerpmsfile
@@ -48,61 +50,72 @@ gather_modulemd_rpms() {
 
 gather_profile() {
    if [ "${1}" != "" ]; then
+      debug "gather_profile adding $binaryrpm to profile"
       echo "                - ${1}" >> $moduleprofilefile
    fi
 }
 
 gather_api() {
    if [ "${1}" != "" ]; then
+      debug "gather_api adding $binaryrpm to api"
       echo "            - ${1}" >> $moduleapifile
    fi
 }
 
-
 # "acl at attr audit babeltrace basesystem bash bc binutils byacc ...."
-srpms=(`echo 'rpm -qp --qf "%{SOURCERPM}\n" /srv/groups/modularity/repos/base-runtime/26/*.rpm | sed -e "s/-[^-]*-[^-]*.base_runtime_master_20170308145737.src.rpm$//"| sort -n | uniq' | ssh fedorapeople.org 2>/dev/null`)
+wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.txt
+brtsrpms=(`grep -v -e "^+\|^*\|!" api.txt | sed -e "s/-[^-]*-[^-]*//"`)
+brtrpms=(`grep -e "^+\|^*" api.txt  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
 
 for binaryrpm in $*; do
-   # make sure it is the name of an srpm:
-   binaryrpm_srpm=`repoquery --releasever 26 -q --qf "%{SOURCERPM}" $binaryrpm 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*.src.rpm//"`
-   if [ "$binaryrpm_srpm" == "" ]; then
-      debug "no source rpm found for $binaryrpm"
-      continue
-   fi
-   binaryrpm=$binaryrpm_srpm
-   if containsElement "$binaryrpm" "${srpms[@]}" -eq 1 ; then
+   debug "working on $binaryrpm"
+   if containsElement "$binaryrpm" "${brtrpms[@]}" -eq 1 ; then
       debug "$binaryrpm is already in BRT"
       continue
    fi
-
    if containsElement "$binaryrpm" "${modulerpms[@]}" -eq 1 ; then
       debug "$binaryrpm is already in the list of deps for this module"
       continue
    fi
-   modulerpms+=($binaryrpm)
+   binaryrpm_srpm=`dnf repoquery --releasever 26 -q --qf "%{SOURCERPM}" --whatprovides "$binaryrpm" 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*.src.rpm//"`
+   if [ "$binaryrpm_srpm" == "" ]; then
+      debug "no source rpm found for $binaryrpm"
+      continue
+   fi
    gather_profile $binaryrpm
    gather_api $binaryrpm
-   gather_modulemd_rpms $binaryrpm "Component for shared userspace."
-   deps=`repoquery --enablerepo=fedora-source --releasever 26 --archlist=src -q --requires --recursive $binaryrpm 2>/dev/null | sed -e "s/ .*$//"`
+   if containsElement "$binaryrpm" "${modulerpms[@]}" -eq 1 ; then
+      gather_modulemd_rpms $binaryrpm_srpm "Component for shared userspace - $binaryrpm."
+      modulerpms+=($binaryrpm_srpm)
+   fi
+   # FIXME recursive: ?
+   #deps=`dnf repoquery --releasever 26 --arch src -q --requires $binaryrpm_srpm 2>/dev/null | sed -e "s/ .*$//"`
+   # dnf repoquery is broken wrt. src rpm requirements, use yum repoquery here:
+   deps=`repoquery --enablerepo fedora-source  --releasever 26 --arch src -q --requires $binaryrpm_srpm 2>/dev/null | sed -e "s/ .*$//"`
    #debug "deps: $deps"
    for dep in $deps; do
-      sdep=`repoquery --releasever 26 -q --qf "%{SOURCERPM}" --whatprovides $dep 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*.src.rpm//"`
-      #debug "dep: x${sdep}x"
-      if containsElement "$sdep" "${srpms[@]}" -eq 1 ; then
-         debug "$sdep is already in BRT"
+      grep -q "$dep" $alreadyprocessed && continue
+      echo "$dep" >> $alreadyprocessed
+      bdep=`dnf repoquery --releasever 26 -q --whatprovides "$dep" 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*$//"`
+      debug "working on $bdep"
+      if containsElement "$bdep" "${brtrpms[@]}" -eq 1 ; then
+         debug "$bdep is already in BRT"
          continue
       fi
 
-      if containsElement "$sdep" "${modulerpms[@]}" -eq 1 ; then
-         debug "$sdep is already in the list of deps for this module"
+      if containsElement "$bdep" "${modulerpms[@]}" -eq 1 ; then
+         debug "$bdep is already in the list of deps for this module"
          continue
       fi
-      modulerpms+=($sdep)
-      gather_profile $sdep
-      gather_modulemd_rpms $sdep "Requirement for ${binaryrpm}."
+      debug "adding 5 $bdep to modulerpms"
+      modulerpms+=($bdep)
+      sdep=`dnf repoquery --releasever 26 -q --qf "%{SOURCERPM}" --whatprovides "$dep" 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*.src.rpm//"`
+      if containsElement "sdep" "${modulerpms[@]}" -ne 1 ; then
+         gather_modulemd_rpms $sdep "Requirement for ${binaryrpm}."
+      fi
    done
 done
-echo ${modulerpms[@]}
+
 
 cat << EOT
 document: modulemd
@@ -138,4 +151,5 @@ cat << EOT
 EOT
 cat $modulerpmsfile
 
-rm -f $moduleprofilefile $moduleapifile $modulerpmsfile
+rm -f $moduleprofilefile $moduleapifile $modulerpmsfile $alreadyprocessed
+
