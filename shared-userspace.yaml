@@ -8,9 +8,9 @@ data:
         module: [ MIT ]
     dependencies:
         buildrequires:
-            base-runtime: master
+            base_runtime: master
         requires:
-            base-runtime: master
+            base_runtime: master
     references:
         community: https://fedoraproject.org/wiki/Modularity
         documentation: https://fedoraproject.org/wiki/Fedora_Packaging_Guidelines_for_Modules
@@ -19,1676 +19,1018 @@ data:
         default:
             rpms:
                 - alsa-lib
-                - autoconf
-                - automake
-                - doxygen
+                - glibc-utils
                 - gtk2
-                - cups
-                - gtk-doc
-                - atk
-                - cairo
-                - gdk-pixbuf2
-                - pango
-                - libXcomposite
-                - libXcursor
-                - libXdamage
-                - libXfixes
-                - libXi
-                - libXinerama
-                - libXrandr
-                - libXrender
                 - hesiod
                 - libusb
-                - libusbx
-                - libvirt
-                - qemu
-                - augeas
-                - avahi
-                - ceph
-                - dnsmasq
-                - ebtables
-                - fuse
-                - git
-                - glusterfs
-                - iscsi-initiator-utils
-                - libnl3
-                - libpciaccess
-                - libssh
-                - openwsman
-                - libxslt
-                - netcf
-                - nfs-utils
-                - numactl
-                - numad
-                - parted
-                - perl
-                - polkit
-                - python2
-                - qt
-                - radvd
-                - sanlock
-                - scrub
-                - sheepdog
-                - systemtap
-                - wireshark
-                - xen
-                - xhtml1-dtds
-                - yajl
-                - mesa
-                - bison
-                - clang
-                - libXext
-                - libXmu
-                - libXxf86vm
-                - libclc
-                - libdrm
-                - libglvnd
-                - libomxil-bellagio
-                - libva
-                - libvdpau
-                - libxshmfence
-                - llvm
-                - imake
-                - opencl-filesystem
-                - valgrind
-                - wayland
-                - python-mako
-                - vulkan
-                - xorg-x11-proto-devel
+                - libvirt-client
+                - mesa-libGL
                 - mesa-libGLU
                 - motif
-                - libXft
-                - libXp
-                - libXt
-                - libjpeg-turbo
-                - xorg-x11-xbitmaps
                 - SDL
-                - arts
-                - audiofile
-                - esound
-                - libX11
-                - nas
-                - pulseaudio
                 - atomic
-                - go-compilers
-                - golang-github-cpuguy83-go-md2man
-                - ostree
-                - policycoreutils
-                - PyYAML
-                - python-dateutil
-                - dbus-python
-                - python-docker
-                - pygobject3
-                - python-requests
                 - atomic-devmode
+                - audit-libs-python
                 - authconfig
-                - intltool
+                - avahi-libs
                 - bash-completion
-                - bind
-                - GeoIP
-                - docbook-style-xsl
-                - mariadb
-                - postgresql
-                - python-ply
+                - bind-libs
+                - bind-libs-lite
+                - bind-license
+                - bind-utils
                 - biosdevname
-                - pciutils
-                - boost
-                - icu
-                - mpich
-                - openmpi
+                - boost-iostreams
+                - boost-program-options
+                - boost-random
+                - boost-regex
+                - boost-system
+                - boost-thread
                 - bridge-utils
-                - sysfsutils
-                - c-ares
-                - checkpolicy
+                - ceph-common
                 - chrony
-                - libedit
-                - pps-tools
                 - cloud-init
-                - iproute
-                - python-configobj
-                - python-httpretty
-                - python-jinja2
-                - python-jsonpatch
-                - python-mock
-                - python-nose
-                - python-oauthlib
-                - python-prettytable
-                - pyserial
-                - python-unittest2
-                - cloud-utils
-                - cockpit
-                - glib-networking
-                - golang
-                - pcp
-                - json-glib
-                - xmlto
+                - cloud-utils-growpart
+                - cockpit-bridge
+                - cockpit-docker
+                - cockpit-ostree
+                - cockpit-system
                 - conntrack-tools
+                - criu
+                - cronie
+                - cronie-anacron
+                - crontabs
+                - cups-libs
+                - dbus-glib
+                - device-mapper-multipath
+                - device-mapper-multipath-libs
+                - device-mapper-persistent-data
+                - dhclient
+                - dhcp-common
+                - dhcp-libs
+                - dmidecode
+                - dracut-network
+                - etcd
+                - ethtool
+                - fcgi
+                - fipscheck
+                - fipscheck-lib
+                - flannel
+                - GeoIP
+                - glusterfs
+                - glusterfs-client-xlators
+                - glusterfs-fuse
+                - glusterfs-libs
+                - gomtree
+                - gperftools-libs
+                - groff-base
+                - grubby
+                - gsettings-desktop-schemas
+                - gssproxy
+                - hardlink
+                - hostname
+                - initscripts
+                - iptables-services
+                - iputils
+                - irqbalance
+                - iscsi-initiator-utils-iscsiuio
+                - jansson
+                - json-glib
+                - kexec-tools
+                - kpartx
+                - kubernetes-client
+                - kubernetes-node
+                - less
+                - libaio
+                - libbasicobjects
+                - libcephfs1
+                - libcgroup
+                - libcollection
+                - libdhash
+                - libedit
+                - libevent
+                - libgudev1
+                - libicu
+                - libini_config
+                - libipa_hbac
+                - libldb
                 - libmnl
+                - libmodman
+                - libndp
                 - libnetfilter_conntrack
                 - libnetfilter_cthelper
                 - libnetfilter_cttimeout
                 - libnetfilter_queue
                 - libnfnetlink
-                - container-selinux
-                - selinux-policy
-                - criu
-                - asciidoc
-                - libnet
-                - protobuf-c
-                - protobuf
-                - dbus-glib
-                - chrpath
-                - device-mapper-multipath
-                - libaio
-                - device-mapper-persistent-data
-                - dhcp
-                - bind99
-                - dmidecode
-                - docker
-                - btrfs-progs
-                - cmake
-                - godep
-                - docker-client
-                - apache-commons-compress
-                - bouncycastle-pkix
-                - glassfish-annotation-api
-                - glassfish-hk2
-                - glassfish-jax-rs-api
-                - glassfish-jaxb-api
-                - jackson-annotations
-                - jackson-core
-                - jackson-databind
-                - jackson-dataformat-yaml
-                - jackson-datatypes-collections
-                - jackson-jaxrs-providers
-                - jackson-module-jaxb-annotations
-                - jersey
-                - jnr-unixsocket
-                - javapackages-tools
-                - maven-surefire
-                - maven-source-plugin
-                - sonatype-oss-parent
-                - docker-latest
-                - efibootmgr
-                - efivar
-                - etcd
-                - golang-github-akrennmair-gopcap
-                - golang-github-bgentry-speakeasy
-                - golang-github-boltdb-bolt
-                - golang-github-cheggaaa-pb
-                - golang-github-cockroachdb-cmux
-                - golang-github-coreos-go-semver
-                - golang-github-coreos-go-systemd
-                - golang-github-coreos-pkg
-                - golang-github-dustin-go-humanize
-                - golang-github-ghodss-yaml
-                - golang-googlecode-gogoprotobuf
-                - golang-github-golang-groupcache
-                - golang-googlecode-goprotobuf
-                - golang-github-google-btree
-                - golang-github-grpc-ecosystem-grpc-gateway
-                - golang-github-jonboulle-clockwork
-                - golang-github-kr-pty
-                - golang-github-olekukonko-tablewriter
-                - golang-github-prometheus-client_golang
-                - golang-github-prometheus-procfs
-                - golang-github-spacejam-loghisto
-                - golang-github-spf13-cobra
-                - golang-github-spf13-pflag
-                - golang-github-ugorji-go
-                - golang-github-urfave-cli
-                - golang-github-xiang90-probing
-                - golang-googlecode-go-crypto
-                - golang-googlecode-net
-                - golang-github-grpc-grpc-go
-                - ethtool
-                - fcgi
-                - fipscheck
-                - flannel
-                - golang-github-aws-aws-sdk-go
-                - golang-github-coreos-go-iptables
-                - golang-github-golang-glog
-                - golang-github-gorilla-mux
-                - golang-github-vishvananda-netlink
-                - golang-googlecode-goauth2
-                - golang-googlecode-google-api-client
-                - gomtree
-                - gperftools
-                - libunwind
-                - perl-generators
-                - grubby
-                - gsettings-desktop-schemas
-                - gssproxy
-                - ding-libs
-                - hardlink
-                - hostname
-                - initscripts
-                - iputils
-                - docbook-utils
-                - perl-SGMLSpm
-                - irqbalance
-                - jansson
-                - python-sphinx
-                - kexec-tools
-                - snappy
-                - kubernetes
-                - go-bindata
-                - rsync
-                - libcgroup
-                - libevent
-                - sssd
-                - check
-                - cifs-utils
-                - diffstat
-                - http-parser
-                - cmocka
-                - libldb
                 - libnfsidmap
-                - samba
+                - libnl3
+                - libpath_utils
+                - libproxy
+                - librados2
+                - librbd1
+                - libref_array
+                - libreport-filesystem
+                - librgw2
+                - libselinux-python
+                - libsemanage-python
+                - libsmbclient
+                - libsoup
+                - libsss_autofs
+                - libsss_idmap
+                - libsss_nss_idmap
+                - libsss_sudo
                 - libtalloc
                 - libtdb
                 - libtevent
-                - nss_wrapper
-                - uid_wrapper
-                - libmodman
-                - libndp
-                - libproxy
-                - kf5-kconfig
-                - webkitgtk4
-                - NetworkManager
-                - js
-                - libreport
-                - desktop-file-utils
-                - gtk3
-                - json-c
-                - libtar
-                - newt
-                - satyr
-                - xmlrpc-c
-                - libsoup
-                - vala
                 - libtirpc
+                - libunwind
                 - libuser
-                - fakeroot
-                - linuxdoc-tools
+                - libverto-tevent
+                - libwbclient
+                - libxml2-python
                 - libyaml
                 - logrotate
                 - lttng-ust
-                - userspace-rcu
                 - m2crypto
-                - python2-typing
-                - swig
                 - mdadm
-                - mokutil
-                - gnu-efi
                 - mozjs17
-                - autoconf213
-                - perl-Getopt-Long
                 - nano
                 - net-tools
-                - bluez
-                - nmap
-                - dos2unix
-                - pygtk2
+                - NetworkManager
+                - NetworkManager-libnm
+                - newt
+                - newt-python
+                - nmap-ncat
                 - nss-altfiles
+                - numactl-libs
                 - oci-register-machine
-                - golang-github-godbus-dbus
-                - golang-gopkg-yaml
                 - oci-systemd-hook
                 - openssh
-                - perl-podlators
-                - tcp_wrappers
-                - xorg-x11-xauth
+                - openssh-clients
+                - openssh-server
+                - ostree
+                - ostree-grub2
                 - passwd
+                - pciutils-libs
                 - pinentry
-                - gcr
-                - libsecret
                 - pkgconfig
+                - policycoreutils
+                - policycoreutils-python
                 - polkit-pkla-compat
                 - ppp
-                - compat-openssl10
+                - protobuf-c
+                - pygobject3-base
+                - pygpgme
                 - pyliblzma
+                - python
                 - python-backports
                 - python-backports-ssl_match_hostname
+                - python-cephfs
                 - python-chardet
+                - python-configobj
+                - python-dateutil
+                - python-decorator
                 - python-dmidecode
                 - python-docker-py
-                - pytest
-                - python-coverage
-                - python-flake8
-                - python-ipaddress
-                - python-pytest-cov
-                - python-websocket-client
                 - python-docker-pycreds
                 - python-ethtool
+                - python-iniparse
                 - python-IPy
-                - python-rhsm
-                - python-slip
-                - python-urlgrabber
+                - python-jsonpatch
+                - python-jsonpointer
+                - python-libs
+                - python-perf
+                - python-prettytable
                 - python-pycurl
+                - python-pyudev
+                - python-rados
+                - python-rbd
+                - python-requests
+                - python-rhsm
+                - python-rhsm-certificates
+                - python-setuptools
+                - python-six
+                - python-slip
+                - python-slip-dbus
+                - python-sssdconfig
+                - python-urlgrabber
+                - python-urllib3
                 - pyxattr
+                - PyYAML
                 - quota
+                - quota-nls
                 - rpcbind
+                - rpm-python
                 - runc
-                - golang-github-Sirupsen-logrus
-                - golang-github-docker-go-units
-                - golang-github-opencontainers-runtime-spec
-                - golang-github-seccomp-libseccomp-golang
-                - golang-github-syndtr-gocapability
-                - setools
-                - qt5-qtbase
+                - samba-client-libs
+                - samba-common
+                - selinux-policy
+                - setools-console
                 - sg3_utils
+                - sg3_utils-libs
                 - shared-mime-info
-                - perl-XML-Parser
-                - shim-signed
-                - pesign
-                - shim
                 - skopeo
+                - skopeo-containers
                 - slang
-                - oniguruma
+                - snappy
                 - socat
+                - sssd-ad
+                - sssd-client
+                - sssd-common
+                - sssd-common-pac
+                - sssd-ipa
+                - sssd-krb5
+                - sssd-krb5-common
+                - sssd-ldap
+                - sssd-proxy
                 - subscription-manager
-                - GConf2
-                - libnotify
-                - redhat-lsb
-                - rarian
+                - subscription-manager-plugin-container
+                - subscription-manager-plugin-ostree
                 - sudo
-                - sendmail
+                - systemd-sysv
+                - tcp_wrappers
+                - tcp_wrappers-libs
                 - tmux
                 - trousers
                 - tuned
+                - tuned-profiles-atomic
                 - usermode
-                - libSM
-                - startup-notification
+                - userspace-rcu
+                - vim-minimal
                 - virt-what
                 - wpa_supplicant
-                - xfsprogs
+                - yajl
                 - yum
-                - python-pygpgme
-                - python-iniparse
-                - yum-metadata-parser
     api:
         rpms:
             - alsa-lib
+            - glibc-utils
             - gtk2
             - hesiod
             - libusb
-            - libvirt
-            - mesa
+            - libvirt-client
+            - mesa-libGL
             - mesa-libGLU
             - motif
             - SDL
             - atomic
             - atomic-devmode
+            - audit-libs-python
             - authconfig
+            - avahi-libs
             - bash-completion
-            - bind
+            - bind-libs
+            - bind-libs-lite
+            - bind-license
+            - bind-utils
             - biosdevname
-            - boost
+            - boost-iostreams
+            - boost-program-options
+            - boost-random
+            - boost-regex
+            - boost-system
+            - boost-thread
             - bridge-utils
-            - c-ares
-            - checkpolicy
+            - ceph-common
             - chrony
             - cloud-init
-            - cloud-utils
-            - cockpit
+            - cloud-utils-growpart
+            - cockpit-bridge
+            - cockpit-docker
+            - cockpit-ostree
+            - cockpit-system
             - conntrack-tools
-            - container-selinux
             - criu
+            - cronie
+            - cronie-anacron
+            - crontabs
+            - cups-libs
             - dbus-glib
             - device-mapper-multipath
+            - device-mapper-multipath-libs
             - device-mapper-persistent-data
-            - dhcp
+            - dhclient
+            - dhcp-common
+            - dhcp-libs
             - dmidecode
-            - docker
-            - docker-client
-            - docker-latest
-            - efibootmgr
+            - dracut-network
             - etcd
             - ethtool
             - fcgi
             - fipscheck
+            - fipscheck-lib
             - flannel
+            - GeoIP
+            - glusterfs
+            - glusterfs-client-xlators
+            - glusterfs-fuse
+            - glusterfs-libs
             - gomtree
-            - gperftools
+            - gperftools-libs
+            - groff-base
             - grubby
             - gsettings-desktop-schemas
             - gssproxy
             - hardlink
             - hostname
             - initscripts
+            - iptables-services
             - iputils
             - irqbalance
+            - iscsi-initiator-utils-iscsiuio
             - jansson
+            - json-glib
             - kexec-tools
-            - kubernetes
+            - kpartx
+            - kubernetes-client
+            - kubernetes-node
+            - less
+            - libaio
+            - libbasicobjects
+            - libcephfs1
             - libcgroup
+            - libcollection
+            - libdhash
+            - libedit
             - libevent
-            - sssd
+            - libgudev1
+            - libicu
+            - libini_config
+            - libipa_hbac
+            - libldb
+            - libmnl
             - libmodman
             - libndp
+            - libnetfilter_conntrack
+            - libnetfilter_cthelper
+            - libnetfilter_cttimeout
+            - libnetfilter_queue
+            - libnfnetlink
+            - libnfsidmap
+            - libnl3
+            - libpath_utils
             - libproxy
-            - libreport
+            - librados2
+            - librbd1
+            - libref_array
+            - libreport-filesystem
+            - librgw2
+            - libselinux-python
+            - libsemanage-python
+            - libsmbclient
             - libsoup
+            - libsss_autofs
+            - libsss_idmap
+            - libsss_nss_idmap
+            - libsss_sudo
+            - libtalloc
+            - libtdb
+            - libtevent
             - libtirpc
+            - libunwind
             - libuser
+            - libverto-tevent
+            - libwbclient
+            - libxml2-python
             - libyaml
             - logrotate
             - lttng-ust
             - m2crypto
             - mdadm
-            - mokutil
             - mozjs17
             - nano
             - net-tools
-            - nmap
+            - NetworkManager
+            - NetworkManager-libnm
+            - newt
+            - newt-python
+            - nmap-ncat
             - nss-altfiles
+            - numactl-libs
             - oci-register-machine
             - oci-systemd-hook
             - openssh
+            - openssh-clients
+            - openssh-server
+            - ostree
+            - ostree-grub2
             - passwd
+            - pciutils-libs
             - pinentry
             - pkgconfig
+            - policycoreutils
+            - policycoreutils-python
             - polkit-pkla-compat
             - ppp
+            - protobuf-c
+            - pygobject3-base
+            - pygpgme
             - pyliblzma
+            - python
             - python-backports
             - python-backports-ssl_match_hostname
+            - python-cephfs
             - python-chardet
+            - python-configobj
+            - python-dateutil
+            - python-decorator
             - python-dmidecode
             - python-docker-py
+            - python-docker-pycreds
             - python-ethtool
+            - python-iniparse
             - python-IPy
+            - python-jsonpatch
+            - python-jsonpointer
+            - python-libs
+            - python-perf
+            - python-prettytable
+            - python-pycurl
+            - python-pyudev
+            - python-rados
+            - python-rbd
+            - python-requests
             - python-rhsm
+            - python-rhsm-certificates
+            - python-setuptools
+            - python-six
             - python-slip
+            - python-slip-dbus
+            - python-sssdconfig
             - python-urlgrabber
+            - python-urllib3
             - pyxattr
+            - PyYAML
             - quota
+            - quota-nls
             - rpcbind
+            - rpm-python
             - runc
-            - setools
+            - samba-client-libs
+            - samba-common
+            - selinux-policy
+            - setools-console
             - sg3_utils
+            - sg3_utils-libs
             - shared-mime-info
-            - shim-signed
             - skopeo
+            - skopeo-containers
             - slang
+            - snappy
             - socat
+            - sssd-ad
+            - sssd-client
+            - sssd-common
+            - sssd-common-pac
+            - sssd-ipa
+            - sssd-krb5
+            - sssd-krb5-common
+            - sssd-ldap
+            - sssd-proxy
             - subscription-manager
+            - subscription-manager-plugin-container
+            - subscription-manager-plugin-ostree
             - sudo
+            - systemd-sysv
+            - tcp_wrappers
+            - tcp_wrappers-libs
             - tmux
             - trousers
             - tuned
+            - tuned-profiles-atomic
             - usermode
+            - userspace-rcu
+            - vim-minimal
             - virt-what
             - wpa_supplicant
-            - xfsprogs
+            - yajl
             - yum
     components:
         rpms:
             alsa-lib:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - alsa-lib.
                 ref: f26
-            autoconf:
-                rationale: Requirement for alsa-lib.
-                ref: f26
-            automake:
-                rationale: Requirement for alsa-lib.
-                ref: f26
-            doxygen:
-                rationale: Requirement for alsa-lib.
+            glibc:
+                rationale: Component for shared userspace - glibc-utils.
                 ref: f26
             gtk2:
-                rationale: Component for shared userspace.
-                ref: f26
-            cups:
-                rationale: Requirement for gtk2.
-                ref: f26
-            gtk-doc:
-                rationale: Requirement for gtk2.
-                ref: f26
-            atk:
-                rationale: Requirement for gtk2.
-                ref: f26
-            cairo:
-                rationale: Requirement for gtk2.
-                ref: f26
-            gdk-pixbuf2:
-                rationale: Requirement for gtk2.
-                ref: f26
-            pango:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXcomposite:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXcursor:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXdamage:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXfixes:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXi:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXinerama:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXrandr:
-                rationale: Requirement for gtk2.
-                ref: f26
-            libXrender:
-                rationale: Requirement for gtk2.
+                rationale: Component for shared userspace - gtk2.
                 ref: f26
             hesiod:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - hesiod.
                 ref: f26
             libusb:
-                rationale: Component for shared userspace.
-                ref: f26
-            libusbx:
-                rationale: Requirement for libusb.
+                rationale: Component for shared userspace - libusb.
                 ref: f26
             libvirt:
-                rationale: Component for shared userspace.
-                ref: f26
-            qemu:
-                rationale: Requirement for libvirt.
-                ref: f26
-            augeas:
-                rationale: Requirement for libvirt.
-                ref: f26
-            avahi:
-                rationale: Requirement for libvirt.
-                ref: f26
-            ceph:
-                rationale: Requirement for libvirt.
-                ref: f26
-            dnsmasq:
-                rationale: Requirement for libvirt.
-                ref: f26
-            ebtables:
-                rationale: Requirement for libvirt.
-                ref: f26
-            fuse:
-                rationale: Requirement for libvirt.
-                ref: f26
-            git:
-                rationale: Requirement for libvirt.
-                ref: f26
-            glusterfs:
-                rationale: Requirement for libvirt.
-                ref: f26
-            iscsi-initiator-utils:
-                rationale: Requirement for libvirt.
-                ref: f26
-            libnl3:
-                rationale: Requirement for libvirt.
-                ref: f26
-            libpciaccess:
-                rationale: Requirement for libvirt.
-                ref: f26
-            libssh:
-                rationale: Requirement for libvirt.
-                ref: f26
-            openwsman:
-                rationale: Requirement for libvirt.
-                ref: f26
-            libxslt:
-                rationale: Requirement for libvirt.
-                ref: f26
-            netcf:
-                rationale: Requirement for libvirt.
-                ref: f26
-            nfs-utils:
-                rationale: Requirement for libvirt.
-                ref: f26
-            numactl:
-                rationale: Requirement for libvirt.
-                ref: f26
-            numad:
-                rationale: Requirement for libvirt.
-                ref: f26
-            parted:
-                rationale: Requirement for libvirt.
-                ref: f26
-            perl:
-                rationale: Requirement for libvirt.
-                ref: f26
-            polkit:
-                rationale: Requirement for libvirt.
-                ref: f26
-            python2:
-                rationale: Requirement for libvirt.
-                ref: f26
-            qt:
-                rationale: Requirement for libvirt.
-                ref: f26
-            radvd:
-                rationale: Requirement for libvirt.
-                ref: f26
-            sanlock:
-                rationale: Requirement for libvirt.
-                ref: f26
-            scrub:
-                rationale: Requirement for libvirt.
-                ref: f26
-            sheepdog:
-                rationale: Requirement for libvirt.
-                ref: f26
-            systemtap:
-                rationale: Requirement for libvirt.
-                ref: f26
-            wireshark:
-                rationale: Requirement for libvirt.
-                ref: f26
-            xen:
-                rationale: Requirement for libvirt.
-                ref: f26
-            xhtml1-dtds:
-                rationale: Requirement for libvirt.
-                ref: f26
-            yajl:
-                rationale: Requirement for libvirt.
+                rationale: Component for shared userspace - libvirt-client.
                 ref: f26
             mesa:
-                rationale: Component for shared userspace.
-                ref: f26
-            bison:
-                rationale: Requirement for mesa.
-                ref: f26
-            clang:
-                rationale: Requirement for mesa.
-                ref: f26
-            libXext:
-                rationale: Requirement for mesa.
-                ref: f26
-            libXmu:
-                rationale: Requirement for mesa.
-                ref: f26
-            libXxf86vm:
-                rationale: Requirement for mesa.
-                ref: f26
-            libclc:
-                rationale: Requirement for mesa.
-                ref: f26
-            libdrm:
-                rationale: Requirement for mesa.
-                ref: f26
-            libglvnd:
-                rationale: Requirement for mesa.
-                ref: f26
-            libomxil-bellagio:
-                rationale: Requirement for mesa.
-                ref: f26
-            libva:
-                rationale: Requirement for mesa.
-                ref: f26
-            libvdpau:
-                rationale: Requirement for mesa.
-                ref: f26
-            libxshmfence:
-                rationale: Requirement for mesa.
-                ref: f26
-            llvm:
-                rationale: Requirement for mesa.
-                ref: f26
-            imake:
-                rationale: Requirement for mesa.
-                ref: f26
-            opencl-filesystem:
-                rationale: Requirement for mesa.
-                ref: f26
-            valgrind:
-                rationale: Requirement for mesa.
-                ref: f26
-            wayland:
-                rationale: Requirement for mesa.
-                ref: f26
-            python-mako:
-                rationale: Requirement for mesa.
-                ref: f26
-            vulkan:
-                rationale: Requirement for mesa.
-                ref: f26
-            xorg-x11-proto-devel:
-                rationale: Requirement for mesa.
+                rationale: Component for shared userspace - mesa-libGL.
                 ref: f26
             mesa-libGLU:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - mesa-libGLU.
                 ref: f26
             motif:
-                rationale: Component for shared userspace.
-                ref: f26
-            libXft:
-                rationale: Requirement for motif.
-                ref: f26
-            libXp:
-                rationale: Requirement for motif.
-                ref: f26
-            libXt:
-                rationale: Requirement for motif.
-                ref: f26
-            libjpeg-turbo:
-                rationale: Requirement for motif.
-                ref: f26
-            xorg-x11-xbitmaps:
-                rationale: Requirement for motif.
+                rationale: Component for shared userspace - motif.
                 ref: f26
             SDL:
-                rationale: Component for shared userspace.
-                ref: f26
-            arts:
-                rationale: Requirement for SDL.
-                ref: f26
-            audiofile:
-                rationale: Requirement for SDL.
-                ref: f26
-            esound:
-                rationale: Requirement for SDL.
-                ref: f26
-            libX11:
-                rationale: Requirement for SDL.
-                ref: f26
-            nas:
-                rationale: Requirement for SDL.
-                ref: f26
-            pulseaudio:
-                rationale: Requirement for SDL.
+                rationale: Component for shared userspace - SDL.
                 ref: f26
             atomic:
-                rationale: Component for shared userspace.
-                ref: f26
-            go-compilers:
-                rationale: Requirement for atomic.
-                ref: f26
-            golang-github-cpuguy83-go-md2man:
-                rationale: Requirement for atomic.
-                ref: f26
-            ostree:
-                rationale: Requirement for atomic.
-                ref: f26
-            policycoreutils:
-                rationale: Requirement for atomic.
-                ref: f26
-            PyYAML:
-                rationale: Requirement for atomic.
-                ref: f26
-            python-dateutil:
-                rationale: Requirement for atomic.
-                ref: f26
-            dbus-python:
-                rationale: Requirement for atomic.
-                ref: f26
-            python-docker:
-                rationale: Requirement for atomic.
-                ref: f26
-            pygobject3:
-                rationale: Requirement for atomic.
-                ref: f26
-            python-requests:
-                rationale: Requirement for atomic.
+                rationale: Component for shared userspace - atomic.
                 ref: f26
             atomic-devmode:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - atomic-devmode.
+                ref: f26
+            audit:
+                rationale: Component for shared userspace - audit-libs-python.
                 ref: f26
             authconfig:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - authconfig.
                 ref: f26
-            intltool:
-                rationale: Requirement for authconfig.
+            avahi:
+                rationale: Component for shared userspace - avahi-libs.
                 ref: f26
             bash-completion:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - bash-completion.
                 ref: f26
             bind:
-                rationale: Component for shared userspace.
-                ref: f26
-            GeoIP:
-                rationale: Requirement for bind.
-                ref: f26
-            docbook-style-xsl:
-                rationale: Requirement for bind.
-                ref: f26
-            mariadb:
-                rationale: Requirement for bind.
-                ref: f26
-            postgresql:
-                rationale: Requirement for bind.
-                ref: f26
-            python-ply:
-                rationale: Requirement for bind.
+                rationale: Component for shared userspace - bind-libs.
                 ref: f26
             biosdevname:
-                rationale: Component for shared userspace.
-                ref: f26
-            pciutils:
-                rationale: Requirement for biosdevname.
+                rationale: Component for shared userspace - biosdevname.
                 ref: f26
             boost:
-                rationale: Component for shared userspace.
-                ref: f26
-            icu:
-                rationale: Requirement for boost.
-                ref: f26
-            mpich:
-                rationale: Requirement for boost.
-                ref: f26
-            openmpi:
-                rationale: Requirement for boost.
+                rationale: Component for shared userspace - boost-system.
                 ref: f26
             bridge-utils:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - bridge-utils.
                 ref: f26
-            sysfsutils:
-                rationale: Requirement for bridge-utils.
-                ref: f26
-            c-ares:
-                rationale: Component for shared userspace.
-                ref: f26
-            checkpolicy:
-                rationale: Component for shared userspace.
+            ceph:
+                rationale: Component for shared userspace - ceph-common.
                 ref: f26
             chrony:
-                rationale: Component for shared userspace.
-                ref: f26
-            libedit:
-                rationale: Requirement for chrony.
-                ref: f26
-            pps-tools:
-                rationale: Requirement for chrony.
+                rationale: Component for shared userspace - chrony.
                 ref: f26
             cloud-init:
-                rationale: Component for shared userspace.
-                ref: f26
-            iproute:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-configobj:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-httpretty:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-jinja2:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-jsonpatch:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-mock:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-nose:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-oauthlib:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-prettytable:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            pyserial:
-                rationale: Requirement for cloud-init.
-                ref: f26
-            python-unittest2:
-                rationale: Requirement for cloud-init.
+                rationale: Component for shared userspace - cloud-init.
                 ref: f26
             cloud-utils:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - cloud-utils-growpart.
                 ref: f26
             cockpit:
-                rationale: Component for shared userspace.
-                ref: f26
-            glib-networking:
-                rationale: Requirement for cockpit.
-                ref: f26
-            golang:
-                rationale: Requirement for cockpit.
-                ref: f26
-            pcp:
-                rationale: Requirement for cockpit.
-                ref: f26
-            json-glib:
-                rationale: Requirement for cockpit.
-                ref: f26
-            xmlto:
-                rationale: Requirement for cockpit.
+                rationale: Component for shared userspace - cockpit-system.
                 ref: f26
             conntrack-tools:
-                rationale: Component for shared userspace.
-                ref: f26
-            libmnl:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            libnetfilter_conntrack:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            libnetfilter_cthelper:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            libnetfilter_cttimeout:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            libnetfilter_queue:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            libnfnetlink:
-                rationale: Requirement for conntrack-tools.
-                ref: f26
-            container-selinux:
-                rationale: Component for shared userspace.
-                ref: f26
-            selinux-policy:
-                rationale: Requirement for container-selinux.
+                rationale: Component for shared userspace - conntrack-tools.
                 ref: f26
             criu:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - criu.
                 ref: f26
-            asciidoc:
-                rationale: Requirement for criu.
+            cronie:
+                rationale: Component for shared userspace - cronie.
                 ref: f26
-            libnet:
-                rationale: Requirement for criu.
+            crontabs:
+                rationale: Component for shared userspace - crontabs.
                 ref: f26
-            protobuf-c:
-                rationale: Requirement for criu.
-                ref: f26
-            protobuf:
-                rationale: Requirement for criu.
+            cups:
+                rationale: Component for shared userspace - cups-libs.
                 ref: f26
             dbus-glib:
-                rationale: Component for shared userspace.
-                ref: f26
-            chrpath:
-                rationale: Requirement for dbus-glib.
+                rationale: Component for shared userspace - dbus-glib.
                 ref: f26
             device-mapper-multipath:
-                rationale: Component for shared userspace.
-                ref: f26
-            libaio:
-                rationale: Requirement for device-mapper-multipath.
+                rationale: Component for shared userspace - device-mapper-multipath.
                 ref: f26
             device-mapper-persistent-data:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - device-mapper-persistent-data.
                 ref: f26
             dhcp:
-                rationale: Component for shared userspace.
-                ref: f26
-            bind99:
-                rationale: Requirement for dhcp.
+                rationale: Component for shared userspace - dhcp-common.
                 ref: f26
             dmidecode:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - dmidecode.
                 ref: f26
-            docker:
-                rationale: Component for shared userspace.
-                ref: f26
-            btrfs-progs:
-                rationale: Requirement for docker.
-                ref: f26
-            cmake:
-                rationale: Requirement for docker.
-                ref: f26
-            godep:
-                rationale: Requirement for docker.
-                ref: f26
-            docker-client:
-                rationale: Component for shared userspace.
-                ref: f26
-            apache-commons-compress:
-                rationale: Requirement for docker-client.
-                ref: f26
-            bouncycastle-pkix:
-                rationale: Requirement for docker-client.
-                ref: f26
-            glassfish-annotation-api:
-                rationale: Requirement for docker-client.
-                ref: f26
-            glassfish-hk2:
-                rationale: Requirement for docker-client.
-                ref: f26
-            glassfish-jax-rs-api:
-                rationale: Requirement for docker-client.
-                ref: f26
-            glassfish-jaxb-api:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-annotations:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-core:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-databind:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-dataformat-yaml:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-datatypes-collections:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-jaxrs-providers:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jackson-module-jaxb-annotations:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jersey:
-                rationale: Requirement for docker-client.
-                ref: f26
-            jnr-unixsocket:
-                rationale: Requirement for docker-client.
-                ref: f26
-            javapackages-tools:
-                rationale: Requirement for docker-client.
-                ref: f26
-            maven-surefire:
-                rationale: Requirement for docker-client.
-                ref: f26
-            maven-source-plugin:
-                rationale: Requirement for docker-client.
-                ref: f26
-            sonatype-oss-parent:
-                rationale: Requirement for docker-client.
-                ref: f26
-            docker-latest:
-                rationale: Component for shared userspace.
-                ref: f26
-            efibootmgr:
-                rationale: Component for shared userspace.
-                ref: f26
-            efivar:
-                rationale: Requirement for efibootmgr.
+            dracut:
+                rationale: Component for shared userspace - dracut-network.
                 ref: f26
             etcd:
-                rationale: Component for shared userspace.
-                ref: f26
-            golang-github-akrennmair-gopcap:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-bgentry-speakeasy:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-boltdb-bolt:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-cheggaaa-pb:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-cockroachdb-cmux:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-coreos-go-semver:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-coreos-go-systemd:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-coreos-pkg:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-dustin-go-humanize:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-ghodss-yaml:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-googlecode-gogoprotobuf:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-golang-groupcache:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-googlecode-goprotobuf:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-google-btree:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-grpc-ecosystem-grpc-gateway:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-jonboulle-clockwork:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-kr-pty:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-olekukonko-tablewriter:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-prometheus-client_golang:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-prometheus-procfs:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-spacejam-loghisto:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-spf13-cobra:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-spf13-pflag:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-ugorji-go:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-urfave-cli:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-xiang90-probing:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-googlecode-go-crypto:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-googlecode-net:
-                rationale: Requirement for etcd.
-                ref: f26
-            golang-github-grpc-grpc-go:
-                rationale: Requirement for etcd.
+                rationale: Component for shared userspace - etcd.
                 ref: f26
             ethtool:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - ethtool.
                 ref: f26
             fcgi:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - fcgi.
                 ref: f26
             fipscheck:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - fipscheck.
                 ref: f26
             flannel:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - flannel.
                 ref: f26
-            golang-github-aws-aws-sdk-go:
-                rationale: Requirement for flannel.
+            GeoIP:
+                rationale: Component for shared userspace - GeoIP.
                 ref: f26
-            golang-github-coreos-go-iptables:
-                rationale: Requirement for flannel.
-                ref: f26
-            golang-github-golang-glog:
-                rationale: Requirement for flannel.
-                ref: f26
-            golang-github-gorilla-mux:
-                rationale: Requirement for flannel.
-                ref: f26
-            golang-github-vishvananda-netlink:
-                rationale: Requirement for flannel.
-                ref: f26
-            golang-googlecode-goauth2:
-                rationale: Requirement for flannel.
-                ref: f26
-            golang-googlecode-google-api-client:
-                rationale: Requirement for flannel.
+            glusterfs:
+                rationale: Component for shared userspace - glusterfs.
                 ref: f26
             gomtree:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - gomtree.
                 ref: f26
             gperftools:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - gperftools-libs.
                 ref: f26
-            libunwind:
-                rationale: Requirement for gperftools.
-                ref: f26
-            perl-generators:
-                rationale: Requirement for gperftools.
+            groff:
+                rationale: Component for shared userspace - groff-base.
                 ref: f26
             grubby:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - grubby.
                 ref: f26
             gsettings-desktop-schemas:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - gsettings-desktop-schemas.
                 ref: f26
             gssproxy:
-                rationale: Component for shared userspace.
-                ref: f26
-            ding-libs:
-                rationale: Requirement for gssproxy.
+                rationale: Component for shared userspace - gssproxy.
                 ref: f26
             hardlink:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - hardlink.
                 ref: f26
             hostname:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - hostname.
                 ref: f26
             initscripts:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - initscripts.
+                ref: f26
+            iptables:
+                rationale: Component for shared userspace - iptables-services.
                 ref: f26
             iputils:
-                rationale: Component for shared userspace.
-                ref: f25
-            docbook-utils:
-                rationale: Requirement for iputils.
-                ref: f26
-            perl-SGMLSpm:
-                rationale: Requirement for iputils.
+                rationale: Component for shared userspace - iputils.
                 ref: f26
             irqbalance:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - irqbalance.
+                ref: f26
+            iscsi-initiator-utils:
+                rationale: Component for shared userspace - iscsi-initiator-utils-iscsiuio.
                 ref: f26
             jansson:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - jansson.
                 ref: f26
-            python-sphinx:
-                rationale: Requirement for jansson.
+            json-glib:
+                rationale: Component for shared userspace - json-glib.
                 ref: f26
             kexec-tools:
-                rationale: Component for shared userspace.
-                ref: f26
-            snappy:
-                rationale: Requirement for kexec-tools.
+                rationale: Component for shared userspace - kexec-tools.
                 ref: f26
             kubernetes:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - kubernetes-node.
                 ref: f26
-            go-bindata:
-                rationale: Requirement for kubernetes.
+            less:
+                rationale: Component for shared userspace - less.
                 ref: f26
-            rsync:
-                rationale: Requirement for kubernetes.
+            libaio:
+                rationale: Component for shared userspace - libaio.
                 ref: f26
             libcgroup:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libcgroup.
+                ref: f26
+            ding-libs:
+                rationale: Component for shared userspace - libdhash.
+                ref: f26
+            libedit:
+                rationale: Component for shared userspace - libedit.
                 ref: f26
             libevent:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libevent.
                 ref: f26
-            sssd:
-                rationale: Component for shared userspace.
+            libgudev:
+                rationale: Component for shared userspace - libgudev1.
                 ref: f26
-            check:
-                rationale: Requirement for sssd.
-                ref: f26
-            cifs-utils:
-                rationale: Requirement for sssd.
-                ref: f26
-            diffstat:
-                rationale: Requirement for sssd.
-                ref: f26
-            http-parser:
-                rationale: Requirement for sssd.
-                ref: f26
-            cmocka:
-                rationale: Requirement for sssd.
+            icu:
+                rationale: Component for shared userspace - libicu.
                 ref: f26
             libldb:
-                rationale: Requirement for sssd.
+                rationale: Component for shared userspace - libldb.
                 ref: f26
-            libnfsidmap:
-                rationale: Requirement for sssd.
-                ref: f26
-            samba:
-                rationale: Requirement for sssd.
-                ref: f26
-            libtalloc:
-                rationale: Requirement for sssd.
-                ref: f26
-            libtdb:
-                rationale: Requirement for sssd.
-                ref: f26
-            libtevent:
-                rationale: Requirement for sssd.
-                ref: f26
-            nss_wrapper:
-                rationale: Requirement for sssd.
-                ref: f26
-            uid_wrapper:
-                rationale: Requirement for sssd.
+            libmnl:
+                rationale: Component for shared userspace - libmnl.
                 ref: f26
             libmodman:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libmodman.
                 ref: f26
             libndp:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libndp.
+                ref: f26
+            libnetfilter_conntrack:
+                rationale: Component for shared userspace - libnetfilter_conntrack.
+                ref: f26
+            libnetfilter_cthelper:
+                rationale: Component for shared userspace - libnetfilter_cthelper.
+                ref: f26
+            libnetfilter_cttimeout:
+                rationale: Component for shared userspace - libnetfilter_cttimeout.
+                ref: f26
+            libnetfilter_queue:
+                rationale: Component for shared userspace - libnetfilter_queue.
+                ref: f26
+            libnfnetlink:
+                rationale: Component for shared userspace - libnfnetlink.
+                ref: f26
+            libnfsidmap:
+                rationale: Component for shared userspace - libnfsidmap.
+                ref: f26
+            libnl3:
+                rationale: Component for shared userspace - libnl3.
                 ref: f26
             libproxy:
-                rationale: Component for shared userspace.
-                ref: f26
-            kf5-kconfig:
-                rationale: Requirement for libproxy.
-                ref: f26
-            webkitgtk4:
-                rationale: Requirement for libproxy.
-                ref: f26
-            NetworkManager:
-                rationale: Requirement for libproxy.
-                ref: f26
-            js:
-                rationale: Requirement for libproxy.
+                rationale: Component for shared userspace - libproxy.
                 ref: f26
             libreport:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libreport-filesystem.
                 ref: f26
-            desktop-file-utils:
-                rationale: Requirement for libreport.
+            libselinux:
+                rationale: Component for shared userspace - libselinux-python.
                 ref: f26
-            gtk3:
-                rationale: Requirement for libreport.
-                ref: f26
-            json-c:
-                rationale: Requirement for libreport.
-                ref: f26
-            libtar:
-                rationale: Requirement for libreport.
-                ref: f26
-            newt:
-                rationale: Requirement for libreport.
-                ref: f26
-            satyr:
-                rationale: Requirement for libreport.
-                ref: f26
-            xmlrpc-c:
-                rationale: Requirement for libreport.
+            libsemanage:
+                rationale: Component for shared userspace - libsemanage-python.
                 ref: f26
             libsoup:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libsoup.
                 ref: f26
-            vala:
-                rationale: Requirement for libsoup.
+            libtalloc:
+                rationale: Component for shared userspace - libtalloc.
+                ref: f26
+            libtdb:
+                rationale: Component for shared userspace - libtdb.
+                ref: f26
+            libtevent:
+                rationale: Component for shared userspace - libtevent.
                 ref: f26
             libtirpc:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libtirpc.
+                ref: f26
+            libunwind:
+                rationale: Component for shared userspace - libunwind.
                 ref: f26
             libuser:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libuser.
                 ref: f26
-            fakeroot:
-                rationale: Requirement for libuser.
+            libverto:
+                rationale: Component for shared userspace - libverto-tevent.
                 ref: f26
-            linuxdoc-tools:
-                rationale: Requirement for libuser.
+            libxml2:
+                rationale: Component for shared userspace - libxml2-python.
                 ref: f26
             libyaml:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - libyaml.
                 ref: f26
             logrotate:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - logrotate.
                 ref: f26
             lttng-ust:
-                rationale: Component for shared userspace.
-                ref: f26
-            userspace-rcu:
-                rationale: Requirement for lttng-ust.
+                rationale: Component for shared userspace - lttng-ust.
                 ref: f26
             m2crypto:
-                rationale: Component for shared userspace.
-                ref: f26
-            python2-typing:
-                rationale: Requirement for m2crypto.
-                ref: f26
-            swig:
-                rationale: Requirement for m2crypto.
+                rationale: Component for shared userspace - m2crypto.
                 ref: f26
             mdadm:
-                rationale: Component for shared userspace.
-                ref: f26
-            mokutil:
-                rationale: Component for shared userspace.
-                ref: f26
-            gnu-efi:
-                rationale: Requirement for mokutil.
+                rationale: Component for shared userspace - mdadm.
                 ref: f26
             mozjs17:
-                rationale: Component for shared userspace.
-                ref: f26
-            autoconf213:
-                rationale: Requirement for mozjs17.
-                ref: f26
-            perl-Getopt-Long:
-                rationale: Requirement for mozjs17.
+                rationale: Component for shared userspace - mozjs17.
                 ref: f26
             nano:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - nano.
                 ref: f26
             net-tools:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - net-tools.
                 ref: f26
-            bluez:
-                rationale: Requirement for net-tools.
+            NetworkManager:
+                rationale: Component for shared userspace - NetworkManager.
+                ref: f26
+            newt:
+                rationale: Component for shared userspace - newt.
                 ref: f26
             nmap:
-                rationale: Component for shared userspace.
-                ref: f26
-            dos2unix:
-                rationale: Requirement for nmap.
-                ref: f26
-            pygtk2:
-                rationale: Requirement for nmap.
+                rationale: Component for shared userspace - nmap-ncat.
                 ref: f26
             nss-altfiles:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - nss-altfiles.
+                ref: f26
+            numactl:
+                rationale: Component for shared userspace - numactl-libs.
                 ref: f26
             oci-register-machine:
-                rationale: Component for shared userspace.
-                ref: f26
-            golang-github-godbus-dbus:
-                rationale: Requirement for oci-register-machine.
-                ref: f26
-            golang-gopkg-yaml:
-                rationale: Requirement for oci-register-machine.
+                rationale: Component for shared userspace - oci-register-machine.
                 ref: f26
             oci-systemd-hook:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - oci-systemd-hook.
                 ref: f26
             openssh:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - openssh.
                 ref: f26
-            perl-podlators:
-                rationale: Requirement for openssh.
-                ref: f26
-            tcp_wrappers:
-                rationale: Requirement for openssh.
-                ref: f26
-            xorg-x11-xauth:
-                rationale: Requirement for openssh.
+            ostree:
+                rationale: Component for shared userspace - ostree.
                 ref: f26
             passwd:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - passwd.
+                ref: f26
+            pciutils:
+                rationale: Component for shared userspace - pciutils-libs.
                 ref: f26
             pinentry:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - pinentry.
                 ref: f26
-            gcr:
-                rationale: Requirement for pinentry.
+            pkgconf:
+                rationale: Component for shared userspace - pkgconfig.
                 ref: f26
-            libsecret:
-                rationale: Requirement for pinentry.
-                ref: f26
-            pkgconfig:
-                rationale: Component for shared userspace.
+            policycoreutils:
+                rationale: Component for shared userspace - policycoreutils.
                 ref: f26
             polkit-pkla-compat:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - polkit-pkla-compat.
                 ref: f26
             ppp:
-                rationale: Component for shared userspace.
+                rationale: Component for shared userspace - ppp.
                 ref: f26
-            compat-openssl10:
-                rationale: Requirement for ppp.
+            protobuf-c:
+                rationale: Component for shared userspace - protobuf-c.
                 ref: f26
-            pyliblzma:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-backports:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-backports-ssl_match_hostname:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-chardet:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-dmidecode:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-docker-py:
-                rationale: Component for shared userspace.
-                ref: f26
-            pytest:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-coverage:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-flake8:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-ipaddress:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-pytest-cov:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-websocket-client:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-docker-pycreds:
-                rationale: Requirement for python-docker-py.
-                ref: f26
-            python-ethtool:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-IPy:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-rhsm:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-slip:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-urlgrabber:
-                rationale: Component for shared userspace.
-                ref: f26
-            python-pycurl:
-                rationale: Requirement for python-urlgrabber.
-                ref: f26
-            pyxattr:
-                rationale: Component for shared userspace.
-                ref: f26
-            quota:
-                rationale: Component for shared userspace.
-                ref: f26
-            rpcbind:
-                rationale: Component for shared userspace.
-                ref: f26
-            runc:
-                rationale: Component for shared userspace.
-                ref: f26
-            golang-github-Sirupsen-logrus:
-                rationale: Requirement for runc.
-                ref: f26
-            golang-github-docker-go-units:
-                rationale: Requirement for runc.
-                ref: f26
-            golang-github-opencontainers-runtime-spec:
-                rationale: Requirement for runc.
-                ref: f26
-            golang-github-seccomp-libseccomp-golang:
-                rationale: Requirement for runc.
-                ref: f26
-            golang-github-syndtr-gocapability:
-                rationale: Requirement for runc.
-                ref: f26
-            setools:
-                rationale: Component for shared userspace.
-                ref: f26
-            qt5-qtbase:
-                rationale: Requirement for setools.
-                ref: f26
-            sg3_utils:
-                rationale: Component for shared userspace.
-                ref: f26
-            shared-mime-info:
-                rationale: Component for shared userspace.
-                ref: f26
-            perl-XML-Parser:
-                rationale: Requirement for shared-mime-info.
-                ref: f26
-            shim-signed:
-                rationale: Component for shared userspace.
-                ref: f26
-            pesign:
-                rationale: Requirement for shim-signed.
-                ref: f26
-            shim:
-                rationale: Requirement for shim-signed.
-                ref: f26
-            skopeo:
-                rationale: Component for shared userspace.
-                ref: f26
-            slang:
-                rationale: Component for shared userspace.
-                ref: f26
-            oniguruma:
-                rationale: Requirement for slang.
-                ref: f26
-            socat:
-                rationale: Component for shared userspace.
-                ref: f26
-            subscription-manager:
-                rationale: Component for shared userspace.
-                ref: f26
-            GConf2:
-                rationale: Requirement for subscription-manager.
-                ref: f26
-            libnotify:
-                rationale: Requirement for subscription-manager.
-                ref: f26
-            redhat-lsb:
-                rationale: Requirement for subscription-manager.
-                ref: f26
-            rarian:
-                rationale: Requirement for subscription-manager.
-                ref: f26
-            sudo:
-                rationale: Component for shared userspace.
-                ref: f26
-            sendmail:
-                rationale: Requirement for sudo.
-                ref: f26
-            tmux:
-                rationale: Component for shared userspace.
-                ref: f26
-            trousers:
-                rationale: Component for shared userspace.
-                ref: f26
-            tuned:
-                rationale: Component for shared userspace.
-                ref: f26
-            usermode:
-                rationale: Component for shared userspace.
-                ref: f26
-            libSM:
-                rationale: Requirement for usermode.
-                ref: f26
-            startup-notification:
-                rationale: Requirement for usermode.
-                ref: f26
-            virt-what:
-                rationale: Component for shared userspace.
-                ref: f26
-            wpa_supplicant:
-                rationale: Component for shared userspace.
-                ref: f26
-            xfsprogs:
-                rationale: Component for shared userspace.
-                ref: f26
-            yum:
-                rationale: Component for shared userspace.
+            pygobject3:
+                rationale: Component for shared userspace - pygobject3-base.
                 ref: f26
             python-pygpgme:
-                rationale: Requirement for yum.
+                rationale: Component for shared userspace - pygpgme.
+                ref: f26
+            pyliblzma:
+                rationale: Component for shared userspace - pyliblzma.
+                ref: f26
+            python2:
+                rationale: Component for shared userspace - python.
+                ref: f26
+            python-backports:
+                rationale: Component for shared userspace - python-backports.
+                ref: f26
+            python-backports-ssl_match_hostname:
+                rationale: Component for shared userspace - python-backports-ssl_match_hostname.
+                ref: f26
+            python-chardet:
+                rationale: Component for shared userspace - python-chardet.
+                ref: f26
+            python-configobj:
+                rationale: Component for shared userspace - python-configobj.
+                ref: f26
+            python-dateutil:
+                rationale: Component for shared userspace - python-dateutil.
+                ref: f26
+            python-decorator:
+                rationale: Component for shared userspace - python-decorator.
+                ref: f26
+            python-dmidecode:
+                rationale: Component for shared userspace - python-dmidecode.
+                ref: f26
+            python-docker-py:
+                rationale: Component for shared userspace - python-docker-py.
+                ref: f26
+            python-docker-pycreds:
+                rationale: Component for shared userspace - python-docker-pycreds.
+                ref: f26
+            python-ethtool:
+                rationale: Component for shared userspace - python-ethtool.
                 ref: f26
             python-iniparse:
-                rationale: Requirement for yum.
+                rationale: Component for shared userspace - python-iniparse.
                 ref: f26
-            yum-metadata-parser:
-                rationale: Requirement for yum.
+            python-IPy:
+                rationale: Component for shared userspace - python-IPy.
+                ref: f26
+            python-jsonpatch:
+                rationale: Component for shared userspace - python-jsonpatch.
+                ref: f26
+            python-jsonpointer:
+                rationale: Component for shared userspace - python-jsonpointer.
+                ref: f26
+            kernel:
+                rationale: Component for shared userspace - python-perf.
+                ref: f26
+            python-prettytable:
+                rationale: Component for shared userspace - python-prettytable.
+                ref: f26
+            python-pycurl:
+                rationale: Component for shared userspace - python-pycurl.
+                ref: f26
+            python-pyudev:
+                rationale: Component for shared userspace - python-pyudev.
+                ref: f26
+            python-requests:
+                rationale: Component for shared userspace - python-requests.
+                ref: f26
+            python-rhsm:
+                rationale: Component for shared userspace - python-rhsm.
+                ref: f26
+            python-setuptools:
+                rationale: Component for shared userspace - python-setuptools.
+                ref: f26
+            python-six:
+                rationale: Component for shared userspace - python-six.
+                ref: f26
+            python-slip:
+                rationale: Component for shared userspace - python-slip.
+                ref: f26
+            python-urlgrabber:
+                rationale: Component for shared userspace - python-urlgrabber.
+                ref: f26
+            python-urllib3:
+                rationale: Component for shared userspace - python-urllib3.
+                ref: f26
+            pyxattr:
+                rationale: Component for shared userspace - pyxattr.
+                ref: f26
+            PyYAML:
+                rationale: Component for shared userspace - PyYAML.
+                ref: f26
+            quota:
+                rationale: Component for shared userspace - quota.
+                ref: f26
+            rpcbind:
+                rationale: Component for shared userspace - rpcbind.
+                ref: f26
+            rpm:
+                rationale: Component for shared userspace - rpm-python.
+                ref: f26
+            runc:
+                rationale: Component for shared userspace - runc.
+                ref: f26
+            samba:
+                rationale: Component for shared userspace - samba-common.
+                ref: f26
+            selinux-policy:
+                rationale: Component for shared userspace - selinux-policy.
+                ref: f26
+            setools:
+                rationale: Component for shared userspace - setools-console.
+                ref: f26
+            sg3_utils:
+                rationale: Component for shared userspace - sg3_utils.
+                ref: f26
+            shared-mime-info:
+                rationale: Component for shared userspace - shared-mime-info.
+                ref: f26
+            skopeo:
+                rationale: Component for shared userspace - skopeo.
+                ref: f26
+            slang:
+                rationale: Component for shared userspace - slang.
+                ref: f26
+            snappy:
+                rationale: Component for shared userspace - snappy.
+                ref: f26
+            socat:
+                rationale: Component for shared userspace - socat.
+                ref: f26
+            sssd:
+                rationale: Component for shared userspace - sssd-common.
+                ref: f26
+            subscription-manager:
+                rationale: Component for shared userspace - subscription-manager.
+                ref: f26
+            sudo:
+                rationale: Component for shared userspace - sudo.
+                ref: f26
+            systemd:
+                rationale: Component for shared userspace - systemd-sysv.
+                ref: f26
+            tcp_wrappers:
+                rationale: Component for shared userspace - tcp_wrappers.
+                ref: f26
+            tmux:
+                rationale: Component for shared userspace - tmux.
+                ref: f26
+            trousers:
+                rationale: Component for shared userspace - trousers.
+                ref: f26
+            tuned:
+                rationale: Component for shared userspace - tuned.
+                ref: f26
+            usermode:
+                rationale: Component for shared userspace - usermode.
+                ref: f26
+            userspace-rcu:
+                rationale: Component for shared userspace - userspace-rcu.
+                ref: f26
+            vim:
+                rationale: Component for shared userspace - vim-minimal.
+                ref: f26
+            virt-what:
+                rationale: Component for shared userspace - virt-what.
+                ref: f26
+            wpa_supplicant:
+                rationale: Component for shared userspace - wpa_supplicant.
+                ref: f26
+            yajl:
+                rationale: Component for shared userspace - yajl.
+                ref: f26
+            yum:
+                rationale: Component for shared userspace - yum.
                 ref: f26
