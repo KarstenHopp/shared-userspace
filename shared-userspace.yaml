@@ -9,6 +9,7 @@ data:
     dependencies:
         buildrequires:
             base-runtime: master
+            perl-bootstrap: master
         requires:
             base-runtime: master
     references:
