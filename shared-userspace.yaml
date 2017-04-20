@@ -40,6 +40,10 @@ data:
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
                 buildorder: 1
+            bison:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 1
             doxygen:
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
