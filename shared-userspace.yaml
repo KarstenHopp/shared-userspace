@@ -48,3 +48,7 @@ data:
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
                 buildorder: 2
+            alsa-lib:
+                rationale: Component of this module
+                ref: f26
+                buildorder: 3
