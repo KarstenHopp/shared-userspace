@@ -45,7 +45,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
-            "cmake" "xapian-core" "libtool" "doxygen" ) 
+            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" ) 
 
 debug() {
    echo "$@" 1>&2
@@ -67,6 +67,7 @@ gather_modulemd_rpms() {
       echo "            ${1}:" >> $modulerpmsfile
       echo "                rationale: ${@:2}" >> $modulerpmsfile
       echo "                ref: f26" >> $modulerpmsfile
+      echo "                buildorder: 10" >> $modulerpmsfile
    fi
 }
 
@@ -110,7 +111,7 @@ for binaryrpm in $*; do
    fi
    gather_profile $binaryrpm
    gather_api $binaryrpm
-   if containsElement "$binaryrpm" "${modulerpms[@]}" ; then
+   if ! containsElement "$binaryrpm" "${modulerpms[@]}" ; then
       gather_modulemd_rpms $binaryrpm_srpm "Component for shared userspace - $binaryrpm."
       modulerpms+=($binaryrpm_srpm)
    fi
@@ -202,6 +203,14 @@ cat << EOT
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
                 buildorder: 2
+            xorg-x11-util-macros:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 2
+            libusbx:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 5
 EOT
 cat $modulerpmsfile
 

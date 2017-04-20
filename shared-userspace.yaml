@@ -23,9 +23,13 @@ data:
         default:
             rpms:
                 - alsa-lib
+                - hesiod
+                - libusb
     api:
         rpms:
             - alsa-lib
+            - hesiod
+            - libusb
     components:
         rpms:
             xapian-core:
@@ -48,7 +52,23 @@ data:
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
                 buildorder: 2
-            alsa-lib:
-                rationale: Component of this module
+            xorg-x11-util-macros:
+                rationale: Build dep for many packages.
                 ref: f26
-                buildorder: 3
+                buildorder: 2
+            libusbx:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 5
+            alsa-lib:
+                rationale: Component for shared userspace - alsa-lib.
+                ref: f26
+                buildorder: 10
+            hesiod:
+                rationale: Component for shared userspace - hesiod.
+                ref: f26
+                buildorder: 10
+            libusb:
+                rationale: Component for shared userspace - libusb.
+                ref: f26
+                buildorder: 10
