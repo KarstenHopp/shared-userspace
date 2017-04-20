@@ -85,9 +85,9 @@ gather_api() {
 }
 
 # "acl at attr audit babeltrace basesystem bash bc binutils byacc ...."
-wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.txt
-brtsrpms=(`grep -v -e "^+\|^*\|!" api.txt | sed -e "s/-[^-]*-[^-]*//"`)
-brtrpms=(`grep -e "^+\|^*" api.txt  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
+wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
+brtsrpms=(`grep -v -e "^+\|^*\|!" api.x86_64 | sed -e "s/-[^-]*-[^-]*//"`)
+brtrpms=(`grep -e "^+\|^*" api.x86_64  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
 
 for binaryrpm in $*; do
    debug "working on $binaryrpm"
@@ -194,6 +194,10 @@ cat << EOT
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
                 buildorder: 1
+            bison:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 1
             doxygen:
                 rationale: Build dep for many packages.
                 ref: private-karsten-modularity
@@ -201,5 +205,5 @@ cat << EOT
 EOT
 cat $modulerpmsfile
 
-#rm -f $moduleprofilefile $moduleapifile $modulerpmsfile $alreadyprocessed
+rm -f $moduleprofilefile $moduleapifile $modulerpmsfile $alreadyprocessed
 
