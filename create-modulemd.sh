@@ -65,9 +65,9 @@ gather_modulemd_rpms() {
    if [ "${1}" != "" ]; then
       debug "gather_modulemd_rpms adding ${1} to rpm list"
       echo "            ${1}:" >> $modulerpmsfile
-      echo "                rationale: ${@:2}" >> $modulerpmsfile
+      echo "                rationale: ${@:3}" >> $modulerpmsfile
       echo "                ref: f26" >> $modulerpmsfile
-      echo "                buildorder: 10" >> $modulerpmsfile
+      echo "                buildorder: ${2}" >> $modulerpmsfile
    fi
 }
 
@@ -85,8 +85,7 @@ gather_api() {
    fi
 }
 
-# "acl at attr audit babeltrace basesystem bash bc binutils byacc ...."
-wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
+#wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
 brtsrpms=(`grep -v -e "^+\|^*\|!" api.x86_64 | sed -e "s/-[^-]*-[^-]*//"`)
 brtrpms=(`grep -e "^+\|^*" api.x86_64  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
 
@@ -112,7 +111,7 @@ for binaryrpm in $*; do
    gather_profile $binaryrpm
    gather_api $binaryrpm
    if ! containsElement "$binaryrpm" "${modulerpms[@]}" ; then
-      gather_modulemd_rpms $binaryrpm_srpm "Component for shared userspace - $binaryrpm."
+      gather_modulemd_rpms $binaryrpm_srpm 10 "Component for shared userspace - $binaryrpm."
       modulerpms+=($binaryrpm_srpm)
    fi
    # deps has a list of dependencies that the source RPM of a package given on the cmdline has
@@ -138,10 +137,15 @@ for binaryrpm in $*; do
          debug "$sdep already in common-build-deps or in bootstrap"
          continue
       fi
+      # FIXME: is this correct ? :
+      if containsElement "$sdep" "${brtsrpms[@]}" ; then
+         debug "$sdep is already in BRT"
+         continue
+      fi
       if ! containsElement "$sdep" "${modulerpms[@]}" ; then
 	 debug "$sdep not in modulerpms, adding"
          modulerpms+=($sdep)
-         gather_modulemd_rpms $sdep "Requirement for ${binaryrpm}."
+         gather_modulemd_rpms $sdep 5 "Requirement for ${binaryrpm}."
          continue
       fi
    done
