@@ -215,6 +215,10 @@ cat << EOT
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 5
+            expat:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: f26
+                buildorder: 1
 EOT
 cat $modulerpmsfile
 

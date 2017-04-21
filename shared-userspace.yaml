@@ -30,6 +30,8 @@ data:
             - alsa-lib
             - hesiod
             - libusb
+            - expat
+            - expat-devel
     components:
         rpms:
             xapian-core:
@@ -72,3 +74,8 @@ data:
                 rationale: Component for shared userspace - libusb.
                 ref: f26
                 buildorder: 10
+            expat:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: f26
+                buildorder: 1
+
