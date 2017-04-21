@@ -22,21 +22,21 @@ data:
     profiles:
         default:
             rpms:
-                - alsa-lib
                 - hesiod
                 - libusb
+                - libxslt
+                - imake
     api:
         rpms:
-            - alsa-lib
             - hesiod
             - libusb
-            - expat
-            - expat-devel
+            - libxslt
+            - imake
     components:
         rpms:
             xapian-core:
                 rationale:  Build dep of doxygen.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 1
             cmake:
                 rationale: Build dep for many packages.
@@ -44,7 +44,7 @@ data:
                 buildorder: 1
             libtool:
                 rationale: Build dep for many packages.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 1
             bison:
                 rationale: Build dep for many packages.
@@ -52,7 +52,7 @@ data:
                 buildorder: 1
             doxygen:
                 rationale: Build dep for many packages.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 2
             xorg-x11-util-macros:
                 rationale: Build dep for many packages.
@@ -62,10 +62,19 @@ data:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 5
-            alsa-lib:
-                rationale: Component for shared userspace - alsa-lib.
+            expat:
+                rationale: Component for shared userspace - expat (dependency of python2)
                 ref: f26
-                buildorder: 10
+                buildorder: 5
+            tcl:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: f26
+                buildorder: 5
+            python2:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: private-karsten-modularity
+                buildorder: 6
+################################################################
             hesiod:
                 rationale: Component for shared userspace - hesiod.
                 ref: f26
@@ -74,8 +83,15 @@ data:
                 rationale: Component for shared userspace - libusb.
                 ref: f26
                 buildorder: 10
-            expat:
-                rationale: Component for shared userspace - expat (dependency of python2)
+            libxslt:
+                rationale: Component for shared userspace - libxslt.
                 ref: f26
-                buildorder: 1
-
+                buildorder: 10
+            imake:
+                rationale: Component for shared userspace - imake.
+                ref: f26
+                buildorder: 10
+            xorg-x11-proto-devel:
+                rationale: Requirement for imake.
+                ref: f26
+                buildorder: 5

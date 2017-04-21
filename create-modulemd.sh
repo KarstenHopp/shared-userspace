@@ -45,7 +45,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
-            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" ) 
+            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl") 
 
 debug() {
    echo "$@" 1>&2
@@ -189,7 +189,7 @@ cat << EOT
         rpms:
             xapian-core:
                 rationale:  Build dep of doxygen.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 1
             cmake:
                 rationale: Build dep for many packages.
@@ -197,7 +197,7 @@ cat << EOT
                 buildorder: 1
             libtool:
                 rationale: Build dep for many packages.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 1
             bison:
                 rationale: Build dep for many packages.
@@ -205,7 +205,7 @@ cat << EOT
                 buildorder: 1
             doxygen:
                 rationale: Build dep for many packages.
-                ref: private-karsten-modularity
+                ref: f26
                 buildorder: 2
             xorg-x11-util-macros:
                 rationale: Build dep for many packages.
@@ -218,7 +218,16 @@ cat << EOT
             expat:
                 rationale: Component for shared userspace - expat (dependency of python2)
                 ref: f26
-                buildorder: 1
+                buildorder: 5
+            tcl:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: f26
+                buildorder: 5
+            python2:
+                rationale: Component for shared userspace - expat (dependency of python2)
+                ref: private-karsten-modularity
+                buildorder: 6
+################################################################
 EOT
 cat $modulerpmsfile
 
