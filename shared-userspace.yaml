@@ -63,21 +63,38 @@ data:
                 ref: f26
                 buildorder: 5
             expat:
-                rationale: dependency of python2
+                rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
             atk:
-                rationale: dependency of gtk2
+                rationale: dependency of gtk2.
                 ref: f26
                 buildorder: 5
             tcl:
-                rationale: dependency of python2
+                rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
+            desktop-file-utils:
+                rationale: dependency of cups/python-cups/epydoc.
+                ref: f26
+                buildorder: 5
+            epydoc:
+                rationale: dependency of cups/python-cups.
+                ref: f26
+                buildorder: 6
+            python-cups:
+                rationale: dependency of cups/python-cups.
+                ref: f26
+                buildorder: 7
             python2:
-                rationale: dependency of many packages
+                rationale: dependency of many packages.
                 ref: private-karsten-modularity
                 buildorder: 6
+            gobject-introspection:
+                rationale: dependency of many packages.
+                ref: f26
+                buildorder: 7
+# TODO: remove avahi from cups
 ################################################################
             hesiod:
                 rationale: Component for shared userspace - hesiod.

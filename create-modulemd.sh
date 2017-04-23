@@ -46,7 +46,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
             "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl" "atk" "desktop-file-utils" \
-            "epydoc" "python-cups" ) 
+            "epydoc" "python-cups" "gobject-introspection" ) 
 
 debug() {
    echo "$@" 1>&2
@@ -245,6 +245,10 @@ cat << EOT
                 rationale: dependency of many packages.
                 ref: private-karsten-modularity
                 buildorder: 6
+            gobject-introspection:
+                rationale: dependency of many packages.
+                ref: f26
+                buildorder: 7
 # TODO: remove avahi from cups
 ################################################################
 EOT
