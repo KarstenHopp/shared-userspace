@@ -45,7 +45,8 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
-            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl" "atk" ) 
+            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl" "atk" "desktop-file-utils" \
+            "epydoc" "python-cups" ) 
 
 debug() {
    echo "$@" 1>&2
@@ -217,21 +218,34 @@ cat << EOT
                 ref: f26
                 buildorder: 5
             expat:
-                rationale: dependency of python2
+                rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
             atk:
-                rationale: dependency of gtk2
+                rationale: dependency of gtk2.
                 ref: f26
                 buildorder: 5
             tcl:
-                rationale: dependency of python2
+                rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
+            desktop-file-utils:
+                rationale: dependency of cups/python-cups/epydoc.
+                ref: f26
+                buildorder: 5
+            epydoc:
+                rationale: dependency of cups/python-cups.
+                ref: f26
+                buildorder: 6
+            python-cups:
+                rationale: dependency of cups/python-cups.
+                ref: f26
+                buildorder: 7
             python2:
-                rationale: dependency of many packages
+                rationale: dependency of many packages.
                 ref: private-karsten-modularity
                 buildorder: 6
+# TODO: remove avahi from cups
 ################################################################
 EOT
 cat $modulerpmsfile
