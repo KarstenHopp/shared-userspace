@@ -45,7 +45,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
-            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl") 
+            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl" "atk" ) 
 
 debug() {
    echo "$@" 1>&2
@@ -86,7 +86,7 @@ gather_api() {
 }
 
 #wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
-brtsrpms=(`grep -v -e "^+\|^*\|!" api.x86_64 | sed -e "s/-[^-]*-[^-]*//"`)
+brtsrpms=(`grep -v -e "^+\|^*\|^-" api.x86_64 | sed -e "s/-[^-]*-[^-]*$//"`)
 brtrpms=(`grep -e "^+\|^*" api.x86_64  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
 
 for binaryrpm in $*; do
@@ -133,6 +133,7 @@ for binaryrpm in $*; do
 #      modulerpms+=($bdep)
       # sdep is a source rpm that provides one of the dependencies of a package given on the cmdline (its srpm) 
       sdep=`repoquery --releasever 26 -q --qf "%{SOURCERPM}" --whatprovides "$dep" 2>/dev/null | tail -1 | sed -e "s/-[^-]*-[^-]*.src.rpm//"`
+      #debug "1 sdep: $sdep   dep: $dep"
       if containsElement "$sdep" "${solvedbuilddeps[@]}" ; then
          debug "$sdep already in common-build-deps or in bootstrap"
          continue
@@ -216,15 +217,19 @@ cat << EOT
                 ref: f26
                 buildorder: 5
             expat:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of python2
+                ref: f26
+                buildorder: 5
+            atk:
+                rationale: dependency of gtk2
                 ref: f26
                 buildorder: 5
             tcl:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of python2
                 ref: f26
                 buildorder: 5
             python2:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of many packages
                 ref: private-karsten-modularity
                 buildorder: 6
 ################################################################

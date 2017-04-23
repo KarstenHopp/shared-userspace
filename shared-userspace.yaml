@@ -63,15 +63,19 @@ data:
                 ref: f26
                 buildorder: 5
             expat:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of python2
+                ref: f26
+                buildorder: 5
+            atk:
+                rationale: dependency of gtk2
                 ref: f26
                 buildorder: 5
             tcl:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of python2
                 ref: f26
                 buildorder: 5
             python2:
-                rationale: Component for shared userspace - expat (dependency of python2)
+                rationale: dependency of many packages
                 ref: private-karsten-modularity
                 buildorder: 6
 ################################################################
