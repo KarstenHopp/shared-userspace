@@ -32,6 +32,8 @@ data:
             - libusb
             - libxslt
             - imake
+            - libicu
+            - libuv
     components:
         rpms:
             xapian-core:
@@ -116,3 +118,11 @@ data:
                 rationale: Requirement for imake.
                 ref: f26
                 buildorder: 5
+            icu:
+                rationale: Dependency of many packages.
+                ref: f26
+                buildorder: 7
+            libuv:
+                rationale: Requirement for nodejs.
+                ref: f26
+                buildorder: 2
