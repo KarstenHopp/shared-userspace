@@ -27,6 +27,7 @@ moduleprofilefile=`mktemp moduleprofile.XXX`
 alreadyprocessed=`mktemp moduledepprocessed.XXX`
 brtrepo="https://kojipkgs.stg.fedoraproject.org/compose/branched/jkaluza/latest-Boltron-26/compose/base-runtime/x86_64/os/"
 
+# add all common-build-dep packages and perl-module package here
 solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automake" "golang" "perl" "perl-Algorithm-Diff" "perl-Archive-Tar" \
             "perl-Archive-Zip" "perl-autodie" "perl-B-Debug" "perl-bignum" "perl-Carp" "perl-Compress-Bzip2" "perl-Compress-Raw-Bzip2" \
             "perl-Compress-Raw-Zlib" "perl-Config-Perl-V" "perl-constant" "perl-CPAN" "perl-CPAN-Meta" "perl-CPAN-Meta-Requirements" \
@@ -45,8 +46,8 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
-            "cmake" "xapian-core" "libtool" "doxygen" "xorg-x11-util-macros" "libusbx" "expat" "python2" "tcl" \
-            "epydoc" "glib2" "xorg-x11-proto-devel" ) 
+            "imake" "cmake" "doxygen" "libusbx" "xorg-x11-proto-devel" "xorg-x11-util-macros" "xapian-core" "bison" \
+            "python2" "tcl" "epydoc" ) 
 # "desktop-file-utils"  "python-cups" "gobject-introspection" "atk"
 debug() {
    echo "$@" 1>&2
@@ -86,7 +87,7 @@ gather_api() {
    fi
 }
 
-#wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
+wget -N https://raw.githubusercontent.com/fedora-modularity/base-runtime/master/api.x86_64
 brtsrpms=(`grep -v -e "^+\|^*\|^-" api.x86_64 | sed -e "s/-[^-]*-[^-]*$//"`)
 brtrpms=(`grep -e "^+\|^*" api.x86_64  | cut -f 2 | sed -e "s/-[^-]*-[^-]*$//"`)
 
@@ -189,50 +190,49 @@ cat $moduleapifile
 cat << EOT
     components:
         rpms:
-            xapian-core:
-                rationale:  Build dep of doxygen.
-                ref: f26
-                buildorder: 1
-            cmake:
-                rationale: Build dep for many packages.
-                ref: private-karsten-modularity
-                buildorder: 1
+#           libtool provides libtool-ltdl, a runtime library:
             libtool:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-#            glib2:
+# moved to common-build-deps:
+#            xapian-core:
+#                rationale:  Build dep of doxygen.
+#                ref: f26
+#                buildorder: 1
+#            cmake:
+#                rationale: Build dep for many packages.
+#                ref: private-karsten-modularity
+#                buildorder: 1
+#            bison:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 1
+#            doxygen:
 #                rationale: Build dep for many packages.
 #                ref: f26
 #                buildorder: 2
-            bison:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 1
-            imake:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 4
-            doxygen:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 2
-            xorg-x11-proto-devel:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 3
-            xorg-x11-util-macros:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 2
-            libusbx:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 5
-            expat:
-                rationale: dependency of python2.
-                ref: f26
-                buildorder: 5
+#            imake:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 4
+#            xorg-x11-proto-devel:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 3
+#            xorg-x11-util-macros:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 2
+#            libusbx:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 5
+#            expat:
+#                rationale: dependency of python2.
+#                ref: f26
+#                buildorder: 5
+#
 #            atk:
 #                rationale: dependency of gtk2.
 #                ref: f26
@@ -241,6 +241,10 @@ cat << EOT
                 rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
+#            glib2:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 2
 # desktop-file-utils need glib2 (and emacs)
 #            desktop-file-utils:
 #                rationale: dependency of cups/python-cups/epydoc.

@@ -42,50 +42,49 @@ data:
             - libaio
     components:
         rpms:
-            xapian-core:
-                rationale:  Build dep of doxygen.
-                ref: f26
-                buildorder: 1
-            cmake:
-                rationale: Build dep for many packages.
-                ref: private-karsten-modularity
-                buildorder: 1
+#           libtool provides libtool-ltdl, a runtime library:
             libtool:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-#            glib2:
+# moved to common-build-deps:
+#            xapian-core:
+#                rationale:  Build dep of doxygen.
+#                ref: f26
+#                buildorder: 1
+#            cmake:
+#                rationale: Build dep for many packages.
+#                ref: private-karsten-modularity
+#                buildorder: 1
+#            bison:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 1
+#            doxygen:
 #                rationale: Build dep for many packages.
 #                ref: f26
 #                buildorder: 2
-            bison:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 1
-            imake:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 4
-            doxygen:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 2
-            xorg-x11-proto-devel:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 3
-            xorg-x11-util-macros:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 2
-            libusbx:
-                rationale: Build dep for many packages.
-                ref: f26
-                buildorder: 5
-            expat:
-                rationale: dependency of python2.
-                ref: f26
-                buildorder: 5
+#            imake:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 4
+#            xorg-x11-proto-devel:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 3
+#            xorg-x11-util-macros:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 2
+#            libusbx:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 5
+#            expat:
+#                rationale: dependency of python2.
+#                ref: f26
+#                buildorder: 5
+#
 #            atk:
 #                rationale: dependency of gtk2.
 #                ref: f26
@@ -94,6 +93,10 @@ data:
                 rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
+#            glib2:
+#                rationale: Build dep for many packages.
+#                ref: f26
+#                buildorder: 2
 # desktop-file-utils need glib2 (and emacs)
 #            desktop-file-utils:
 #                rationale: dependency of cups/python-cups/epydoc.
