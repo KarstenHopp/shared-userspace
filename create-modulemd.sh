@@ -233,10 +233,10 @@ cat << EOT
                 rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
-            atk:
-                rationale: dependency of gtk2.
-                ref: f26
-                buildorder: 9
+#            atk:
+#                rationale: dependency of gtk2.
+#                ref: f26
+#                buildorder: 9
             tcl:
                 rationale: dependency of python2.
                 ref: f26
