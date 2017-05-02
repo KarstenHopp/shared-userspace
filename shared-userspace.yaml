@@ -26,7 +26,7 @@ data:
                 - hesiod
                 - libusb
                 - libxslt
-                - icu
+                - libicu
                 - libuv
                 - libedit
                 - libaio
@@ -38,7 +38,7 @@ data:
             - hesiod
             - libusb
             - libxslt
-            - icu
+            - libicu
             - libuv
             - libedit
             - libaio
@@ -148,7 +148,7 @@ data:
                 ref: f26
                 buildorder: 10
             icu:
-                rationale: Component for shared userspace - icu.
+                rationale: Component for shared userspace - libicu.
                 ref: f26
                 buildorder: 10
             libuv:
