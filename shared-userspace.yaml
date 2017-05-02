@@ -26,20 +26,24 @@ data:
                 - hesiod
                 - libusb
                 - libxslt
-                - libicu
+                - icu
                 - libuv
                 - libedit
                 - libaio
+                - libtool
+                - compat-openssl10
     api:
         rpms:
             - alsa-lib
             - hesiod
             - libusb
             - libxslt
-            - libicu
+            - icu
             - libuv
             - libedit
             - libaio
+            - libtool
+            - compat-openssl10
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -144,7 +148,7 @@ data:
                 ref: f26
                 buildorder: 10
             icu:
-                rationale: Component for shared userspace - libicu.
+                rationale: Component for shared userspace - icu.
                 ref: f26
                 buildorder: 10
             libuv:
@@ -159,3 +163,15 @@ data:
                 rationale: Component for shared userspace - libaio.
                 ref: f26
                 buildorder: 10
+            libtool:
+                rationale: Component for shared userspace - libtool.
+                ref: f26
+                buildorder: 10
+            compat-openssl10:
+                rationale: Component for shared userspace - compat-openssl10.
+                ref: f26
+                buildorder: 10
+            lksctp-tools:
+                rationale: Requirement for compat-openssl10.
+                ref: f26
+                buildorder: 5
