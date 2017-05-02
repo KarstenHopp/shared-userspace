@@ -30,8 +30,8 @@ data:
                 - libuv
                 - libedit
                 - libaio
-                - libtool
                 - compat-openssl10
+                - selinux-policy
     api:
         rpms:
             - alsa-lib
@@ -42,8 +42,8 @@ data:
             - libuv
             - libedit
             - libaio
-            - libtool
             - compat-openssl10
+            - selinux-policy
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -51,43 +51,6 @@ data:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-# moved to common-build-deps:
-#            xapian-core:
-#                rationale:  Build dep of doxygen.
-#                ref: f26
-#                buildorder: 1
-#            cmake:
-#                rationale: Build dep for many packages.
-#                ref: private-karsten-modularity
-#                buildorder: 1
-#            bison:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 1
-#            doxygen:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
-#            imake:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 4
-#            xorg-x11-proto-devel:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 3
-#            xorg-x11-util-macros:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
-#            libusbx:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 5
-#            expat:
-#                rationale: dependency of python2.
-#                ref: f26
-#                buildorder: 5
 #
 #            atk:
 #                rationale: dependency of gtk2.
@@ -102,10 +65,10 @@ data:
 #                ref: f26
 #                buildorder: 2
 # desktop-file-utils need glib2 (and emacs)
-#            desktop-file-utils:
-#                rationale: dependency of cups/python-cups/epydoc.
-#                ref: f26
-#                buildorder: 5
+            desktop-file-utils:
+                rationale: dependency of cups/python-cups/epydoc/policycoreutils
+                ref: f26
+                buildorder: 5
             epydoc:
 # disabled dep on desktop-file-utils
                 rationale: dependency of cups/python-cups.
@@ -120,10 +83,26 @@ data:
                 rationale: dependency of many packages.
                 ref: private-karsten-modularity
                 buildorder: 6
-#            libxslt:
-#                rationale: Component of shared-userspace module
-#                ref: f26
-#                buildorder: 7
+            chrpath:
+                rationale: dependency of dbus-glib.
+                ref: f26
+                buildorder: 1
+            dbus-glib:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 5
+            libcgroup:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 2
+            checkpolicy:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 2
+            policycoreutils:
+                rationale: dependency of selinux-policy.
+                ref: f26
+                buildorder: 6
 # go-i requires lots of stuff we don't have yet
 #            gobject-introspection:
 #                rationale: dependency of many packages.
@@ -163,10 +142,6 @@ data:
                 rationale: Component for shared userspace - libaio.
                 ref: f26
                 buildorder: 10
-            libtool:
-                rationale: Component for shared userspace - libtool.
-                ref: f26
-                buildorder: 10
             compat-openssl10:
                 rationale: Component for shared userspace - compat-openssl10.
                 ref: f26
@@ -175,3 +150,7 @@ data:
                 rationale: Requirement for compat-openssl10.
                 ref: f26
                 buildorder: 5
+            selinux-policy:
+                rationale: Component for shared userspace - selinux-policy.
+                ref: f26
+                buildorder: 10
