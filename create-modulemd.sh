@@ -47,7 +47,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
             "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
             "imake" "cmake" "doxygen" "libusbx" "xorg-x11-proto-devel" "xorg-x11-util-macros" "xapian-core" "bison" \
-            "python2" "tcl" "epydoc" ) 
+            "python2" "tcl" "epydoc" "chrpath" "dbus-glib" "libcgroup" "checkpolicy" "policycoreutils" )
 # "desktop-file-utils"  "python-cups" "gobject-introspection" "atk"
 debug() {
    echo "$@" 1>&2
@@ -195,43 +195,6 @@ cat << EOT
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-# moved to common-build-deps:
-#            xapian-core:
-#                rationale:  Build dep of doxygen.
-#                ref: f26
-#                buildorder: 1
-#            cmake:
-#                rationale: Build dep for many packages.
-#                ref: private-karsten-modularity
-#                buildorder: 1
-#            bison:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 1
-#            doxygen:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
-#            imake:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 4
-#            xorg-x11-proto-devel:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 3
-#            xorg-x11-util-macros:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
-#            libusbx:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 5
-#            expat:
-#                rationale: dependency of python2.
-#                ref: f26
-#                buildorder: 5
 #
 #            atk:
 #                rationale: dependency of gtk2.
@@ -246,10 +209,10 @@ cat << EOT
 #                ref: f26
 #                buildorder: 2
 # desktop-file-utils need glib2 (and emacs)
-#            desktop-file-utils:
-#                rationale: dependency of cups/python-cups/epydoc.
-#                ref: f26
-#                buildorder: 5
+            desktop-file-utils:
+                rationale: dependency of cups/python-cups/epydoc/policycoreutils
+                ref: f26
+                buildorder: 5
             epydoc:
 # disabled dep on desktop-file-utils
                 rationale: dependency of cups/python-cups.
@@ -264,10 +227,26 @@ cat << EOT
                 rationale: dependency of many packages.
                 ref: private-karsten-modularity
                 buildorder: 6
-#            libxslt:
-#                rationale: Component of shared-userspace module
-#                ref: f26
-#                buildorder: 7
+            chrpath:
+                rationale: dependency of dbus-glib.
+                ref: f26
+                buildorder: 1
+            dbus-glib:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 5
+            libcgroup:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 2
+            checkpolicy:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 2
+            policycoreutils:
+                rationale: dependency of selinux-policy.
+                ref: f26
+                buildorder: 6
 # go-i requires lots of stuff we don't have yet
 #            gobject-introspection:
 #                rationale: dependency of many packages.
