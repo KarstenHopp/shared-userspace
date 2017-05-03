@@ -28,24 +28,32 @@ alreadyprocessed=`mktemp moduledepprocessed.XXX`
 brtrepo="https://kojipkgs.stg.fedoraproject.org/compose/branched/jkaluza/latest-Boltron-26/compose/base-runtime/x86_64/os/"
 
 # add all common-build-dep packages and perl-module package here
-solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automake" "golang" "perl" "perl-Algorithm-Diff" "perl-Archive-Tar" \
-            "perl-Archive-Zip" "perl-autodie" "perl-B-Debug" "perl-bignum" "perl-Carp" "perl-Compress-Bzip2" "perl-Compress-Raw-Bzip2" \
-            "perl-Compress-Raw-Zlib" "perl-Config-Perl-V" "perl-constant" "perl-CPAN" "perl-CPAN-Meta" "perl-CPAN-Meta-Requirements" \
-            "perl-CPAN-Meta-YAML" "perl-Data-Dumper" "perl-Data-OptList" "perl-Data-Section" "perl-DB_File" "perl-Devel-PPPort" \
-            "perl-Devel-Size" "perl-Digest" "perl-Digest-MD5" "perl-Digest-SHA" "perl-Encode" "perl-Env" "perl-experimental" "perl-Exporter" \
-            "perl-ExtUtils-CBuilder" "perl-ExtUtils-Install" "perl-ExtUtils-MakeMaker" "perl-ExtUtils-Manifest" "perl-ExtUtils-ParseXS" \
-            "perl-Fedora-VSP" "perl-File-Fetch" "perl-File-HomeDir" "perl-File-Path" "perl-File-Temp" "perl-File-Which" "perl-Filter" \
-            "perl-Filter-Simple" "perl-generators" "perl-Getopt-Long" "perl-HTTP-Tiny" "perl-inc-latest" "perl-IO-Compress" \
-            "perl-IO-Socket-IP" "perl-IPC-Cmd" "perl-IPC-System-Simple" "perl-IPC-SysV" "perl-JSON-PP" "perl-libnet" "perl-local-lib" \
-            "perl-Locale-Codes" "perl-Locale-Maketext" "perl-Math-BigInt" "perl-Math-BigInt-FastCalc" "perl-Math-BigRat" "perl-MIME-Base64" \
-            "perl-Module-Build" "perl-Module-CoreList" "perl-Module-Load" "perl-Module-Load-Conditional" "perl-Module-Metadata" \
-            "perl-MRO-Compat" "perl-Package-Generator" "perl-Params-Check" "perl-Params-Util" "perl-parent" "perl-PathTools" \
-            "perl-Perl-OSType" "perl-perlfaq" "perl-PerlIO-via-QuotedPrint" "perl-Pod-Checker" "perl-Pod-Escapes" "perl-Pod-Parser" \
-            "perl-Pod-Perldoc" "perl-Pod-Simple" "perl-Pod-Usage" "perl-podlators" "perl-Scalar-List-Utils" "perl-Socket" "perl-Software-License" \
-            "perl-Storable" "perl-Sub-Exporter" "perl-Sub-Install" "perl-Sys-Syslog" "perl-Term-ANSIColor" "perl-Term-Cap" "perl-Test-Harness" \
-            "perl-Test-Simple" "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" "perl-Text-Tabs+Wrap" \
-            "perl-Text-Template" "perl-Thread-Queue" "perl-threads" "perl-threads-shared" "perl-Time-HiRes" "perl-Time-Local" \
-            "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-URI" "perl-version" \
+solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automake" "golang"  \
+            "perl" "perl-Algorithm-Diff" "perl-Archive-Tar" "perl-Archive-Zip" "perl-B-Debug" \
+            "perl-CPAN" "perl-CPAN-Meta" "perl-CPAN-Meta-Requirements" "perl-CPAN-Meta-YAML" \
+            "perl-Carp" "perl-Compress-Bzip2" "perl-Compress-Raw-Bzip2" "perl-Compress-Raw-Zlib" \
+            "perl-Config-Perl-V" "perl-DB_File" "perl-Data-Dumper" "perl-Data-OptList" "perl-Data-Section" \
+            "perl-Devel-PPPort" "perl-Devel-Size" "perl-Digest" "perl-Digest-MD5" "perl-Digest-SHA" \
+            "perl-Encode" "perl-Env" "perl-Exporter" "perl-ExtUtils-CBuilder" "perl-ExtUtils-Install" \
+            "perl-ExtUtils-MakeMaker" "perl-ExtUtils-Manifest" "perl-ExtUtils-ParseXS" "perl-Fedora-VSP" \
+            "perl-File-Fetch" "perl-File-HomeDir" "perl-File-Path" "perl-File-Temp" "perl-File-Which" \
+            "perl-Filter" "perl-Filter-Simple" "perl-Getopt-Long" "perl-HTTP-Tiny" "perl-IO-Compress" \
+            "perl-IO-Socket-IP" "perl-IPC-Cmd" "perl-IPC-SysV" "perl-IPC-System-Simple" "perl-JSON-PP" \
+            "perl-Locale-Codes" "perl-Locale-Maketext" "perl-MIME-Base64" "perl-MRO-Compat" \
+            "perl-Math-BigInt" "perl-Math-BigInt-FastCalc" "perl-Math-BigRat" "perl-Module-Build" \
+            "perl-Module-CoreList" "perl-Module-Load" "perl-Module-Load-Conditional" \
+            "perl-Module-Metadata" "perl-Package-Generator" "perl-Params-Check" "perl-Params-Util" \
+            "perl-PathTools" "perl-Perl-OSType" "perl-PerlIO-via-QuotedPrint" "perl-Pod-Checker" \
+            "perl-Pod-Escapes" "perl-Pod-Parser" "perl-Pod-Perldoc" "perl-Pod-Simple" "perl-Pod-Usage" \
+            "perl-Scalar-List-Utils" "perl-Socket" "perl-Software-License" "perl-Storable" \
+            "perl-Sub-Exporter" "perl-Sub-Install" "perl-Sys-Syslog" "perl-Term-ANSIColor" \
+            "perl-Term-Cap" "perl-Test-Harness" "perl-Test-Simple" "perl-Test-Taint" \
+            "perl-Text-Balanced" "perl-Text-Diff" "perl-Text-Glob" "perl-Text-ParseWords" \
+            "perl-Text-Tabs+Wrap" "perl-Text-Template" "perl-Thread-Queue" "perl-Time-HiRes" \
+            "perl-Time-Local" "perl-URI" "perl-Unicode-Collate" "perl-Unicode-Normalize" "perl-autodie" \
+            "perl-bignum" "perl-constant" "perl-experimental" "perl-generators" "perl-inc-latest" \
+            "perl-libnet" "perl-local-lib" "perl-parent" "perl-perlfaq" "perl-podlators" \
+            "perl-srpm-macros" "perl-threads" "perl-threads-shared" "perl-version" \
             "imake" "cmake" "doxygen" "libusbx" "xorg-x11-proto-devel" "xorg-x11-util-macros" "xapian-core" "bison" \
             "python2" "tcl" "epydoc" "chrpath" "dbus-glib" "libcgroup" "checkpolicy" "policycoreutils" )
 # "desktop-file-utils"  "python-cups" "gobject-introspection" "atk"
