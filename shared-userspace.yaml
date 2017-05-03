@@ -12,7 +12,7 @@ data:
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
-            bootstrap: master
+            f26-modularity: master
         requires:
             base-runtime: master
             perl: master
@@ -52,11 +52,6 @@ data:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-#
-#            atk:
-#                rationale: dependency of gtk2.
-#                ref: f26
-#                buildorder: 9
             tcl:
                 rationale: dependency of python2.
                 ref: f26
@@ -74,11 +69,6 @@ data:
                 rationale: dependency of cups/python-cups.
                 ref: f26
                 buildorder: 7
-# python-cups requires cups
-#            python-cups:
-#                rationale: dependency of cups/python-cups.
-#                ref: f26
-#                buildorder: 7
             python2:
                 rationale: dependency of many packages.
                 ref: private-karsten-modularity
@@ -107,13 +97,6 @@ data:
                 rationale: dependency of selinux-policy.
                 ref: f26
                 buildorder: 6
-# go-i requires lots of stuff we don't have yet
-#            gobject-introspection:
-#                rationale: dependency of many packages.
-#                ref: f26
-#                buildorder: 8
-# TODO: remove avahi from cups
-################################################################
             alsa-lib:
                 rationale: Component for shared userspace - alsa-lib.
                 ref: f26

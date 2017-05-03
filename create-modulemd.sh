@@ -178,6 +178,7 @@ data:
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
+            f26-modularity: master
         requires:
             base-runtime: master
             perl: master
@@ -203,19 +204,14 @@ cat << EOT
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 1
-#
-#            atk:
-#                rationale: dependency of gtk2.
-#                ref: f26
-#                buildorder: 9
             tcl:
                 rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
-#            glib2:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
+            glib2:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 4
 # desktop-file-utils need glib2 (and emacs)
             desktop-file-utils:
                 rationale: dependency of cups/python-cups/epydoc/policycoreutils
@@ -226,11 +222,6 @@ cat << EOT
                 rationale: dependency of cups/python-cups.
                 ref: f26
                 buildorder: 7
-# python-cups requires cups
-#            python-cups:
-#                rationale: dependency of cups/python-cups.
-#                ref: f26
-#                buildorder: 7
             python2:
                 rationale: dependency of many packages.
                 ref: private-karsten-modularity
@@ -255,12 +246,6 @@ cat << EOT
                 rationale: dependency of selinux-policy.
                 ref: f26
                 buildorder: 6
-# go-i requires lots of stuff we don't have yet
-#            gobject-introspection:
-#                rationale: dependency of many packages.
-#                ref: f26
-#                buildorder: 8
-# TODO: remove avahi from cups
 ################################################################
 EOT
 cat $modulerpmsfile
