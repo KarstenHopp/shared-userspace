@@ -12,6 +12,7 @@ data:
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
+            bootstrap: master
         requires:
             base-runtime: master
             perl: master
@@ -60,17 +61,16 @@ data:
                 rationale: dependency of python2.
                 ref: f26
                 buildorder: 5
-#            glib2:
-#                rationale: Build dep for many packages.
-#                ref: f26
-#                buildorder: 2
-# desktop-file-utils need glib2 (and emacs)
+            glib2:
+                rationale: Build dep for many packages.
+                ref: f26
+                buildorder: 4
+# desktop-file-utils needs glib2-devel (and emacs)
             desktop-file-utils:
                 rationale: dependency of cups/python-cups/epydoc/policycoreutils
                 ref: f26
                 buildorder: 5
             epydoc:
-# disabled dep on desktop-file-utils
                 rationale: dependency of cups/python-cups.
                 ref: f26
                 buildorder: 7
@@ -100,6 +100,10 @@ data:
                 ref: f26
                 buildorder: 2
             policycoreutils:
+                rationale: dependency of selinux-policy.
+                ref: f26
+                buildorder: 6
+            perl-Unicode-EastAsianWidth:
                 rationale: dependency of selinux-policy.
                 ref: f26
                 buildorder: 6
