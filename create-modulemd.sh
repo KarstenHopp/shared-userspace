@@ -178,7 +178,7 @@ data:
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
-            f26-modularity: master
+            bootstrap: master
         requires:
             base-runtime: master
             perl: master
