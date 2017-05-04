@@ -174,7 +174,7 @@ data:
         module: [ MIT ]
     dependencies:
         buildrequires:
-            base-runtime: master
+#            base-runtime: f26
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
