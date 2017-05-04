@@ -24,27 +24,49 @@ data:
         default:
             rpms:
                 - alsa-lib
+                - gtk2
                 - hesiod
                 - libusb
-                - libxslt
+                - libvirt-client
+                - mesa-libGL
+                - mesa-libGLU
+                - motif
+                - SDL
                 - libicu
                 - libuv
                 - libedit
                 - libaio
                 - compat-openssl10
                 - selinux-policy
+                - time
+                - PyYAML
+                - boost
+                - gperftools
+                - libstemmer
+                - tcp_wrappers
     api:
         rpms:
             - alsa-lib
+            - gtk2
             - hesiod
             - libusb
-            - libxslt
+            - libvirt-client
+            - mesa-libGL
+            - mesa-libGLU
+            - motif
+            - SDL
             - libicu
             - libuv
             - libedit
             - libaio
             - compat-openssl10
             - selinux-policy
+            - time
+            - PyYAML
+            - boost
+            - gperftools
+            - libstemmer
+            - tcp_wrappers
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -60,7 +82,6 @@ data:
                 rationale: Build dep for many packages.
                 ref: f26
                 buildorder: 4
-# desktop-file-utils needs glib2-devel (and emacs)
             desktop-file-utils:
                 rationale: dependency of cups/python-cups/epydoc/policycoreutils
                 ref: f26
@@ -93,14 +114,67 @@ data:
                 rationale: dependency of selinux-policy.
                 ref: f26
                 buildorder: 6
-            perl-Unicode-EastAsianWidth:
-                rationale: dependency of selinux-policy.
-                ref: f26
-                buildorder: 6
+################################################################
             alsa-lib:
                 rationale: Component for shared userspace - alsa-lib.
                 ref: f26
                 buildorder: 10
+            gtk2:
+                rationale: Component for shared userspace - gtk2.
+                ref: f26
+                buildorder: 10
+            cups:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            atk:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            cairo:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            gdk-pixbuf2:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            pango:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXcomposite:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXcursor:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXdamage:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXfixes:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXi:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXinerama:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXrandr:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
+            libXrender:
+                rationale: Requirement for gtk2.
+                ref: f26
+                buildorder: 5
             hesiod:
                 rationale: Component for shared userspace - hesiod.
                 ref: f26
@@ -109,10 +183,230 @@ data:
                 rationale: Component for shared userspace - libusb.
                 ref: f26
                 buildorder: 10
-            libxslt:
-                rationale: Component for shared userspace - libxslt.
+            libvirt:
+                rationale: Component for shared userspace - libvirt-client.
+                ref: f26
+                buildorder: 15
+            qemu:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 6
+            ceph:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            dnsmasq:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            ebtables:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            git:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            glusterfs:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            iscsi-initiator-utils:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            libpciaccess:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            libssh:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            openwsman:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            netcf:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            nfs-utils:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            numactl:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            numad:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            parted:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            polkit:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            qt:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            radvd:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            sanlock:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            scrub:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            sheepdog:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            wireshark:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            xen:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            xhtml1-dtds:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            yajl:
+                rationale: Requirement for libvirt-client.
+                ref: f26
+                buildorder: 5
+            clang:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libXext:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libXmu:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libXxf86vm:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libclc:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libdrm:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libglvnd:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libomxil-bellagio:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libva:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libvdpau:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            libxshmfence:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            llvm:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            opencl-filesystem:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            wayland:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            python-mako:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            vulkan:
+                rationale: Requirement for mesa-libGL.
+                ref: f26
+                buildorder: 5
+            mesa-libGLU:
+                rationale: Component for shared userspace - mesa-libGLU.
                 ref: f26
                 buildorder: 10
+            motif:
+                rationale: Component for shared userspace - motif.
+                ref: f26
+                buildorder: 10
+            libXft:
+                rationale: Requirement for motif.
+                ref: f26
+                buildorder: 5
+            libXp:
+                rationale: Requirement for motif.
+                ref: f26
+                buildorder: 5
+            libXt:
+                rationale: Requirement for motif.
+                ref: f26
+                buildorder: 5
+            libjpeg-turbo:
+                rationale: Requirement for motif.
+                ref: f26
+                buildorder: 5
+            xorg-x11-xbitmaps:
+                rationale: Requirement for motif.
+                ref: f26
+                buildorder: 5
+            SDL:
+                rationale: Component for shared userspace - SDL.
+                ref: f26
+                buildorder: 10
+            arts:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
+            audiofile:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
+            esound:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
+            libX11:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
+            nas:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
+            pulseaudio:
+                rationale: Requirement for SDL.
+                ref: f26
+                buildorder: 5
             icu:
                 rationale: Component for shared userspace - libicu.
                 ref: f26
@@ -141,3 +435,119 @@ data:
                 rationale: Component for shared userspace - selinux-policy.
                 ref: f26
                 buildorder: 10
+            time:
+                rationale: Component for shared userspace - time.
+                ref: f26
+                buildorder: 10
+            PyYAML:
+                rationale: Component for shared userspace - PyYAML.
+                ref: f26
+                buildorder: 10
+            Cython:
+                rationale: Requirement for PyYAML.
+                ref: f26
+                buildorder: 5
+            libyaml:
+                rationale: Requirement for PyYAML.
+                ref: f26
+                buildorder: 5
+            boost:
+                rationale: Component for shared userspace - boost.
+                ref: f26
+                buildorder: 10
+            mpich:
+                rationale: Requirement for boost.
+                ref: f26
+                buildorder: 5
+            openmpi:
+                rationale: Requirement for boost.
+                ref: f26
+                buildorder: 5
+            gperftools:
+                rationale: Component for shared userspace - gperftools.
+                ref: f26
+                buildorder: 10
+            libunwind:
+                rationale: Requirement for gperftools.
+                ref: f26
+                buildorder: 5
+            libstemmer:
+                rationale: Component for shared userspace - libstemmer.
+                ref: f26
+                buildorder: 10
+            libevent:
+                rationale: Requirement for nfs-utils.
+                ref: f26
+                buildorder: 5
+            tcp_wrappers:
+                rationale: Component for shared userspace - tcp_wrappers
+                ref: f26
+                buildorder: 5
+            augeas:
+                rationale: Requirement for netcf.
+                ref: f26
+                buildorder: 5
+            libnl3:
+                rationale: Requirement for netcf.
+                ref: f26
+                buildorder: 5
+            libxslt:
+                rationale: Requirement for netcf.
+                ref: f26
+                buildorder: 5
+            libssh:
+                rationale: Component for shared userspace - libssh.
+                ref: f26
+                buildorder: 10
+            cmocka:
+                rationale: Requirement for libssh.
+                ref: f26
+                buildorder: 5
+            isns-utils:
+                rationale: Requirement for iscsi-initiator-utils.
+                ref: f26
+                buildorder: 5
+            avahi:
+                rationale: Component for shared userspace - avahi.
+                ref: f26
+                buildorder: 12
+            dbus-python:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            gtk-sharp2:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            gtk3:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            intltool:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            libdaemon:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            mono:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            perl-XML-Parser:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            pygtk2:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            qt3:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
+            xmltoman:
+                rationale: Requirement for avahi.
+                ref: f26
+                buildorder: 5
