@@ -155,6 +155,10 @@ data:
                 rationale: dependency of policycoreutils.
                 ref: f26
                 buildorder: 2
+            libselinux:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 5
             policycoreutils:
                 rationale: dependency of selinux-policy.
                 ref: f26
