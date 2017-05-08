@@ -244,10 +244,14 @@ data:
                 rationale: Requirement for libvirt-client.
                 ref: f26
                 buildorder: 5
+            llvm:
+                rationale: Requirement for mesa.
+                ref: f26
+                buildorder: 10
             mesa:
                 rationale: Component for shared userspace - mesa-libGL.
                 ref: f26
-                buildorder: 10
+                buildorder: 7
             libXext:
                 rationale: Requirement for mesa-libGL.
                 ref: f26
@@ -272,10 +276,11 @@ data:
                 rationale: Component for shared userspace - mesa-libGLU.
                 ref: f26
                 buildorder: 10
-            motif:
-                rationale: Component for shared userspace - motif.
-                ref: f26
-                buildorder: 10
+# FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
+#            motif:
+#                rationale: Component for shared userspace - motif.
+#                ref: f26
+#                buildorder: 10
             libXft:
                 rationale: Requirement for motif.
                 ref: f26
