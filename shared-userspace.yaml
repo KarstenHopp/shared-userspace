@@ -116,6 +116,11 @@ data:
 #            - git
 #            - go-md2man
 #            - btrfs-progs
+#            - xfsprogs
+#            - skopeo
+#            - python-rhsm
+#            - parted
+#            - gnupg
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -393,3 +398,23 @@ data:
                 rationale: Build dependency of docker.
                 ref: f26
                 buildorder: 13
+            skopeo:
+                rationale: Build dependency of docker.
+                ref: f26
+                buildorder: 14
+            gnupg:
+                rationale: build dep of golang.
+                ref: f26
+                buildorder: 15
+            parted:
+                rationale: build dep of golang.
+                ref: f26
+                buildorder: 15
+            python-rhsm:
+                rationale: build dep of golang.
+                ref: f26
+                buildorder: 15
+            xfsprogs:
+                rationale: build dep of golang.
+                ref: f26
+                buildorder: 15
