@@ -252,14 +252,18 @@ data:
                 rationale: Requirement for mesa.
                 ref: f26
                 buildorder: 6
+            compiler-rt:
+                rationale: Requirement for clang.
+                ref: f26
+                buildorder: 7
             clang:
                 rationale: Requirement for mesa.
                 ref: f26
-                buildorder: 7
+                buildorder: 8
             mesa:
                 rationale: Component for shared userspace - mesa-libGL.
                 ref: f26
-                buildorder: 8
+                buildorder: 9
             libXext:
                 rationale: Requirement for mesa-libGL.
                 ref: f26
