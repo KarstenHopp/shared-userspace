@@ -368,12 +368,16 @@ data:
             git:
                 rationale: Build dependency of docker.
                 ref: f26
+                buildorder: 10
             godep:
                 rationale: Build dependency of docker.
                 ref: f26
+                buildorder: 10
             btrfs-progs:
                 rationale: Build dependency of docker.
                 ref: f26
+                buildorder: 10
             golang-github-cpuguy83-go-md2man:
                 rationale: Build dependency of docker.
                 ref: f26
+                buildorder: 10
