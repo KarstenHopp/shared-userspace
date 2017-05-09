@@ -112,6 +112,10 @@ data:
 #            - xorg-x11-xbitmaps
 #            - libX11
 #            - pulseaudio
+#            - godep
+#            - git
+#            - go-md2man
+#            - btrfs-progs
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -361,3 +365,15 @@ data:
                 rationale: Component for shared userspace - python-pymongo.
                 ref: f26
                 buildorder: 10
+            git:
+                rationale: Build dependency of docker.
+                ref: f26
+            godep:
+                rationale: Build dependency of docker.
+                ref: f26
+            btrfs-progs:
+                rationale: Build dependency of docker.
+                ref: f26
+            golang-github-cpuguy83-go-md2man:
+                rationale: Build dependency of docker.
+                ref: f26
