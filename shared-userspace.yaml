@@ -381,7 +381,15 @@ data:
                 rationale: Build dependency of docker.
                 ref: f26
                 buildorder: 10
+            golang-github-shurcooL-sanitized_anchor_name:
+                rationale: Build dependency of golang-github-russross-blackfriday.
+                ref: f26
+                buildorder: 11
+            golang-github-russross-blackfriday:
+                rationale: Build dependency of golang-github-cpuguy83-go-md2man.
+                ref: f26
+                buildorder: 12
             golang-github-cpuguy83-go-md2man:
                 rationale: Build dependency of docker.
                 ref: f26
-                buildorder: 10
+                buildorder: 13
