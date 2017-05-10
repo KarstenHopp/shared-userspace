@@ -241,10 +241,12 @@ data:
                 rationale: Component for shared userspace - libusb.
                 ref: f26
                 buildorder: 10
-            libvirt:
-                rationale: Component for shared userspace - libvirt-client.
-                ref: f26
-                buildorder: 10
+            # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
+            # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
+            # libvirt:
+            #     rationale: Component for shared userspace - libvirt-client.
+            #     ref: f26
+            #     buildorder: 10
             libssh:
                 rationale: Requirement for libvirt-client.
                 ref: f26
