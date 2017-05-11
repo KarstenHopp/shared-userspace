@@ -257,11 +257,11 @@ data:
                 buildorder: 5
             llvm:
                 rationale: Requirement for mesa.
-                ref: f26
+                ref: 6532ccc2ea87d123175ce553285ec00a2c9dfd30
                 buildorder: 6
             compiler-rt:
                 rationale: Requirement for clang.
-                ref: f26
+                ref: 2ff9f55e3d67c9272322275662de3a8f2f30bad0
                 buildorder: 7
             clang:
                 rationale: Requirement for mesa.
