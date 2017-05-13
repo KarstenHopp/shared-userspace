@@ -146,7 +146,7 @@ data:
                 buildorder: 7
             python2:
                 rationale: dependency of many packages.
-                ref: bd0f7dde0373e1a3458a6cf41fe5621b6f41c6de
+                ref: private-karsten-modularity
                 buildorder: 6
             chrpath:
                 rationale: dependency of dbus-glib.
