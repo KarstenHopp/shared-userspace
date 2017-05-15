@@ -12,7 +12,7 @@ data:
             perl: master
             common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
-            bootstrap: master
+            bootstrap: f26
         requires:
             base-runtime: master
             perl: master
@@ -488,11 +488,16 @@ data:
                 rationale: build and runtime dep of many packages.
                 ref: f26
                 buildorder: 15
+            docbook-style-xsl:
+                rationale: libsecret dependency.
+                ref: f26
+                buildorder: 8
+            vala:
+                rationale: libsecret dependency.
+                ref: f26
+                buildorder: 8
 #TODO:
 # git <- libsecret <- deps:
-# docbook-style-xsl
 # gtk-doc
 # intltool
-# vala
-# vala-devel >= 0.17.2.12
 # valgrind-devel
