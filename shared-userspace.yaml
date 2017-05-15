@@ -10,7 +10,7 @@ data:
         buildrequires:
 #            base-runtime: f26
             perl: master
-            common-build-dependencies-bootstrap: f26
+#            common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
             bootstrap: f26
         requires:
