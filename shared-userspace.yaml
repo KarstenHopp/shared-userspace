@@ -488,3 +488,11 @@ data:
                 rationale: build and runtime dep of many packages.
                 ref: f26
                 buildorder: 15
+#TODO:
+# git <- libsecret <- deps:
+# docbook-style-xsl
+# gtk-doc
+# intltool
+# vala
+# vala-devel >= 0.17.2.12
+# valgrind-devel
