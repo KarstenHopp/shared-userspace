@@ -23,104 +23,164 @@ data:
     profiles:
         default:
             rpms:
-                 []
-#                - alsa-lib
-#                - gtk2
-#                - hesiod
-#                - libusb
-#                - libvirt-client
-#                - mesa-libGL
-#                - mesa-libGLU
-#                - motif
-#                - SDL
-#                - libicu
-#                - libuv
-#                - libedit
-#                - libaio
-#                - compat-openssl10
-#                - selinux-policy
-#                - time
-#                - PyYAML
-#                - boost
-#                - gperftools
-#                - libstemmer
-#                - python-pymongo
-#                - scons
+                - libtool
+                - tcl
+                - glib2
+                - desktop-file-utils
+                - epydoc
+                - python2
+                - chrpath
+                - dbus-glib
+                - libcgroup
+                - checkpolicy
+                - libselinux
+                - policycoreutils
+                - alsa-lib
+                - gtk2
+                - cups
+                - atk
+                - cairo
+                - gdk-pixbuf2
+                - pango
+                - libXcomposite
+                - libXcursor
+                - libXdamage
+                - libXfixes
+                - libXi
+                - libXinerama
+                - libXrandr
+                - libXrender
+                - hesiod
+                - libusb
+                # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
+                # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
+                # - libvirt
+                - libssh
+                - libxslt
+                - llvm
+                - compiler-rt
+                - clang
+                - mesa
+                - libXext
+                - libXmu
+                - libXxf86vm
+                - libdrm
+                - libxshmfence
+                - mesa-libGLU
+                # FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
+                # - motif
+                - libXft
+                - libXp
+                - libXt
+                - xorg-x11-xbitmaps
+                - SDL
+                - libX11
+                - pulseaudio
+                - icu
+                - libuv
+                - libedit
+                - libaio
+                - compat-openssl10
+                - lksctp-tools
+                - selinux-policy
+                - time
+                - PyYAML
+                - boost
+                - gperftools
+                - libstemmer
+                - python-pymongo
+                - git
+                - godep
+                - btrfs-progs
+                - golang-github-shurcooL-sanitized_anchor_name
+                - golang-github-russross-blackfriday
+                - golang-github-cpuguy83-go-md2man
+                - skopeo
+                - gnupg
+                - parted
+                - python-rhsm
+                - xfsprogs
+                - systemtap
     api:
         rpms:
-             []
-#            - alsa-lib
-#            - gtk2
-#            - hesiod
-#            - libusb
-#            - libvirt-client
-#            - mesa-libGL
-#            - mesa-libGLU
-#            - motif
-#            - SDL
-#            - libicu
-#            - libuv
-#            - libedit
-#            - libaio
-#            - compat-openssl10
-#            - selinux-policy
-#            - time
-#            - PyYAML
-#            - boost
-#            - gperftools
-#            - libstemmer
-#            - python-pymongo
-#            - scons
-#            - libtool
-#            - tcl
-#            - glib2
-#            - desktop-file-utils
-#            - epydoc
-#            - python2
-#            - chrpath
-#            - dbus-glib
-#            - libcgroup
-#            - checkpolicy
-#            - policycoreutils
-#            - systemtap
-#            - cups
-#            - atk
-#            - cairo
-#            - gdk-pixbuf2
-#            - pango
-#            - libXcomposite
-#            - libXcursor
-#            - libXdamage
-#            - libXfixes
-#            - libXi
-#            - libXinerama
-#            - libXrandr
-#            - libXrender
-#            - libvirt
-#            - libssh
-#            - libxslt
-#            - mesa
-#            - libXext
-#            - libXmu
-#            - libXxf86vm
-#            - libdrm
-#            - libxshmfence
-#            - motif
-#            - libXft
-#            - libXp
-#            - libXt
-#            - xorg-x11-xbitmaps
-#            - libX11
-#            - pulseaudio
-#            - godep
-#            - git
-#            - go-md2man
-#            - btrfs-progs
-#            - xfsprogs
-#            - skopeo
-#            - python-rhsm
-#            - parted
-#            - gnupg
+             - libtool
+             - tcl
+             - glib2
+             - desktop-file-utils
+             - epydoc
+             - python2
+             - chrpath
+             - dbus-glib
+             - libcgroup
+             - checkpolicy
+             - libselinux
+             - policycoreutils
+             - alsa-lib
+             - gtk2
+             - cups
+             - atk
+             - cairo
+             - gdk-pixbuf2
+             - pango
+             - libXcomposite
+             - libXcursor
+             - libXdamage
+             - libXfixes
+             - libXi
+             - libXinerama
+             - libXrandr
+             - libXrender
+             - hesiod
+             - libusb
+             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
+             # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
+             # - libvirt
+             - libssh
+             - libxslt
+             - llvm
+             - compiler-rt
+             - clang
+             - mesa
+             - libXext
+             - libXmu
+             - libXxf86vm
+             - libdrm
+             - libxshmfence
+             - mesa-libGLU
+             # FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
+             # - motif
+             - libXft
+             - libXp
+             - libXt
+             - xorg-x11-xbitmaps
+             - SDL
+             - libX11
+             - pulseaudio
+             - icu
+             - libuv
+             - libedit
+             - libaio
+             - compat-openssl10
+             - lksctp-tools
+             - selinux-policy
+             - time
+             - PyYAML
+             - boost
+             - gperftools
+             - libstemmer
+             - python-pymongo
+             - git
+             - godep
+             - btrfs-progs
+             - golang-github-shurcooL-sanitized_anchor_name
+             - golang-github-russross-blackfriday
+             - golang-github-cpuguy83-go-md2man
+             - skopeo
+             - gnupg
+             - parted
+             - python-rhsm
+             - xfsprogs
+             - systemtap
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -428,3 +488,86 @@ data:
                 rationale: build and runtime dep of many packages.
                 ref: f26
                 buildorder: 15
+
+
+
+
+            libtool:
+            tcl:
+            glib2:
+            desktop-file-utils:
+            epydoc:
+            python2:
+            chrpath:
+            dbus-glib:
+            libcgroup:
+            checkpolicy:
+            libselinux:
+            policycoreutils:
+################################################################
+            alsa-lib:
+            gtk2:
+            cups:
+            atk:
+            cairo:
+            gdk-pixbuf2:
+            pango:
+            libXcomposite:
+            libXcursor:
+            libXdamage:
+            libXfixes:
+            libXi:
+            libXinerama:
+            libXrandr:
+            libXrender:
+            hesiod:
+            libusb:
+            # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
+            # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
+            # libvirt:
+            libssh:
+            libxslt:
+            llvm:
+            compiler-rt:
+            clang:
+            mesa:
+            libXext:
+            libXmu:
+            libXxf86vm:
+            libdrm:
+            libxshmfence:
+            mesa-libGLU:
+# FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
+#            motif:
+            libXft:
+            libXp:
+            libXt:
+            xorg-x11-xbitmaps:
+            SDL:
+            libX11:
+            pulseaudio:
+            icu:
+            libuv:
+            libedit:
+            libaio:
+            compat-openssl10:
+            lksctp-tools:
+            selinux-policy:
+            time:
+            PyYAML:
+            boost:
+            gperftools:
+            libstemmer:
+            python-pymongo:
+            git:
+            godep:
+            btrfs-progs:
+            golang-github-shurcooL-sanitized_anchor_name:
+            golang-github-russross-blackfriday:
+            golang-github-cpuguy83-go-md2man:
+            skopeo:
+            gnupg:
+            parted:
+            python-rhsm:
+            xfsprogs:
+            systemtap:
