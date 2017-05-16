@@ -56,7 +56,7 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "perl-srpm-macros" "perl-threads" "perl-threads-shared" "perl-version" \
             "imake" "cmake" "doxygen" "libusbx" "xorg-x11-proto-devel" "xorg-x11-util-macros" "xapian-core" "bison" \
             "python2" "tcl" "epydoc" "chrpath" "dbus-glib" "libcgroup" "checkpolicy" "policycoreutils" \
-            "vala" "cups" "bluez" "git" "libical" "cups-filter" "docbook-dtds" "docbook-style-dsssl" "perl-SGMLSpm" \
+            "vala" "cups" "bluez" "git" "libical" "cups-filters" "docbook-dtds" "docbook-style-dsssl" "perl-SGMLSpm" \
             "libyaml" )
 
 # "desktop-file-utils"  "python-cups" "gobject-introspection" "atk"

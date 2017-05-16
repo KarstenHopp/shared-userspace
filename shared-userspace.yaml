@@ -37,7 +37,7 @@ data:
                 - compat-openssl10
                 - compiler-rt
                 - cups
-                - cups-filter
+                - cups-filters
                 - dbus-glib
                 - desktop-file-utils
                 - docbook-dtds
@@ -124,7 +124,7 @@ data:
             - compat-openssl10
             - compiler-rt
             - cups
-            - cups-filter
+            - cups-filters
             - dbus-glib
             - desktop-file-utils
             - docbook-dtds
@@ -255,7 +255,7 @@ data:
                 rationale: Component for shared userspace - gtk2.
                 ref: f26
                 buildorder: 10
-            cups-filter:
+            cups-filters:
                 rationale: Runtime requirement for cups.
                 ref: f26
                 buildorder: 11
@@ -542,6 +542,10 @@ data:
                 rationale: libsecret dependency.
                 ref: f26
                 buildorder: 8
+            xmlto:
+                rationale: libsecret dependency.
+                ref: f26
+                buildorder: 12
             vala:
                 rationale: libsecret dependency.
                 ref: f26
