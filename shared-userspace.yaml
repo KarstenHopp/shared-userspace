@@ -23,80 +23,80 @@ data:
     profiles:
         default:
             rpms:
-                - libtool
-                - tcl
-                - glib2
+                - PyYAML
+                - SDL
+                - alsa-lib
+                - atk
+                - boost
+                - btrfs-progs
+                - cairo
+                - checkpolicy
+                - chrpath
+                - clang
+                - compat-openssl10
+                - compiler-rt
+                - cups
+                - dbus-glib
                 - desktop-file-utils
                 - epydoc
-                - python2
-                - chrpath
-                - dbus-glib
-                - libcgroup
-                - checkpolicy
-                - libselinux
-                - policycoreutils
-                - alsa-lib
-                - gtk2
-                - cups
-                - atk
-                - cairo
                 - gdk-pixbuf2
-                - pango
+                - git
+                - glib2
+                - gnupg
+                - godep
+                - golang-github-cpuguy83-go-md2man
+                - golang-github-russross-blackfriday
+                - golang-github-shurcooL-sanitized_anchor_name
+                - gperftools
+                - gtk2
+                - hesiod
+                - icu
+                - libX11
                 - libXcomposite
                 - libXcursor
                 - libXdamage
+                - libXext
                 - libXfixes
+                - libXft
                 - libXi
                 - libXinerama
+                - libXmu
+                - libXp
                 - libXrandr
                 - libXrender
-                - hesiod
-                - libusbx
-                - libusb
-                - libssh
-                - libxslt
-                - llvm
-                - compiler-rt
-                - clang
-                - mesa
-                - libXext
-                - libXmu
-                - libXxf86vm
-                - libdrm
-                - libxshmfence
-                - mesa-libGLU
-                - libXft
-                - libXp
                 - libXt
-                - xorg-x11-xbitmaps
-                - SDL
-                - libX11
-                - pulseaudio
-                - icu
-                - libuv
-                - libedit
+                - libXxf86vm
                 - libaio
-                - compat-openssl10
-                - lksctp-tools
-                - selinux-policy
-                - time
-                - PyYAML
-                - boost
-                - gperftools
+                - libcgroup
+                - libdrm
+                - libedit
+                - libselinux
+                - libssh
                 - libstemmer
-                - python-pymongo
-                - git
-                - godep
-                - btrfs-progs
-                - golang-github-shurcooL-sanitized_anchor_name
-                - golang-github-russross-blackfriday
-                - golang-github-cpuguy83-go-md2man
-                - skopeo
-                - gnupg
+                - libtool
+                - libusb
+                - libusbx
+                - libuv
+                - libxshmfence
+                - libxslt
+                - lksctp-tools
+                - llvm
+                - mesa
+                - mesa-libGLU
+                - pango
                 - parted
+                - policycoreutils
+                - pulseaudio
+                - python-pymongo
                 - python-rhsm
-                - xfsprogs
+                - python2
+                - selinux-policy
+                - skopeo
                 - systemtap
+                - tcl
+                - time
+                - xfsprogs
+                - xorg-x11-xbitmaps
                 # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
                 # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
                 # - libvirt
@@ -104,80 +104,80 @@ data:
                 # - motif
     api:
         rpms:
-            - libtool
-            - tcl
-            - glib2
+            - PyYAML
+            - SDL
+            - alsa-lib
+            - atk
+            - boost
+            - btrfs-progs
+            - cairo
+            - checkpolicy
+            - chrpath
+            - clang
+            - compat-openssl10
+            - compiler-rt
+            - cups
+            - dbus-glib
             - desktop-file-utils
             - epydoc
-            - python2
-            - chrpath
-            - dbus-glib
-            - libcgroup
-            - checkpolicy
-            - libselinux
-            - policycoreutils
-            - alsa-lib
-            - gtk2
-            - cups
-            - atk
-            - cairo
             - gdk-pixbuf2
-            - pango
+            - git
+            - glib2
+            - gnupg
+            - godep
+            - golang-github-cpuguy83-go-md2man
+            - golang-github-russross-blackfriday
+            - golang-github-shurcooL-sanitized_anchor_name
+            - gperftools
+            - gtk2
+            - hesiod
+            - icu
+            - libX11
             - libXcomposite
             - libXcursor
             - libXdamage
+            - libXext
             - libXfixes
+            - libXft
             - libXi
             - libXinerama
+            - libXmu
+            - libXp
             - libXrandr
             - libXrender
-            - hesiod
-            - libusbx
-            - libusb
-            - libssh
-            - libxslt
-            - llvm
-            - compiler-rt
-            - clang
-            - mesa
-            - libXext
-            - libXmu
-            - libXxf86vm
-            - libdrm
-            - libxshmfence
-            - mesa-libGLU
-            - libXft
-            - libXp
             - libXt
-            - xorg-x11-xbitmaps
-            - SDL
-            - libX11
-            - pulseaudio
-            - icu
-            - libuv
-            - libedit
+            - libXxf86vm
             - libaio
-            - compat-openssl10
-            - lksctp-tools
-            - selinux-policy
-            - time
-            - PyYAML
-            - boost
-            - gperftools
+            - libcgroup
+            - libdrm
+            - libedit
+            - libselinux
+            - libssh
             - libstemmer
-            - python-pymongo
-            - git
-            - godep
-            - btrfs-progs
-            - golang-github-shurcooL-sanitized_anchor_name
-            - golang-github-russross-blackfriday
-            - golang-github-cpuguy83-go-md2man
-            - skopeo
-            - gnupg
+            - libtool
+            - libusb
+            - libusbx
+            - libuv
+            - libxshmfence
+            - libxslt
+            - lksctp-tools
+            - llvm
+            - mesa
+            - mesa-libGLU
+            - pango
             - parted
+            - policycoreutils
+            - pulseaudio
+            - python-pymongo
             - python-rhsm
-            - xfsprogs
+            - python2
+            - selinux-policy
+            - skopeo
             - systemtap
+            - tcl
+            - time
+            - xfsprogs
+            - xorg-x11-xbitmaps
             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
             # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
             # - libvirt
