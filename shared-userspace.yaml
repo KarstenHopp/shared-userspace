@@ -51,6 +51,7 @@ data:
                 - libXrandr
                 - libXrender
                 - hesiod
+                - libusbx
                 - libusb
                 - libssh
                 - libxslt
@@ -131,6 +132,7 @@ data:
             - libXrandr
             - libXrender
             - hesiod
+            - libusbx
             - libusb
             - libssh
             - libxslt
@@ -297,6 +299,10 @@ data:
                 rationale: Component for shared userspace - hesiod.
                 ref: f26
                 buildorder: 10
+            libusbx:
+                rationale: requirement for libusb.
+                ref: f26
+                buildorder: 8
             libusb:
                 rationale: Component for shared userspace - libusb.
                 ref: f26
