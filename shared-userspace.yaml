@@ -43,6 +43,7 @@ data:
                 - docbook-dtds
                 - docbook-style-dsssl
                 - epydoc
+                - fontconfig
                 - gdk-pixbuf2
                 - git
                 - glib2
@@ -74,14 +75,19 @@ data:
                 - libcgroup
                 - libdrm
                 - libedit
+                - libglvnd
                 - libical
+                - jbigkit
+                - libjpeg-turbo
                 - libselinux
                 - libssh
                 - libstemmer
                 - libtool
+                - libunwind
                 - libusb
                 - libusbx
                 - libuv
+                - libxcb
                 - libxshmfence
                 - libxslt
                 - lksctp-tools
@@ -91,6 +97,7 @@ data:
                 - pango
                 - parted
                 - perl-SGMLSpm
+                - pixman
                 - policycoreutils
                 - pulseaudio
                 - python-pymongo
@@ -100,9 +107,11 @@ data:
                 - skopeo
                 - systemtap
                 - tcl
+                - tcp_wrappers
                 - time
                 - xfsprogs
                 - xorg-x11-xbitmaps
+                - xorg-x11-proto-devel
                 # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
                 # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
                 # - libvirt
@@ -130,6 +139,7 @@ data:
             - docbook-dtds
             - docbook-style-dsssl
             - epydoc
+            - fontconfig
             - gdk-pixbuf2
             - git
             - glib2
@@ -161,14 +171,19 @@ data:
             - libcgroup
             - libdrm
             - libedit
+            - libglvnd
             - libical
+            - jbigkit
+            - libjpeg-turbo
             - libselinux
             - libssh
             - libstemmer
             - libtool
+            - libunwind
             - libusb
             - libusbx
             - libuv
+            - libxcb
             - libxshmfence
             - libxslt
             - lksctp-tools
@@ -177,6 +192,7 @@ data:
             - mesa-libGLU
             - pango
             - parted
+            - pixman
             - perl-SGMLSpm
             - policycoreutils
             - pulseaudio
@@ -187,14 +203,35 @@ data:
             - skopeo
             - systemtap
             - tcl
+            - tcp_wrappers
             - time
             - xfsprogs
             - xorg-x11-xbitmaps
+            - xorg-x11-proto-devel
             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
             # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
             # - libvirt
             # FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
             # - motif
+    filter:
+        rpms:
+            - clang-analyzer
+            - cups-client
+            - cups-ipptool
+            - cups-lpd
+            - boost-doctools
+            - boost-graph-mpich
+            - boost-graph-openmpi
+            - boost-mpich-devel
+            - boost-mpich
+            - boost-openmpi-devel
+            - boost-openmpi-python
+            - boost-mpich-python
+            - git-all
+            - git-cvs
+            - git-email
+            - git-gui
+            - gtk2-immodules
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
@@ -255,6 +292,10 @@ data:
                 rationale: Component for shared userspace - gtk2.
                 ref: f26
                 buildorder: 10
+            libunwind:
+                rationale: Runtime requirement for gperftools.
+                ref: f26
+                buildorder: 11
             cups-filters:
                 rationale: Runtime requirement for cups.
                 ref: f26
@@ -267,6 +308,18 @@ data:
                 rationale: Requirement for gtk2.
                 ref: f26
                 buildorder: 5
+            jbigkit:
+                rationale: Requirement for libtiff.
+                ref: f26
+                buildorder: 5
+            libjpeg-turbo:
+                rationale: Requirement for libtiff.
+                ref: f26
+                buildorder: 5
+            libtiff:
+                rationale: Runtime requirement for gtk2
+                ref: f26
+                buildorder: 6
             bluez:
                 rationale: Requirement for gtk2.
                 ref: f26
@@ -294,7 +347,15 @@ data:
             cairo:
                 rationale: Requirement for gtk2.
                 ref: f26
-                buildorder: 5
+                buildorder: 8
+            fontconfig:
+                rationale: Runtime requirement for cairo-devel.
+                ref: f26
+                buildorder: 8
+            pixman:
+                rationale: Runtime requirement for cairo-devel.
+                ref: f26
+                buildorder: 8
             gdk-pixbuf2:
                 rationale: Requirement for gtk2.
                 ref: f26
@@ -337,6 +398,14 @@ data:
                 buildorder: 5
             libyaml:
                 rationale: Runtime requirement for PyYAML.
+                ref: f26
+                buildorder: 12
+            libxml2:
+                rationale: Runtime requirement for shared-mime-info.
+                ref: f26
+                buildorder: 11
+            shared-mime-info:
+                rationale: Runtime requirement for gdk-pixbuf2.
                 ref: f26
                 buildorder: 12
             hesiod:
@@ -397,6 +466,18 @@ data:
                 rationale: Requirement for mesa-libGL.
                 ref: f26
                 buildorder: 5
+            tcp_wrappers:
+                rationale: requirement for audit and others.
+                ref: f26
+                buildorder: 8
+            xorg-x11-proto-devel:
+                rationale: requirement for libX11.
+                ref: f26
+                buildorder: 8
+            libxcb:
+                rationale: Runtime requirement for libX11-devel.
+                ref: f26
+                buildorder: 11
             libxshmfence:
                 rationale: Requirement for mesa-libGL.
                 ref: f26
@@ -450,6 +531,10 @@ data:
                 rationale: Component for shared userspace - libedit.
                 ref: f26
                 buildorder: 10
+            libglvnd:
+                rationale: runtime requirement for cairo.
+                ref: f26
+                buildorder: 8
             libaio:
                 rationale: Component for shared userspace - libaio.
                 ref: f26
