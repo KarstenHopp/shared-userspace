@@ -9,13 +9,13 @@ data:
     dependencies:
         buildrequires:
 #            base-runtime: f26
-            perl: master
+            perl: f26
 #            common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
             bootstrap: f26
         requires:
-            base-runtime: master
-            perl: master
+            base-runtime: f26
+            perl: f26
     references:
         community: https://fedoraproject.org/wiki/Modularity
         documentation: https://fedoraproject.org/wiki/Fedora_Packaging_Guidelines_for_Modules
@@ -235,9 +235,15 @@ data:
             - git-cvs
             - git-email
             - git-gui
+            - git-svn
+            - gitk
+            - gitweb
+            - glib2-fam
             - gtk2-immodules
             - libtool
             - libtool-ltdl-devel
+            - perl-Git-SVN
+            - policycoreutils-gui
     components:
         rpms:
 #           libtool provides libtool-ltdl, a runtime library:
