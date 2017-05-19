@@ -1,3 +1,4 @@
+---
 document: modulemd
 version: 1
 data:
@@ -5,12 +6,13 @@ data:
     description: A module that contains libraries, binaries, etc
                  that are shared between all other modules.
     license:
-        module: [ MIT ]
+        module:
+            - MIT
     dependencies:
         buildrequires:
-#            base-runtime: f26
+            #  base-runtime: f26
             perl: f26
-#            common-build-dependencies-bootstrap: f26
+            # common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
             bootstrap: f26
         requires:
@@ -18,7 +20,8 @@ data:
             perl: f26
     references:
         community: https://fedoraproject.org/wiki/Modularity
-        documentation: https://fedoraproject.org/wiki/Fedora_Packaging_Guidelines_for_Modules
+        documentation:
+            https://fedoraproject.org/wiki/Fedora_Packaging_Guidelines_for_Modules
         tracker: https://taiga.fedorainfracloud.org/project/modularity
     profiles:
         default:
@@ -246,7 +249,7 @@ data:
             - policycoreutils-gui
     components:
         rpms:
-#           libtool provides libtool-ltdl, a runtime library:
+            # libtool provides libtool-ltdl, a runtime library:
             libtool:
                 rationale: Build dep for many packages.
                 ref: f26
@@ -295,7 +298,6 @@ data:
                 rationale: dependency of selinux-policy.
                 ref: f26
                 buildorder: 6
-################################################################
             alsa-lib:
                 rationale: Component for shared userspace - alsa-lib.
                 ref: f26
@@ -510,11 +512,11 @@ data:
                 rationale: Component for shared userspace - mesa-libGLU.
                 ref: f26
                 buildorder: 10
-# FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
-#            motif:
-#                rationale: Component for shared userspace - motif.
-#                ref: f26
-#                buildorder: 12
+            # FTBFS: https://bugzilla.redhat.com/show_bug.cgi?id=1448819
+            #            motif:
+            #                rationale: Component for shared userspace - motif.
+            #                ref: f26
+            #                buildorder: 12
             libXft:
                 rationale: Requirement for motif.
                 ref: f26
@@ -612,11 +614,11 @@ data:
                 ref: f26
                 buildorder: 10
             golang-github-shurcooL-sanitized_anchor_name:
-                rationale: Build dependency of golang-github-russross-blackfriday.
+                rationale: B-D of golang-github-russross-blackfriday.
                 ref: f26
                 buildorder: 11
             golang-github-russross-blackfriday:
-                rationale: Build dependency of golang-github-cpuguy83-go-md2man.
+                rationale: B-D of golang-github-cpuguy83-go-md2man.
                 ref: f26
                 buildorder: 12
             golang-github-cpuguy83-go-md2man:
@@ -647,10 +649,6 @@ data:
                 rationale: build and runtime dep of many packages.
                 ref: f26
                 buildorder: 15
-            docbook-style-xsl:
-                rationale: libsecret dependency.
-                ref: f26
-                buildorder: 8
             xmlto:
                 rationale: libsecret dependency.
                 ref: f26
@@ -659,7 +657,7 @@ data:
                 rationale: libsecret dependency.
                 ref: f26
                 buildorder: 8
-#TODO:
+# TODO:
 # git <- libsecret <- deps:
 # gtk-doc
 # intltool
