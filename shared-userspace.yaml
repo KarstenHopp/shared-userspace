@@ -10,7 +10,7 @@ data:
             - MIT
     dependencies:
         buildrequires:
-            #  base-runtime: f26
+            # base-runtime: f26
             perl: f26
             # common-build-dependencies-bootstrap: f26
             common-build-dependencies: f26
@@ -100,7 +100,9 @@ data:
                 - mesa-libGLU
                 - pango
                 - parted
+                - perl-Error
                 - perl-SGMLSpm
+                - perl-TermReadKey
                 - pixman
                 - policycoreutils
                 - pulseaudio
@@ -113,6 +115,7 @@ data:
                 - tcl
                 - tcp_wrappers
                 - time
+                - valgrind
                 - xfsprogs
                 - xorg-x11-proto-devel
                 - xorg-x11-xbitmaps
@@ -199,7 +202,9 @@ data:
             - pango
             - parted
             - pixman
+            - perl-Error
             - perl-SGMLSpm
+            - perl-TermReadKey
             - policycoreutils
             - pulseaudio
             - python-pymongo
@@ -211,6 +216,7 @@ data:
             - tcl
             - tcp_wrappers
             - time
+            - valgrind
             - xfsprogs
             - xorg-x11-proto-devel
             - xorg-x11-xbitmaps
@@ -657,6 +663,26 @@ data:
                 rationale: libsecret dependency.
                 ref: f26
                 buildorder: 8
+            perl-Error:
+                rationale: Component for shared userspace - perl(Error).
+                ref: f26
+                buildorder: 15
+            perl-Test-Pod:
+                rationale: Requirement for perl(Error).
+                ref: f26
+                buildorder: 14
+            perl-Test-Pod-Coverage:
+                rationale: Requirement for perl(Error).
+                ref: f26
+                buildorder: 14
+            perl-TermReadKey:
+                rationale: Requirement for git.
+                ref: f26
+                buildorder: 14
+            valgrind:
+                rationale: Requirement for git.
+                ref: f26
+                buildorder: 12
 # TODO:
 # git <- libsecret <- deps:
 # gtk-doc

@@ -57,7 +57,8 @@ solvedbuilddeps=("hostname" "multilib-rpm-config" "help2man" "autoconf" "automak
             "imake" "cmake" "doxygen" "libusbx" "xorg-x11-proto-devel" "xorg-x11-util-macros" "xapian-core" "bison" \
             "python2" "tcl" "epydoc" "chrpath" "dbus-glib" "libcgroup" "checkpolicy" "policycoreutils" \
             "vala" "cups" "bluez" "git" "libical" "cups-filters" "docbook-dtds" "docbook-style-dsssl" "perl-SGMLSpm" \
-            "libyaml" )
+            "libyaml" "xorg-x11-xtrans-devel" "libICE" "libXau" "xorg-x11-xbitmaps" "fontconfig" \
+            "libglvnd" "jbigkit" "libjpeg-turbo" "libunwind" "libxcb" "pixman" "tcp_wrappers" "xorg-x11-proto-devel" )
 
 # "desktop-file-utils"  "python-cups" "gobject-introspection" "atk"
 debug() {
@@ -199,6 +200,31 @@ cat << EOT
         rpms:
 EOT
 cat $moduleapifile
+cat << EOT
+    filter:
+        rpms:
+            - clang-analyzer
+            - cups-client
+            - cups-ipptool
+            - cups-lpd
+            - boost-doctools
+            - boost-graph-mpich
+            - boost-graph-openmpi
+            - boost-mpich-devel
+            - boost-mpich
+            - boost-openmpi-devel
+            - boost-openmpi-python
+            - boost-mpich-python
+            - git-all
+            - git-cvs
+            - git-email
+            - git-gui
+            - gtk2-immodules
+            - libtool
+            - libtool-ltdl-devel
+            - perl-Git-SVN
+            - policycoreutils-gui
+EOT
 cat << EOT
     components:
         rpms:
