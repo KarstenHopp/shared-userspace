@@ -259,7 +259,7 @@ data:
             libtool:
                 rationale: Build dep for many packages.
                 ref: f26
-                buildorder: 1
+                buildorder: 6
             tcl:
                 rationale: dependency of python2.
                 ref: f26
@@ -449,7 +449,7 @@ data:
             libssh:
                 rationale: Requirement for libvirt-client.
                 ref: f26
-                buildorder: 6
+                buildorder: 5
             libxslt:
                 rationale: Requirement for libvirt-client.
                 ref: f26
