@@ -449,7 +449,7 @@ data:
             libssh:
                 rationale: Requirement for libvirt-client.
                 ref: f26
-                buildorder: 5
+                buildorder: 6
             libxslt:
                 rationale: Requirement for libvirt-client.
                 ref: f26
