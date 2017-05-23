@@ -523,10 +523,11 @@ data:
             #                rationale: Component for shared userspace - motif.
             #                ref: f26
             #                buildorder: 12
-            gcc:
-                rationale: temporary update for bootstrap gcc.
-                ref: f26
-                buildorder: 2
+            #
+            # gcc:
+            #     rationale: temporary update for bootstrap gcc.
+            #     ref: f26
+            #     buildorder: 2
             libXft:
                 rationale: Requirement for motif.
                 ref: f26
