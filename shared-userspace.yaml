@@ -707,6 +707,14 @@ data:
                 rationale: Runtime req for cups and others.
                 ref: f26
                 buildorder: 12
+            fontpackages:
+                rationale: Runtime req for fontconfig.
+                ref: f26
+                buildorder: 12
+            liberation-fonts:
+                rationale: Runtime req for fontconfig.
+                ref: f26
+                buildorder: 12
 # TODO:
 # git <- libsecret <- deps:
 # gtk-doc
