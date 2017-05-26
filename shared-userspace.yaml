@@ -258,8 +258,29 @@ data:
             - harfbuzz-icu
             - libtool
             - libtool-ltdl-devel
+            - mesa-vulkan-devel
+            - pango-tests
             - perl-Git-SVN
+            - perl-Test-Pod-Coverage
             - policycoreutils-gui
+            - pulseaudio-gdm-hooks
+            - pulseaudio-module-bluetooth
+            - pulseaudio-module-gconf
+            - pulseaudio-module-jack
+            - pulseaudio-module-lirc
+            - pulseaudio-module-x11
+            - pulseaudio-module-zeroconf
+            - pulseaudio-utils
+            - pulseaudio-qpaeq
+            - selinux-policy-doc
+            - systemtap-testksuite
+            - systemtap-initscript
+            - systemtap-runtime-java
+            - systemtap-server
+            - vala-doc
+            - vulkan-devel
+            - xmlto-tex
+            - xmlto-xhtml
     components:
         rpms:
             # libtool provides libtool-ltdl, a runtime library:
@@ -719,4 +740,3 @@ data:
 # git <- libsecret <- deps:
 # gtk-doc
 # intltool
-# valgrind-devel
