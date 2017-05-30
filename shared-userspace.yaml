@@ -281,7 +281,7 @@ data:
             - pulseaudio-utils
             - pulseaudio-qpaeq
             - selinux-policy-doc
-            - systemtap-testksuite
+            - systemtap-testsuite
             - systemtap-initscript
             - systemtap-runtime-java
             - systemtap-server
