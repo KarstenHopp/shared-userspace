@@ -736,7 +736,8 @@ data:
                 rationale: Runtime req for fontconfig.
                 ref: f26
                 buildorder: 12
-# TODO:
-# git <- libsecret <- deps:
-# gtk-doc
-# intltool
+            # TODO: git <- libsecret <- {gtk-doc, intltool}
+            libsecret:
+                rationale: Runtime req for git.
+                ref: f26
+                buildorder: 12
