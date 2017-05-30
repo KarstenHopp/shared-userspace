@@ -227,6 +227,14 @@ data:
             - xorg-x11-proto-devel
             - xorg-x11-xbitmaps
             - xorg-x11-xtrans-devel
+            - rpcbind
+            - quota
+            - nfs-utils
+            - libtirpc
+            - libsecret
+            - ding-libs
+            - gssproxy
+            - libevent
             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
             # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
             # - libvirt
