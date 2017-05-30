@@ -57,6 +57,7 @@ data:
                 - golang-github-russross-blackfriday
                 - golang-github-shurcooL-sanitized_anchor_name
                 - gperftools
+                - graphite2
                 - gtk2
                 - harfbuzz
                 - hesiod
@@ -104,7 +105,7 @@ data:
                 - pango
                 - parted
                 - perl-Error
-                - perl-SGMLSpm
+                # perl-SGMLSpm
                 - perl-TermReadKey
                 - pixman
                 - policycoreutils
@@ -161,6 +162,7 @@ data:
             - golang-github-russross-blackfriday
             - golang-github-shurcooL-sanitized_anchor_name
             - gperftools
+            - graphite2
             - gtk2
             - harfbuzz
             - hesiod
@@ -209,7 +211,7 @@ data:
             - parted
             - pixman
             - perl-Error
-            - perl-SGMLSpm
+            # perl-SGMLSpm
             - perl-TermReadKey
             - policycoreutils
             - pulseaudio
@@ -242,6 +244,18 @@ data:
             # - motif
     filter:
         rpms:
+            - avahi-autoipd
+            - avahi-dnsconfd
+            - avahi-qt3
+            - avahi-qt3-devel
+            - avahi-qt4
+            - avahi-qt4-devel
+            - avahi-sharp
+            - avahi-ui-devel
+            - avahi-ui-gtk3
+            - avahi-ui-sharp
+            - avahi-ui-sharp-devel
+            - avahi-ui-tools
             - clang-analyzer
             - cups-client
             - cups-ipptool
@@ -251,9 +265,12 @@ data:
             - boost-graph-openmpi
             - boost-mpich-devel
             - boost-mpich
+            - boost-openmpi
             - boost-openmpi-devel
             - boost-openmpi-python
             - boost-mpich-python
+            - fontpackages-devel
+            - fontpackages-tools
             - git-all
             - git-cvs
             - git-email
@@ -263,12 +280,16 @@ data:
             - gitweb
             - glib2-fam
             - gtk2-immodules
+            - graphite2-devel
             - harfbuzz-icu
+            - harfbuzz-devel
+            - libsecret-devel
             - libtool
             - libtool-ltdl-devel
             - mesa-vulkan-devel
             - pango-tests
             - perl-Git-SVN
+            - perl-SGMLSpm
             - perl-Test-Pod-Coverage
             - policycoreutils-gui
             - pulseaudio-gdm-hooks
@@ -280,12 +301,19 @@ data:
             - pulseaudio-module-zeroconf
             - pulseaudio-utils
             - pulseaudio-qpaeq
+            - qt5
+            - qt5-devel
+            - qt5-rpm-macros
             - selinux-policy-doc
             - systemtap-testsuite
             - systemtap-initscript
             - systemtap-runtime-java
             - systemtap-server
+            # texinfo
+            - texinfo-tex
+            - util-linux-user
             - vala-doc
+            - valgrind-openmpi
             - vulkan-devel
             - xmlto-tex
             - xmlto-xhtml
@@ -777,3 +805,7 @@ data:
                 rationale: Component of shared-userspace.
                 ref: f26
                 buildorder: 17
+            graphite2:
+                rationale: runtime req of git.
+                ref: f26
+                buildorder: 15
