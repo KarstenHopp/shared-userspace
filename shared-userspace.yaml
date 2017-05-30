@@ -740,4 +740,32 @@ data:
             libsecret:
                 rationale: Runtime req for git.
                 ref: f26
-                buildorder: 12
+                buildorder: 16
+            rpcbind:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            quota:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            libtirpc:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            libevent:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            gssproxy:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            ding-libs:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 16
+            nfs-utils:
+                rationale: Component of shared-userspace.
+                ref: f26
+                buildorder: 17
