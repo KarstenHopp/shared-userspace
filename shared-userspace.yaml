@@ -234,7 +234,6 @@ data:
             - nfs-utils
             - libtirpc
             - libsecret
-            - ding-libs
             - gssproxy
             - libevent
             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
@@ -797,14 +796,10 @@ data:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
                 buildorder: 16
-            ding-libs:
-                rationale: Runtime requirement for nfs-utils.
-                ref: f26
-                buildorder: 16
             nfs-utils:
                 rationale: Component of shared-userspace.
                 ref: f26
-                buildorder: 17
+                buildorder: 16
             graphite2:
                 rationale: runtime req of git.
                 ref: f26
