@@ -75,6 +75,7 @@ data:
                 - libXp
                 - libXrandr
                 - libXrender
+                - libSM
                 - libXt
                 - libXxf86vm
                 - libaio
@@ -86,7 +87,8 @@ data:
                 - libICE
                 - jbigkit
                 - libjpeg-turbo
-                - libselinux
+                # in BRT:
+                #- libselinux
                 - libssh
                 - libstemmer
                 - libthai
@@ -180,6 +182,7 @@ data:
             - libXp
             - libXrandr
             - libXrender
+            - libSM
             - libXt
             - libXxf86vm
             - libaio
@@ -191,7 +194,8 @@ data:
             - libICE
             - jbigkit
             - libjpeg-turbo
-            - libselinux
+            # in BRT:
+            #- libselinux
             - libssh
             - libstemmer
             - libthai
@@ -237,6 +241,7 @@ data:
             - ding-libs
             - gssproxy
             - libevent
+            - libnfsidmap
             # FTBFS https://bugzilla.redhat.com/show_bug.cgi?id=1449809
             # https://koji.fedoraproject.org/koji/taskinfo?taskID=19489426
             # - libvirt
@@ -292,6 +297,7 @@ data:
             - perl-SGMLSpm
             - perl-Test-Pod-Coverage
             - policycoreutils-gui
+            - policycoreutils-python
             - pulseaudio-gdm-hooks
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gconf
@@ -360,10 +366,11 @@ data:
                 rationale: dependency of policycoreutils.
                 ref: f26
                 buildorder: 2
-            libselinux:
-                rationale: dependency of policycoreutils.
-                ref: f26
-                buildorder: 5
+            # in BRT:
+            #libselinux:
+            #    rationale: dependency of policycoreutils.
+            #    ref: f26
+            #    buildorder: 5
             policycoreutils:
                 rationale: dependency of selinux-policy.
                 ref: f26
@@ -776,36 +783,56 @@ data:
             libsecret:
                 rationale: Runtime req for git.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             rpcbind:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             quota:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             libtirpc:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             libevent:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
+            libnfsidmap:
+                rationale: Runtime requirement for nfs-utils.
+                ref: f26
+                buildorder: 15
             gssproxy:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             ding-libs:
                 rationale: Runtime requirement for nfs-utils.
                 ref: f26
-                buildorder: 16
+                buildorder: 15
             nfs-utils:
                 rationale: Component of shared-userspace.
                 ref: f26
-                buildorder: 17
+                buildorder: 16
             graphite2:
                 rationale: runtime req of git.
+                ref: f26
+                buildorder: 15
+            libSM:
+                rationale: Requirement for libXt.
+                ref: f26
+                buildorder: 15
+            libpciaccess:
+                rationale: Requirement for libdrm.
+                ref: f26
+                buildorder: 15
+            gtk3:
+                rationale: runtime req for gtk2 ?.
+                ref: f26
+                buildorder: 15
+            libdatrie:
+                rationale: runtime req for libthai.
                 ref: f26
                 buildorder: 15
