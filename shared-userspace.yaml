@@ -117,6 +117,7 @@ data:
                 - perl-TermReadKey
                 - pixman
                 - policycoreutils
+                - polkit
                 - poppler-data
                 - pulseaudio
                 - python-pymongo
@@ -230,6 +231,7 @@ data:
             # perl-SGMLSpm
             - perl-TermReadKey
             - policycoreutils
+            - polkit
             - poppler-data
             - pulseaudio
             - python-pymongo
@@ -871,3 +873,7 @@ data:
                 rationale: runtime req for ghostscript-core.
                 ref: f26
                 buildorder: 13
+            polkit:
+                rationale: runtime req for ghostscript-core.
+                ref: f26
+                buildorder: 15
