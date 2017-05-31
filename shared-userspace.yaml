@@ -262,7 +262,6 @@ data:
             - avahi-ui-sharp-devel
             - avahi-ui-tools
             - clang-analyzer
-            - cups-client
             - cups-ipptool
             - cups-lpd
             - boost-doctools
