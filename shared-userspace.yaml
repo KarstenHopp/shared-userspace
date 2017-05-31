@@ -91,10 +91,11 @@ data:
                 - libical
                 - libICE
                 - jbigkit
+                - lcms2
                 - libjpeg-turbo
                 - libpciaccess
-                # in BRT:
-                #- libselinux
+                # in BRT, but to old:
+                - libselinux
                 - libssh
                 - libstemmer
                 - libthai
@@ -179,6 +180,7 @@ data:
             - harfbuzz
             - hesiod
             - icu
+            - lcms2
             - libX11
             - libXcomposite
             - libXcursor
@@ -207,8 +209,8 @@ data:
             - jbigkit
             - libjpeg-turbo
             - libpciaccess
-            # in BRT:
-            #- libselinux
+            # in BRT, but to old:
+            - libselinux
             - libssh
             - libstemmer
             - libthai
@@ -305,6 +307,7 @@ data:
             - harfbuzz-icu
             - harfbuzz-devel
             - libsecret-devel
+            - libselinux-ruby
             - libtool
             - libtool-ltdl-devel
             - lynx
@@ -383,11 +386,11 @@ data:
                 rationale: dependency of policycoreutils.
                 ref: f26
                 buildorder: 2
-            # in BRT:
-            #libselinux:
-            #    rationale: dependency of policycoreutils.
-            #    ref: f26
-            #    buildorder: 5
+            # in BRT, but to old:
+            libselinux:
+                rationale: dependency of policycoreutils.
+                ref: f26
+                buildorder: 5
             policycoreutils:
                 rationale: dependency of selinux-policy.
                 ref: f26
@@ -874,6 +877,10 @@ data:
                 ref: f26
                 buildorder: 13
             polkit:
+                rationale: runtime req for ghostscript-core.
+                ref: f26
+                buildorder: 15
+            lcms2:
                 rationale: runtime req for ghostscript-core.
                 ref: f26
                 buildorder: 15
