@@ -49,6 +49,8 @@ data:
                 - epydoc
                 - fontconfig
                 - gdk-pixbuf2
+                - ghostscript
+                - ghostscript-fonts
                 - git
                 - glib2
                 - gnupg
@@ -59,6 +61,7 @@ data:
                 - gperftools
                 - graphite2
                 - gtk2
+                - gtk3
                 - harfbuzz
                 - hesiod
                 - icu
@@ -80,6 +83,8 @@ data:
                 - libXxf86vm
                 - libaio
                 - libcgroup
+                - libdaemon
+                - libdatrie
                 - libdrm
                 - libedit
                 - libglvnd
@@ -87,6 +92,7 @@ data:
                 - libICE
                 - jbigkit
                 - libjpeg-turbo
+                - libpciaccess
                 # in BRT:
                 #- libselinux
                 - libssh
@@ -111,6 +117,7 @@ data:
                 - perl-TermReadKey
                 - pixman
                 - policycoreutils
+                - poppler-data
                 - pulseaudio
                 - python-pymongo
                 - python-rhsm
@@ -156,6 +163,8 @@ data:
             - epydoc
             - fontconfig
             - gdk-pixbuf2
+            - ghostscript
+            - ghostscript-fonts
             - git
             - glib2
             - gnupg
@@ -187,6 +196,8 @@ data:
             - libXxf86vm
             - libaio
             - libcgroup
+            - libdaemon
+            - libdatrie
             - libdrm
             - libedit
             - libglvnd
@@ -194,6 +205,7 @@ data:
             - libICE
             - jbigkit
             - libjpeg-turbo
+            - libpciaccess
             # in BRT:
             #- libselinux
             - libssh
@@ -218,6 +230,7 @@ data:
             # perl-SGMLSpm
             - perl-TermReadKey
             - policycoreutils
+            - poppler-data
             - pulseaudio
             - python-pymongo
             - python-rhsm
@@ -275,6 +288,8 @@ data:
             - boost-mpich-python
             - fontpackages-devel
             - fontpackages-tools
+            - ghostscript-doc
+            - ghostscript-gtk
             - git-all
             - git-cvs
             - git-email
@@ -290,6 +305,7 @@ data:
             - libsecret-devel
             - libtool
             - libtool-ltdl-devel
+            - lynx
             - mesa-vulkan-devel
             - pango-tests
             - perl-Git-SVN
@@ -835,3 +851,23 @@ data:
                 rationale: runtime req for libthai.
                 ref: f26
                 buildorder: 15
+            libdaemon:
+                rationale: runtime req for avahi.
+                ref: f26
+                buildorder: 15
+            lynx:
+                rationale: build req for libdaemon.
+                ref: f26
+                buildorder: 14
+            ghostscript:
+                rationale: req for cups-filters.
+                ref: f26
+                buildorder: 14
+            ghostscript-fonts:
+                rationale: req for ghostscript-core.
+                ref: f26
+                buildorder: 14
+            poppler-data:
+                rationale: runtime req for ghostscript-core.
+                ref: f26
+                buildorder: 13
