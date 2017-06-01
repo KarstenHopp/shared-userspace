@@ -89,6 +89,7 @@ data:
                 - libedit
                 - libglvnd
                 - libical
+                - libreport
                 - libICE
                 - jbigkit
                 - lcms2
@@ -207,6 +208,7 @@ data:
             - libedit
             - libglvnd
             - libical
+            - libreport
             - libICE
             - jbigkit
             - libjpeg-turbo
@@ -312,6 +314,24 @@ data:
             - graphite2-devel
             - harfbuzz-icu
             - harfbuzz-devel
+            - libreport-centos
+            - libreport-cli
+            - libreport-compat
+            - libreport-devel
+            - libreport-fedora
+            - libreport-gtk
+            - libreport-gtk-devel
+            - libreport-newt
+            - libreport-plugin-kerneloops
+            - libreport-plugin-logger
+            - libreport-plugin-mailx
+            - libreport-plugin-mantisbt
+            - libreport-plugin-rhtsupport
+            - libreport-plugin-systemd-journal
+            - libreport-plugin-ureport
+            - libreport-python
+            - libreport-python3
+            - libreport-web-devel
             - libsecret-devel
             - libselinux-ruby
             - libtool
@@ -911,3 +931,7 @@ data:
                 rationale: runtime req for libreport.
                 ref: f26
                 buildorder: 15
+            libreport:
+                rationale: runtime req for anaconda.
+                ref: f26
+                buildorder: 16
