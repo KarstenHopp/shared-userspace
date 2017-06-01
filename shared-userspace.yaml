@@ -29,6 +29,7 @@ data:
                 - PyYAML
                 - SDL
                 - alsa-lib
+                - augeas
                 - avahi
                 - atk
                 - bluez
@@ -45,7 +46,6 @@ data:
                 - dbus-glib
                 - desktop-file-utils
                 - docbook-dtds
-                - docbook-style-dsssl
                 - epydoc
                 - fontconfig
                 - gdk-pixbuf2
@@ -114,16 +114,18 @@ data:
                 - pango
                 - parted
                 - perl-Error
-                # perl-SGMLSpm
                 - perl-TermReadKey
                 - pixman
                 - policycoreutils
                 - polkit
+                - poppler
                 - poppler-data
                 - pulseaudio
                 - python-pymongo
                 - python-rhsm
                 - python2
+                - qpdf
+                - satyr
                 - selinux-policy
                 - skopeo
                 - systemtap
@@ -146,6 +148,7 @@ data:
             - SDL
             - alsa-lib
             - atk
+            - augeas
             - avahi
             - bluez
             - boost
@@ -161,7 +164,6 @@ data:
             - dbus-glib
             - desktop-file-utils
             - docbook-dtds
-            - docbook-style-dsssl
             - epydoc
             - fontconfig
             - gdk-pixbuf2
@@ -230,15 +232,17 @@ data:
             - parted
             - pixman
             - perl-Error
-            # perl-SGMLSpm
             - perl-TermReadKey
             - policycoreutils
             - polkit
+            - poppler
             - poppler-data
             - pulseaudio
             - python-pymongo
             - python-rhsm
             - python2
+            - qpdf
+            - satyr
             - selinux-policy
             - skopeo
             - systemtap
@@ -266,6 +270,8 @@ data:
             # - motif
     filter:
         rpms:
+            - augeas
+            - augeas-devel
             - avahi-autoipd
             - avahi-dnsconfd
             - avahi-qt3
@@ -314,10 +320,20 @@ data:
             - mesa-vulkan-devel
             - pango-tests
             - perl-Git-SVN
-            - perl-SGMLSpm
             - perl-Test-Pod-Coverage
             - policycoreutils-gui
             - policycoreutils-python
+            - poppler-cpp
+            - poppler-cpp-devel
+            - poppler-demos
+            - poppler-devel
+            - poppler-glib
+            - poppler-glib-devel
+            - poppler-glib-doc
+            - poppler-qt
+            - poppler-qt5
+            - poppler-qt5-devel
+            - poppler-qt-devel
             - pulseaudio-gdm-hooks
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gconf
@@ -330,6 +346,9 @@ data:
             - qt5
             - qt5-devel
             - qt5-rpm-macros
+            - satyr-devel
+            - satyr-python
+            - satyr-python3
             - selinux-policy-doc
             - systemtap-testsuite
             - systemtap-initscript
@@ -435,16 +454,8 @@ data:
                 rationale: Requirement for gtk2.
                 ref: f26
                 buildorder: 11
-            perl-SGMLSpm:
-                rationale: Requirement for docbook-utils.
-                ref: f26
-                buildorder: 6
             docbook-dtds:
                 rationale: runtime requirement for boost-doctools.
-                ref: f26
-                buildorder: 6
-            docbook-style-dsssl:
-                rationale: Requirement for docbook-utils.
                 ref: f26
                 buildorder: 6
             docbook-style-xsl:
@@ -882,5 +893,21 @@ data:
                 buildorder: 15
             lcms2:
                 rationale: runtime req for ghostscript-core.
+                ref: f26
+                buildorder: 15
+            poppler:
+                rationale: runtime req for cups-filters.
+                ref: f26
+                buildorder: 15
+            qpdf:
+                rationale: runtime req for cups-filters.
+                ref: f26
+                buildorder: 15
+            satyr:
+                rationale: runtime req for libreport.
+                ref: f26
+                buildorder: 15
+            augeas:
+                rationale: runtime req for libreport.
                 ref: f26
                 buildorder: 15
