@@ -47,6 +47,7 @@ data:
                 - desktop-file-utils
                 - docbook-dtds
                 - epydoc
+                - fipscheck
                 - fontconfig
                 - freeglut
                 - freetype
@@ -124,6 +125,7 @@ data:
                 - mesa-libGLU
                 - mozjs17
                 - openjpeg2
+                - openssh
                 - pango
                 - parted
                 - perl-Error
@@ -179,6 +181,7 @@ data:
             - desktop-file-utils
             - docbook-dtds
             - epydoc
+            - fipscheck
             - fontconfig
             - freeglut
             - freetype
@@ -255,6 +258,7 @@ data:
             - mesa-libGLU
             - mozjs17
             - openjpeg2
+            - openssh
             - pango
             - parted
             - pixman
@@ -324,6 +328,7 @@ data:
             - boost-openmpi-devel
             - boost-openmpi-python
             - boost-mpich-python
+            - fipscheck-devel
             - fontpackages-devel
             - fontpackages-tools
             - ghostscript-doc
@@ -388,6 +393,11 @@ data:
             - openjpeg2-jp3d
             - openjpeg2-jp3d-devel
             - openjpeg2-jp3d-tools
+            - openssh-cavs
+            - openssh-clients-ssh1
+            - openssh-keycat
+            - openssh-ldap
+            - openssh-server
             - pango-tests
             - perl-Git-SVN
             - perl-Test-Pod-Coverage
@@ -421,6 +431,7 @@ data:
             - satyr-python
             - satyr-python3
             - selinux-policy-doc
+            - selinux-policy-mls
             - systemtap-testsuite
             - systemtap-initscript
             - systemtap-runtime-java
@@ -1038,3 +1049,11 @@ data:
                 rationale: req for many packages.
                 ref: f26
                 buildorder: 10
+            fipscheck:
+                rationale: req for openssl-clients.
+                ref: f26
+                buildorder: 10
+            openssh:
+                rationale: req for systemtap-client.
+                ref: f26
+                buildorder: 12
