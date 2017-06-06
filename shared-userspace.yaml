@@ -48,6 +48,9 @@ data:
                 - docbook-dtds
                 - epydoc
                 - fontconfig
+                - freeglut
+                - freetype
+                - fontenc 
                 - gdk-pixbuf2
                 - ghostscript
                 - ghostscript-fonts
@@ -64,13 +67,17 @@ data:
                 - gtk3
                 - harfbuzz
                 - hesiod
+                - hwdata
                 - icu
+                - jasper
+                - less
                 - libX11
                 - libXcomposite
                 - libXcursor
                 - libXdamage
                 - libXext
                 - libXfixes
+                - libXfont
                 - libXft
                 - libXi
                 - libXinerama
@@ -78,6 +85,7 @@ data:
                 - libXp
                 - libXrandr
                 - libXrender
+                - libXxf86vm
                 - libSM
                 - libXt
                 - libXxf86vm
@@ -90,6 +98,7 @@ data:
                 - libglvnd
                 - libical
                 - libreport
+                - libpciaccess
                 - libICE
                 - jbigkit
                 - lcms2
@@ -135,6 +144,7 @@ data:
                 - time
                 - valgrind
                 - xfsprogs
+                - xorg-x11-font-utils
                 - xorg-x11-proto-devel
                 - xorg-x11-xbitmaps
                 - xorg-x11-xtrans-devel
@@ -167,6 +177,9 @@ data:
             - docbook-dtds
             - epydoc
             - fontconfig
+            - freeglut
+            - freetype
+            - fontenc 
             - gdk-pixbuf2
             - ghostscript
             - ghostscript-fonts
@@ -182,14 +195,18 @@ data:
             - gtk2
             - harfbuzz
             - hesiod
+            - hwdata
             - icu
+            - jasper
             - lcms2
+            - less
             - libX11
             - libXcomposite
             - libXcursor
             - libXdamage
             - libXext
             - libXfixes
+            - libXfont
             - libXft
             - libXi
             - libXinerama
@@ -197,6 +214,7 @@ data:
             - libXp
             - libXrandr
             - libXrender
+            - libXxf86vm
             - libSM
             - libXt
             - libXxf86vm
@@ -209,6 +227,7 @@ data:
             - libglvnd
             - libical
             - libreport
+            - libpciaccess
             - libICE
             - jbigkit
             - libjpeg-turbo
@@ -253,6 +272,7 @@ data:
             - time
             - valgrind
             - xfsprogs
+            - xorg-x11-font-utils
             - xorg-x11-proto-devel
             - xorg-x11-xbitmaps
             - xorg-x11-xtrans-devel
@@ -336,6 +356,7 @@ data:
             - libselinux-ruby
             - libtool
             - libtool-ltdl-devel
+            - libXxf86vm-devel
             - lynx
             - mesa-vulkan-devel
             - pango-tests
@@ -935,3 +956,43 @@ data:
                 rationale: runtime req for anaconda.
                 ref: f26
                 buildorder: 16
+            libpciaccess:
+                rationale: runtime req for libdrm.
+                ref: f26
+                buildorder: 16
+            hwdata:
+                rationale: runtime req for libpciaccess.
+                ref: f26
+                buildorder: 16
+            jasper:
+                rationale: runtime req for gdk-pixbuf2.
+                ref: f26
+                buildorder: 16
+            libXxf86vm:
+                rationale: runtime req for freeglut.
+                ref: f26
+                buildorder: 15
+            freeglut:
+                rationale: runtime req for gdk-pixbuf2.
+                ref: f26
+                buildorder: 16
+            fontenc:
+                rationale: req for xorg-x11-font-utils.
+                ref: f26
+                buildorder: 10
+            freetype:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 10
+            libXfont:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 11
+            xorg-x11-font-utils:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 12
+            less:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 12
