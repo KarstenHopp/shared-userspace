@@ -122,6 +122,8 @@ data:
                 - llvm
                 - mesa
                 - mesa-libGLU
+                - mozjs17
+                - openjpeg2
                 - pango
                 - parted
                 - perl-Error
@@ -251,6 +253,8 @@ data:
             - llvm
             - mesa
             - mesa-libGLU
+            - mozjs17
+            - openjpeg2
             - pango
             - parted
             - pixman
@@ -368,11 +372,28 @@ data:
             - libXxf86vm-devel
             - lynx
             - mesa-vulkan-devel
+            - mozjs17-devel
+            - openjpeg2-devel
+            - openjpeg2-devel-docs
+            - openjpeg2-tools
+            - openjpeg2-mj2
+            - openjpeg2-mj2-devel
+            - openjpeg2-mj2-tools
+            - openjpeg2-jpwl
+            - openjpeg2-jpwl-devel
+            - openjpeg2-jpwl-tools
+            - openjpeg2-jpip
+            - openjpeg2-jpip-devel
+            - openjpeg2-jpip-tools
+            - openjpeg2-jp3d
+            - openjpeg2-jp3d-devel
+            - openjpeg2-jp3d-tools
             - pango-tests
             - perl-Git-SVN
             - perl-Test-Pod-Coverage
             - policycoreutils-gui
             - policycoreutils-python
+            - policycoreutils-sandbox
             - poppler-cpp
             - poppler-cpp-devel
             - poppler-demos
@@ -1009,3 +1030,11 @@ data:
                 rationale: req for many packages.
                 ref: f26
                 buildorder: 12
+            mozjs17:
+                rationale: req for polkit.
+                ref: f26
+                buildorder: 10
+            openjpeg2:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 10
