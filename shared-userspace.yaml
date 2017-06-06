@@ -51,7 +51,7 @@ data:
                 - fontconfig
                 - freeglut
                 - freetype
-                - fontenc 
+                - libfontenc 
                 - gdk-pixbuf2
                 - ghostscript
                 - ghostscript-fonts
@@ -185,7 +185,7 @@ data:
             - fontconfig
             - freeglut
             - freetype
-            - fontenc 
+            - libfontenc 
             - gdk-pixbuf2
             - ghostscript
             - ghostscript-fonts
@@ -1017,7 +1017,7 @@ data:
                 rationale: runtime req for gdk-pixbuf2.
                 ref: f26
                 buildorder: 16
-            fontenc:
+            libfontenc:
                 rationale: req for xorg-x11-font-utils.
                 ref: f26
                 buildorder: 10
