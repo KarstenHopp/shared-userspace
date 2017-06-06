@@ -67,6 +67,7 @@ data:
                 - gtk3
                 - harfbuzz
                 - hesiod
+                - hicolor-icon-theme
                 - hwdata
                 - icu
                 - jasper
@@ -195,6 +196,7 @@ data:
             - gtk2
             - harfbuzz
             - hesiod
+            - hicolor-icon-theme
             - hwdata
             - icu
             - jasper
@@ -331,6 +333,12 @@ data:
             - gitweb
             - glib2-fam
             - gtk2-immodules
+            - gtk3
+            - gtk3-devel
+            - gtk3-devel-docs
+            - gtk3-immodules
+            - gtk3-immodule-xim
+            - gtk3-tests
             - graphite2-devel
             - harfbuzz-icu
             - harfbuzz-devel
@@ -354,6 +362,7 @@ data:
             - libreport-web-devel
             - libsecret-devel
             - libselinux-ruby
+            - libtirpc-devel
             - libtool
             - libtool-ltdl-devel
             - libXxf86vm-devel
@@ -993,6 +1002,10 @@ data:
                 ref: f26
                 buildorder: 12
             less:
+                rationale: req for many packages.
+                ref: f26
+                buildorder: 12
+            hicolor-icon-theme:
                 rationale: req for many packages.
                 ref: f26
                 buildorder: 12
