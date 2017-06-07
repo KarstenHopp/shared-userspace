@@ -450,7 +450,7 @@ data:
             libtool:
                 rationale: Build dep for many packages.
                 ref: f26
-                buildorder: 6
+                buildorder: 3
             tcl:
                 rationale: dependency of python2.
                 ref: f26
