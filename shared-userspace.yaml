@@ -71,8 +71,13 @@ data:
                 - hicolor-icon-theme
                 - hwdata
                 - icu
+                - python-IPy
                 - jasper
+                - jbigkit
+                - json-c
+                - lcms2
                 - less
+                - libICE
                 - libX11
                 - libXcomposite
                 - libXcursor
@@ -99,13 +104,12 @@ data:
                 - libedit
                 - libglvnd
                 - libical
+                - libmodman
+                - libpciaccess
+                - libproxy
                 - libreport
-                - libpciaccess
-                - libICE
-                - jbigkit
-                - lcms2
+                - libtar
                 - libjpeg-turbo
-                - libpciaccess
                 # in BRT, but to old:
                 - libselinux
                 - libssh
@@ -133,22 +137,26 @@ data:
                 - pixman
                 - policycoreutils
                 - polkit
+                - polkit-pkla-compat
                 - poppler
                 - poppler-data
                 - pulseaudio
                 - python-pymongo
-                - python-rhsm
+                # - python-rhsm
                 - python2
                 - qpdf
                 - satyr
                 - selinux-policy
+                - setools
                 - skopeo
                 - systemtap
                 - tcl
                 - tcp_wrappers
                 - time
+                - urw-fonts
                 - valgrind
                 - xfsprogs
+                - xmlrpc-c
                 - xorg-x11-font-utils
                 - xorg-x11-proto-devel
                 - xorg-x11-xbitmaps
@@ -204,9 +212,13 @@ data:
             - hicolor-icon-theme
             - hwdata
             - icu
+            - python-IPy
             - jasper
+            - jbigkit
+            - json-c
             - lcms2
             - less
+            - libICE
             - libX11
             - libXcomposite
             - libXcursor
@@ -233,12 +245,12 @@ data:
             - libedit
             - libglvnd
             - libical
+            - libmodman
             - libreport
             - libpciaccess
-            - libICE
-            - jbigkit
+            - libproxy
+            - libtar
             - libjpeg-turbo
-            - libpciaccess
             # in BRT, but to old:
             - libselinux
             - libssh
@@ -261,27 +273,31 @@ data:
             - openssh
             - pango
             - parted
-            - pixman
             - perl-Error
             - perl-TermReadKey
+            - pixman
             - policycoreutils
             - polkit
+            - polkit-pkla-compat
             - poppler
             - poppler-data
             - pulseaudio
             - python-pymongo
-            - python-rhsm
+            # - python-rhsm
             - python2
             - qpdf
             - satyr
             - selinux-policy
+            - setools
             - skopeo
             - systemtap
             - tcl
             - tcp_wrappers
             - time
+            - urw-fonts
             - valgrind
             - xfsprogs
+            - xmlrpc-c
             - xorg-x11-font-utils
             - xorg-x11-proto-devel
             - xorg-x11-xbitmaps
@@ -351,6 +367,15 @@ data:
             - graphite2-devel
             - harfbuzz-icu
             - harfbuzz-devel
+            - json-c-devel
+            - libmodman-devel
+            - libproxy-bin
+            - libproxy-devel
+            - libproxy-gnome
+            - libproxy-kde
+            - libproxy-mozjs
+            - libproxy-pacrunner
+            - libproxy-webkitgtk4
             - libreport-centos
             - libreport-cli
             - libreport-compat
@@ -371,13 +396,22 @@ data:
             - libreport-web-devel
             - libsecret-devel
             - libselinux-ruby
+            - libtar-devel
             - libtirpc-devel
             - libtool
             - libtool-ltdl-devel
             - libXxf86vm-devel
             - lynx
+            - mesa-libGLU-devel
+            - mesa-libOpenCL
+            - mesa-libOpenCL-devel
+            - mesa-libwayland-egl-devel
+            - mesa-omx-drivers
             - mesa-vulkan-devel
+            - mesa-vulkan-drivers
             - mozjs17-devel
+            - mozjs38
+            - mozjs38-devel
             - openjpeg2-devel
             - openjpeg2-devel-docs
             - openjpeg2-tools
@@ -432,6 +466,10 @@ data:
             - satyr-python3
             - selinux-policy-doc
             - selinux-policy-mls
+            - selinux-policy-sandbox
+            - setools-console
+            - setools-console-analyses
+            - setools-gui
             - systemtap-testsuite
             - systemtap-initscript
             - systemtap-runtime-java
@@ -442,6 +480,10 @@ data:
             - vala-doc
             - valgrind-openmpi
             - vulkan-devel
+            - xmlrpc-c-apps
+            - xmlrpc-c-client++
+            - xmlrpc-c-c++
+            - xmlrpc-c-devel
             - xmlto-tex
             - xmlto-xhtml
     components:
@@ -832,10 +874,11 @@ data:
                 rationale: build dep of golang.
                 ref: f26
                 buildorder: 15
-            python-rhsm:
-                rationale: build dep of golang.
-                ref: f26
-                buildorder: 15
+            # KH: golang doesn't seem to require this ?
+            # python-rhsm:
+            #     rationale: build dep of golang.
+            #     ref: f26
+            #     buildorder: 15
             xfsprogs:
                 rationale: build dep of golang.
                 ref: f26
@@ -1057,3 +1100,43 @@ data:
                 rationale: req for systemtap-client.
                 ref: f26
                 buildorder: 12
+            urw-fonts:
+                rationale: req for ghostscript-core.
+                ref: f26
+                buildorder: 12
+            libtar:
+                rationale: req for libreport.
+                ref: f26
+                buildorder: 12
+            json-c:
+                rationale: req for libreport.
+                ref: f26
+                buildorder: 12
+            libmodman:
+                rationale: req for libproxy.
+                ref: f26
+                buildorder: 12
+            mozjs38:
+                rationale: build req for libproxy.
+                ref: f26
+                buildorder: 13
+            libproxy:
+                rationale: req for libreport.
+                ref: f26
+                buildorder: 13
+            xmlrpc-c:
+                rationale: req for libreport.
+                ref: f26
+                buildorder: 13
+            python-IPy:
+                rationale: req for policycoreutils-python3.
+                ref: f26
+                buildorder: 13
+            setools:
+                rationale: req for policycoreutils-python3.
+                ref: f26
+                buildorder: 13
+            polkit-pkla-compat:
+                rationale: req for polkit.
+                ref: f26
+                buildorder: 13
