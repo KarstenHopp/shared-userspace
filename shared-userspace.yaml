@@ -1123,7 +1123,7 @@ data:
             libproxy:
                 rationale: req for libreport.
                 ref: f26
-                buildorder: 13
+                buildorder: 14
             xmlrpc-c:
                 rationale: req for libreport.
                 ref: f26
