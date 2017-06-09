@@ -249,6 +249,7 @@ data:
             - libreport
             - libpciaccess
             - libproxy
+            - libreport-cli
             - libtar
             - libjpeg-turbo
             # in BRT, but to old:
@@ -377,7 +378,6 @@ data:
             - libproxy-pacrunner
             - libproxy-webkitgtk4
             - libreport-centos
-            - libreport-cli
             - libreport-compat
             - libreport-devel
             - libreport-fedora
