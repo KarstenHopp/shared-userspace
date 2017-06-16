@@ -96,7 +96,6 @@ data:
                 - libSM
                 - libXt
                 - libXxf86vm
-                - libaio
                 - libcgroup
                 - libdaemon
                 - libdatrie
@@ -237,7 +236,6 @@ data:
             - libSM
             - libXt
             - libXxf86vm
-            - libaio
             - libcgroup
             - libdaemon
             - libdatrie
@@ -799,10 +797,6 @@ data:
                 rationale: runtime requirement for cairo.
                 ref: f26
                 buildorder: 8
-            libaio:
-                rationale: Component for shared userspace - libaio.
-                ref: f26
-                buildorder: 10
             compat-openssl10:
                 rationale: Component for shared userspace - compat-openssl10.
                 ref: f26
