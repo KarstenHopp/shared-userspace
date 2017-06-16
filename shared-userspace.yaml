@@ -142,7 +142,7 @@ data:
                 - poppler-data
                 - pulseaudio
                 - python-pymongo
-                # - python-rhsm
+                - python-rhsm-certificates
                 - python2
                 - qpdf
                 - satyr
@@ -284,7 +284,7 @@ data:
             - poppler-data
             - pulseaudio
             - python-pymongo
-            # - python-rhsm
+            - python-rhsm-certificates
             - python2
             - qpdf
             - satyr
@@ -486,6 +486,7 @@ data:
             - xmlrpc-c-devel
             - xmlto-tex
             - xmlto-xhtml
+            - python-rhsm  # requires python-dateutil and python-iniparse
     components:
         rpms:
             # libtool provides libtool-ltdl, a runtime library:
@@ -867,20 +868,19 @@ data:
                 ref: f26
                 buildorder: 14
             gnupg:
-                rationale: build dep of golang.
+                rationale: runtime dependency of docker.
                 ref: f26
                 buildorder: 15
             parted:
-                rationale: build dep of golang.
+                rationale: runtime dependency of docker.
                 ref: f26
                 buildorder: 15
-            # KH: golang doesn't seem to require this ?
-            # python-rhsm:
-            #     rationale: build dep of golang.
-            #     ref: f26
-            #     buildorder: 15
+            python-rhsm:
+                rationale: runtime dependency of docker.
+                ref: f26
+                buildorder: 15
             xfsprogs:
-                rationale: build dep of golang.
+                rationale: runtime dependency of docker.
                 ref: f26
                 buildorder: 15
             systemtap:
