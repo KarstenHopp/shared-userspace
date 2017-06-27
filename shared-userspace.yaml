@@ -27,7 +27,6 @@ data:
         default:
             rpms:
                 - PyYAML
-                - SDL
                 - alsa-lib
                 - augeas
                 - avahi
@@ -139,7 +138,6 @@ data:
                 - polkit-pkla-compat
                 - poppler
                 - poppler-data
-                - pulseaudio
                 - python-pymongo
                 - python-rhsm-certificates
                 - python2
@@ -168,7 +166,6 @@ data:
     api:
         rpms:
             - PyYAML
-            - SDL
             - alsa-lib
             - atk
             - augeas
@@ -280,7 +277,6 @@ data:
             - polkit-pkla-compat
             - poppler
             - poppler-data
-            - pulseaudio
             - python-pymongo
             - python-rhsm-certificates
             - python2
@@ -447,15 +443,6 @@ data:
             - poppler-qt5
             - poppler-qt5-devel
             - poppler-qt-devel
-            - pulseaudio-gdm-hooks
-            - pulseaudio-module-bluetooth
-            - pulseaudio-module-gconf
-            - pulseaudio-module-jack
-            - pulseaudio-module-lirc
-            - pulseaudio-module-x11
-            - pulseaudio-module-zeroconf
-            - pulseaudio-utils
-            - pulseaudio-qpaeq
             - qt5
             - qt5-devel
             - qt5-rpm-macros
@@ -769,16 +756,8 @@ data:
                 rationale: Requirement for motif.
                 ref: f26
                 buildorder: 5
-            SDL:
-                rationale: Component for shared userspace - SDL.
-                ref: f26
-                buildorder: 10
             libX11:
-                rationale: Requirement for SDL.
-                ref: f26
-                buildorder: 5
-            pulseaudio:
-                rationale: Requirement for SDL.
+                rationale: build and runtime dependency for many things.
                 ref: f26
                 buildorder: 5
             icu:
