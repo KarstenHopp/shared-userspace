@@ -682,7 +682,9 @@ data:
                 buildorder: 6
             compiler-rt:
                 rationale: Requirement for clang.
-                ref: f26
+                #ref: f26
+                # f26 HEAD needs llvm-4.0.1 which isn't available in f26 (yet)
+                ref: 6bcb3b7dbd6d081521df3be798997fe21665997f
                 buildorder: 7
             clang:
                 rationale: Requirement for mesa.
