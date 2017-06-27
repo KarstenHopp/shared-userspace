@@ -63,9 +63,12 @@ data:
                 - golang-github-shurcooL-sanitized_anchor_name
                 - gperftools-libs
                 - graphite2
+                - graphite2-devel
                 - gtk2
                 - gtk3
                 - harfbuzz
+                - harfbuzz-devel
+                - harfbuzz-icu
                 - hesiod
                 - hicolor-icon-theme
                 - hwdata
@@ -91,10 +94,10 @@ data:
                 - libXp
                 - libXrandr
                 - libXrender
-                - libXxf86vm
                 - libSM
                 - libXt
                 - libXxf86vm
+                - libXxf86vm-devel
                 - libcgroup
                 - libdaemon
                 - libdatrie
@@ -125,6 +128,7 @@ data:
                 - llvm
                 - mesa
                 - mesa-libGLU
+                - mesa-libGLU-devel
                 - mozjs17
                 - openjpeg2
                 - openssh
@@ -152,6 +156,7 @@ data:
                 - time
                 - urw-fonts
                 - valgrind
+                - wayland
                 - xfsprogs
                 - xmlrpc-c
                 - xorg-x11-font-utils
@@ -202,8 +207,11 @@ data:
             - golang-github-shurcooL-sanitized_anchor_name
             - gperftools-libs
             - graphite2
+            - graphite2-devel
             - gtk2
             - harfbuzz
+            - harfbuzz-devel
+            - harfbuzz-icu
             - hesiod
             - hicolor-icon-theme
             - hwdata
@@ -229,10 +237,10 @@ data:
             - libXp
             - libXrandr
             - libXrender
-            - libXxf86vm
             - libSM
             - libXt
             - libXxf86vm
+            - libXxf86vm-devel
             - libcgroup
             - libdaemon
             - libdatrie
@@ -264,6 +272,7 @@ data:
             - llvm
             - mesa
             - mesa-libGLU
+            - mesa-libGLU-devel
             - mozjs17
             - openjpeg2
             - openssh
@@ -291,6 +300,7 @@ data:
             - time
             - urw-fonts
             - valgrind
+            - wayland
             - xfsprogs
             - xmlrpc-c
             - xorg-x11-font-utils
@@ -359,9 +369,6 @@ data:
             - gtk3-immodules
             - gtk3-immodule-xim
             - gtk3-tests
-            - graphite2-devel
-            - harfbuzz-icu
-            - harfbuzz-devel
             - json-c-devel
             - libmodman-devel
             - libproxy-bin
@@ -394,9 +401,7 @@ data:
             - libtirpc-devel
             - libtool
             - libtool-ltdl-devel
-            - libXxf86vm-devel
             - lynx
-            - mesa-libGLU-devel
             - mesa-libOpenCL
             - mesa-libOpenCL-devel
             - mesa-libwayland-egl-devel
@@ -467,6 +472,8 @@ data:
             - vala-devel
             - vala-doc
             - valgrind-openmpi
+            - wayland-devel
+            - wayland-doc
             - vulkan-devel
             - xmlrpc-c-apps
             - xmlrpc-c-client++
@@ -503,7 +510,7 @@ data:
                 ref: 0268e323750ca7d4af3c78e13480cffc63b08f85
                 buildorder: 6
             chrpath:
-                rationale: dependency of dbus-glib.
+                rationale: dependency of dbus-glib. build dependency of wayland.
                 ref: f26
                 buildorder: 1
             dbus-glib:
@@ -572,7 +579,7 @@ data:
                 ref: f26
                 buildorder: 6
             docbook-style-xsl:
-                rationale: runtime requirement for boost-doctools.
+                rationale: runtime requirement for boost-doctools. build requirement for wayland and gl-manpages.
                 ref: f26
                 buildorder: 6
             atk:
@@ -636,7 +643,7 @@ data:
                 ref: f26
                 buildorder: 12
             libxml2:
-                rationale: Runtime requirement for shared-mime-info.
+                rationale: Runtime requirement for shared-mime-info. Build requirement for wayland.
                 ref: f26
                 buildorder: 11
             shared-mime-info:
@@ -666,7 +673,7 @@ data:
                 ref: f26
                 buildorder: 5
             libxslt:
-                rationale: Requirement for libvirt-client.
+                rationale: Requirement for libvirt-client. Build requirement for wayland.
                 ref: f26
                 buildorder: 5
             llvm:
@@ -864,7 +871,7 @@ data:
                 ref: f26
                 buildorder: 15
             xmlto:
-                rationale: libsecret dependency.
+                rationale: libsecret dependency. build dependency for wayland.
                 ref: f26
                 buildorder: 12
             vala:
@@ -892,7 +899,7 @@ data:
                 ref: f26
                 buildorder: 12
             harfbuzz:
-                rationale: Runtime req for pango.
+                rationale: Runtime req for pango, pango-devel.
                 ref: f26
                 buildorder: 12
             libthai:
@@ -949,7 +956,7 @@ data:
                 ref: f26
                 buildorder: 16
             graphite2:
-                rationale: runtime req of git.
+                rationale: runtime req of git and harfbuzz-devel.
                 ref: f26
                 buildorder: 15
             libSM:
@@ -1116,3 +1123,15 @@ data:
                 rationale: req for polkit.
                 ref: f26
                 buildorder: 13
+            wayland:
+                rationale: runtime req for mesa-libEGL (libwayland-*).
+                ref: f26
+                buildorder: 13
+            docbook5-style-xsl:
+                rationale: build requirement for gl-manpages.
+                ref: f26
+                buildorder: 13
+            gl-manpages:
+                rationale: runtime requirement for mesa-libGLU-devel
+                ref: f26
+                buildorder: 14
