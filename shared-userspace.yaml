@@ -463,6 +463,8 @@ data:
             # texinfo
             - texinfo-tex
             - util-linux-user
+            - vala
+            - vala-devel
             - vala-doc
             - valgrind-openmpi
             - vulkan-devel
@@ -866,7 +868,7 @@ data:
                 ref: f26
                 buildorder: 12
             vala:
-                rationale: libsecret dependency.
+                rationale: build dependency for libsecret.
                 ref: f26
                 buildorder: 8
             perl-Error:
