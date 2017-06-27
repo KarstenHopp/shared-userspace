@@ -61,7 +61,7 @@ data:
                 - golang-github-cpuguy83-go-md2man
                 - golang-github-russross-blackfriday
                 - golang-github-shurcooL-sanitized_anchor_name
-                - gperftools
+                - gperftools-libs
                 - graphite2
                 - gtk2
                 - gtk3
@@ -200,7 +200,7 @@ data:
             - golang-github-cpuguy83-go-md2man
             - golang-github-russross-blackfriday
             - golang-github-shurcooL-sanitized_anchor_name
-            - gperftools
+            - gperftools-libs
             - graphite2
             - gtk2
             - harfbuzz
@@ -443,6 +443,7 @@ data:
             - poppler-qt5
             - poppler-qt5-devel
             - poppler-qt-devel
+            - pprof
             - qt5
             - qt5-devel
             - qt5-rpm-macros
