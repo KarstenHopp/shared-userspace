@@ -850,7 +850,10 @@ data:
                 buildorder: 13
             skopeo:
                 rationale: Build dependency of docker.
-                ref: f26
+                #ref: f26
+                # f26 HEAD needs ostree-devel which pulls in a whole slew of
+                # other stuff
+                ref: 64c6a63999314920a3db70092fe7b2d600a19b4e
                 buildorder: 14
             gnupg:
                 rationale: runtime dependency of docker.
