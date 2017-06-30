@@ -312,7 +312,18 @@ data:
             - nfs-utils
             - libtirpc
             - libsecret
-            - ding-libs
+            - libbasicobjects
+            - libbasicobjects
+            - libcollection
+            - libcollection-devel
+            - libdhash
+            - libdhash-devel
+            - libini_config
+            - libini_config-devel
+            - libpath_utils
+            - libpath_utils-devel
+            - libref_array
+            - libref_array-devel
             - gssproxy
             - libevent
             - libnfsidmap
