@@ -313,7 +313,7 @@ data:
             - libtirpc
             - libsecret
             - libbasicobjects
-            - libbasicobjects
+            - libbasicobjects-devel
             - libcollection
             - libcollection-devel
             - libdhash
