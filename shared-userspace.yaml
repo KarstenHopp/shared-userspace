@@ -373,6 +373,7 @@ data:
             - gitk
             - gitweb
             - glib2-fam
+            - gperftools
             - gtk2-immodules
             - gtk3
             - gtk3-devel
