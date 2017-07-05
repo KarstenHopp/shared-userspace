@@ -360,7 +360,10 @@ data:
             - boost-openmpi-devel
             - boost-openmpi-python
             - boost-mpich-python
+            - epydoc-doc
+            - epydoc-gui
             - fipscheck-devel
+            - fontconfig-devel-doc
             - fontpackages-devel
             - fontpackages-tools
             - ghostscript-doc
@@ -369,11 +372,13 @@ data:
             - git-cvs
             - git-email
             - git-gui
+            - git-p4
             - git-svn
             - gitk
             - gitweb
             - glib2-fam
             - gperftools
+            - godep-devel
             - gtk2-immodules
             - gtk3
             - gtk3-devel
@@ -382,6 +387,10 @@ data:
             - gtk3-immodule-xim
             - gtk3-tests
             - json-c-devel
+            - json-c-doc
+            - libevent-doc
+            - libicu-doc
+            - libusbx-devel-doc
             - libmodman-devel
             - libproxy-bin
             - libproxy-devel
@@ -413,6 +422,8 @@ data:
             - libtirpc-devel
             - libtool
             - libtool-ltdl-devel
+            - libxcb-doc
+            - llvm-doc
             - lynx
             - mesa-libOpenCL
             - mesa-libOpenCL-devel
@@ -461,6 +472,9 @@ data:
             - poppler-qt5-devel
             - poppler-qt-devel
             - pprof
+            - qpdf-doc
+            - quota-doc
+            - python-pymongo-doc
             - qt5
             - qt5-devel
             - qt5-rpm-macros
@@ -477,6 +491,7 @@ data:
             - systemtap-initscript
             - systemtap-runtime-java
             - systemtap-server
+            - tcl-doc
             # texinfo
             - texinfo-tex
             - util-linux-user
