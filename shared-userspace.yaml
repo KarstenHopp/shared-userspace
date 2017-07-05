@@ -1167,3 +1167,11 @@ data:
                 rationale: runtime requirement for mesa-libGLU-devel
                 ref: f26
                 buildorder: 14
+            libdwarf:
+                rationale: build and runtime requirement for dyninst
+                ref: f26
+                buildorder: 1
+            dyninst:
+                rationale: build and runtime requirement for systemtap
+                ref: f26
+                buildorder: 11
