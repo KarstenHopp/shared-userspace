@@ -490,6 +490,7 @@ data:
             - systemtap-testsuite
             - systemtap-initscript
             - systemtap-runtime-java
+            - systemtap-runtime-virthost
             - systemtap-server
             - tcl-doc
             # texinfo
