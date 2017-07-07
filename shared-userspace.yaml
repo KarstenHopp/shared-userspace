@@ -482,7 +482,6 @@ data:
             - satyr-python
             - satyr-python3
             - selinux-policy-doc
-            - selinux-policy-mls
             - selinux-policy-sandbox
             - setools-console
             - setools-console-analyses
@@ -1176,3 +1175,7 @@ data:
                 rationale: build and runtime requirement for systemtap
                 ref: f26
                 buildorder: 11
+            mcstrans:
+                rationale: runtime requirement for selinux-policy-mls
+                ref: f26
+                buildorder: 16
