@@ -360,6 +360,7 @@ data:
             - boost-openmpi-devel
             - boost-openmpi-python
             - boost-mpich-python
+            - cups-devel
             - epydoc-doc
             - epydoc-gui
             - fipscheck-devel
@@ -379,6 +380,7 @@ data:
             - glib2-fam
             - gperftools
             - godep-devel
+            - godep-unit-test-devel
             - gtk2-immodules
             - gtk3
             - gtk3-devel
