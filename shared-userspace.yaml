@@ -150,7 +150,7 @@ data:
                 - selinux-policy
                 - setools
                 - skopeo
-                - systemtap
+#                - systemtap
                 - tcl
                 - tcp_wrappers
                 - time
@@ -294,7 +294,7 @@ data:
             - selinux-policy
             - setools
             - skopeo
-            - systemtap
+#            - systemtap
             - tcl
             - tcp_wrappers
             - time
@@ -361,6 +361,11 @@ data:
             - boost-openmpi-python
             - boost-mpich-python
             - cups-devel
+            - dyninst
+            - dyninst-devel
+            - dyninst-doc
+            - dyninst-static
+            - dyninst-testsuite
             - epydoc-doc
             - epydoc-gui
             - fipscheck-devel
@@ -390,6 +395,10 @@ data:
             - gtk3-tests
             - json-c-devel
             - json-c-doc
+            - libdwarf
+            - libdwarf-devel
+            - libdwarf-static
+            - libdwarf-tools
             - libevent-doc
             - libicu-doc
             - libusbx-devel-doc
@@ -488,11 +497,19 @@ data:
             - setools-console
             - setools-console-analyses
             - setools-gui
-            - systemtap-testsuite
+            - systemtap
+            - systemtap-client
+            - systemtap-devel
             - systemtap-initscript
+            - systemtap-runtime
             - systemtap-runtime-java
+            - systemtap-runtime-python2
+            - systemtap-runtime-python3
+            - systemtap-runtime-virtguest
             - systemtap-runtime-virthost
+            - systemtap-sdt-devel
             - systemtap-server
+            - systemtap-testsuite
             - tcl-doc
             # texinfo
             - texinfo-tex
